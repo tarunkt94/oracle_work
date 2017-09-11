@@ -1,0 +1,7 @@
+add_db_to_rac.sh
+applypsr.sh
+applypsr.sh.idm
+applypsr.sh.oim
+postpsr.sql
+prepsr.sql
+swingbench

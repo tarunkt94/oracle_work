@@ -1,0 +1,99 @@
+.
+.
+JAVA Memory arguments: -Xms256m -Xmx512m -XX:CompileThreshold=8000 -XX:PermSize=128m  -XX:MaxPermSize=512m
+.
+WLS Start Mode=Development
+.
+CLASSPATH=/scratch/aime/work/CLOUDTOP/Middleware/oracle_common/modules/oracle.jdbc_11.1.1/ojdbc6dms.jar:/scratch/aime/work/CLOUDTOP/Middleware/patch_wls1036/profiles/default/sys_manifest_classpath/weblogic_patch.jar:/scratch/aime/work/CLOUDTOP/Middleware/jrockit-jdk1.6.0_37/lib/tools.jar:/scratch/aime/work/CLOUDTOP/Middleware/wlserver_10.3/server/lib/weblogic_sp.jar:/scratch/aime/work/CLOUDTOP/Middleware/wlserver_10.3/server/lib/weblogic.jar:/scratch/aime/work/CLOUDTOP/Middleware/modules/features/weblogic.server.modules_10.3.6.0.jar:/scratch/aime/work/CLOUDTOP/Middleware/wlserver_10.3/server/lib/webservices.jar:/scratch/aime/work/CLOUDTOP/Middleware/modules/org.apache.ant_1.7.1/lib/ant-all.jar:/scratch/aime/work/CLOUDTOP/Middleware/modules/net.sf.antcontrib_1.1.0.0_1-0b2/lib/ant-contrib.jar:/scratch/aime/work/CLOUDTOP/Middleware/oracle_common/soa/modules/commons-cli-1.1.jar:/scratch/aime/work/CLOUDTOP/Middleware/oracle_common/soa/modules/oracle.soa.mgmt_11.1.1/soa-infra-mgmt.jar:/scratch/aime/work/CLOUDTOP/Middleware/oracle_common/modules/oracle.jrf_11.1.1/jrf.jar:/scratch/aime/work/CLOUDTOP/Middleware/wlserver_10.3/common/derby/lib/derbyclient.jar:/scratch/aime/work/CLOUDTOP/Middleware/wlserver_10.3/server/lib/xqrl.jar
+.
+PATH=/scratch/aime/work/CLOUDTOP/Middleware/wlserver_10.3/server/bin:/scratch/aime/work/CLOUDTOP/Middleware/modules/org.apache.ant_1.7.1/bin:/scratch/aime/work/CLOUDTOP/Middleware/jrockit-jdk1.6.0_37/jre/bin:/scratch/aime/work/CLOUDTOP/Middleware/jrockit-jdk1.6.0_37/bin:/scratch/aime/work/CLOUDTOP/Middleware/user_projects/domains/dc_domain/bin:/scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl:.:/usr/local/packages/aime/6.0.0.0.0/sbin:/usr/local/packages/aime/6.0.0.0.0/bin:/scratch/aime/ifarm:/usr/lib64/qt-3.3/bin:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin
+.
+***************************************************
+*  To start WebLogic Server, use a username and   *
+*  password assigned to an admin-level user.  For *
+*  server administration, use the WebLogic Server *
+*  console at http://hostname:port/console        *
+***************************************************
+starting weblogic with Java version:
+java version "1.6.0_37"
+Java(TM) SE Runtime Environment (build 1.6.0_37-b06)
+Oracle JRockit(R) (build R28.2.5-50-153520-1.6.0_37-20121220-0843-linux-x86_64, compiled mode)
+Starting WLS with line:
+/scratch/aime/work/CLOUDTOP/Middleware/jrockit-jdk1.6.0_37/bin/java -client   -Xms256m -Xmx512m -XX:CompileThreshold=8000 -XX:PermSize=128m  -XX:MaxPermSize=512m -Dweblogic.Name=AdminServer -Djava.security.policy=/scratch/aime/work/CLOUDTOP/Middleware/wlserver_10.3/server/lib/weblogic.policy -Djps.subject.cache.ttl=600000 -Djps.subject.cache.key=5 -Djps.policystore.hybrid.mode=false -Djps.combiner.optimize=true -Djps.combiner.optimize.lazyeval=true -Djps.authz=ACC -Duser.timezone=UTC  -Xverify:none  -da -Dplatform.home=/scratch/aime/work/CLOUDTOP/Middleware/wlserver_10.3 -Dwls.home=/scratch/aime/work/CLOUDTOP/Middleware/wlserver_10.3/server -Dweblogic.home=/scratch/aime/work/CLOUDTOP/Middleware/wlserver_10.3/server  -Dcommon.components.home=/scratch/aime/work/CLOUDTOP/Middleware/oracle_common -Djrf.version=11.1.1 -Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.Jdk14Logger -Ddomain.home=/scratch/aime/work/CLOUDTOP/Middleware/user_projects/domains/cpserver/MyServices -Djrockit.optfile=/scratch/aime/work/CLOUDTOP/Middleware/oracle_common/modules/oracle.jrf_11.1.1/jrocket_optfile.txt -Doracle.server.config.dir=/scratch/aime/work/CLOUDTOP/Middleware/user_projects/domains/cpserver/MyServices/config/fmwconfig/servers/AdminServer -Doracle.domain.config.dir=/scratch/aime/work/CLOUDTOP/Middleware/user_projects/domains/cpserver/MyServices/config/fmwconfig  -Digf.arisidbeans.carmlloc=/scratch/aime/work/CLOUDTOP/Middleware/user_projects/domains/cpserver/MyServices/config/fmwconfig/carml  -Digf.arisidstack.home=/scratch/aime/work/CLOUDTOP/Middleware/user_projects/domains/cpserver/MyServices/config/fmwconfig/arisidprovider -Doracle.security.jps.config=/scratch/aime/work/CLOUDTOP/Middleware/user_projects/domains/cpserver/MyServices/config/fmwconfig/jps-config.xml -Doracle.deployed.app.dir=/scratch/aime/work/CLOUDTOP/Middleware/user_projects/domains/cpserver/MyServices/servers/AdminServer/tmp/_WL_user -Doracle.deployed.app.ext=/- -Dweblogic.alternateTypesDirectory=/scratch/aime/work/CLOUDTOP/Middleware/oracle_common/modules/oracle.ossoiap_11.1.1,/scratch/aime/work/CLOUDTOP/Middleware/oracle_common/modules/oracle.oamprovider_11.1.1,/scratch/aime/work/CLOUDTOP/Middleware/oracle_common/modules/oracle.jps_11.1.1 -Djava.protocol.handler.pkgs=oracle.mds.net.protocol  -Dweblogic.jdbc.remoteEnabled=false  -Dem.oracle.home=/scratch/aime/work/CLOUDTOP/Middleware/oracle_common -Djava.awt.headless=true -Dweblogic.management.discover=true  -Dwlw.iterativeDev= -Dwlw.testConsole= -Dwlw.logErrorsToConsole= -Dweblogic.ext.dirs=/scratch/aime/work/CLOUDTOP/Middleware/patch_wls1036/profiles/default/sysext_manifest_classpath  weblogic.Server
+[WARN ][jrockit] CompileThreshold=8000 ignored: Not a valid option for JRockit
+[WARN ][jrockit] PermSize=128m ignored: Not a valid option for JRockit
+[WARN ][jrockit] MaxPermSize=512m ignored: Not a valid option for JRockit
+[WARN ] Use of -Djrockit.optfile is deprecated and discouraged.
+<Jul 31, 2017 9:23:58 AM UTC> <Info> <Security> <BEA-090905> <Disabling CryptoJ JCE Provider self-integrity check for better startup performance. To enable this check, specify -Dweblogic.security.allowCryptoJDefaultJCEVerification=true> 
+<Jul 31, 2017 9:23:59 AM UTC> <Info> <Security> <BEA-090906> <Changing the default Random Number Generator in RSA CryptoJ from ECDRBG to FIPS186PRNG. To disable this change, specify -Dweblogic.security.allowCryptoJDefaultPRNG=true> 
+<Jul 31, 2017 9:23:59 AM UTC> <Info> <WebLogicServer> <BEA-000377> <Starting WebLogic Server with Oracle JRockit(R) Version R28.2.5-50-153520-1.6.0_37-20121220-0843-linux-x86_64 from Oracle Corporation> 
+<Jul 31, 2017 9:23:59 AM UTC> <Info> <Management> <BEA-141107> <Version: WebLogic Server Temporary Patch for BUG14261891 Wed Sep 26 00:21:15 CDT 2012
+WebLogic Server Temporary Patch for BUG13572968 Fri Jan 13 12:27:23 IST 2012
+WebLogic Server Temporary Patch for BUG15865825 Sun Nov 18 22:05:45 CST 2012
+WebLogic Server Temporary Patch for BUG14809365 Tue Jan 08 00:46:05 CST 2013
+WebLogic Server Temporary Patch for BUG14763317 Wed Dec 26 16:32:10 IST 2012
+WebLogic Server Temporary Patch for BUG16810704, 12972254, 15879401 Wed May 15 14:53:39 MDT 2013
+WebLogic Server Temporary Patch for BUG16362974 Tue Feb 19 23:49:30 CST 2013
+WebLogic Server Temporary Patch for BUG15917028 Tue Nov 27 13:54:55 IST 2012
+WebLogic Server Temporary Patch for BUG14390070 Tue Jul 31 01:41:56 CDT 2012
+WebLogic Server Temporary Patch for BUG16250408 Tue Feb 05 02:12:30 CST 2013
+WebLogic Server Temporary Patch for BUG16180221 Wed Jun 05 12:46:15 MDT 2013
+WebLogic Server Temporary Patch for BUG14595754 Wed Oct 03 10:10:13 CDT 2012
+WebLogic Server Temporary Patch for BUG14390065 Tue Jul 31 01:57:13 CDT 2012
+WebLogic Server Temporary Patch for BUG14482558 Fri Jan 11 11:20:16 IST 2013
+WebLogic Server Temporary Patch for BUG16741136 Thu May 02 06:21:02 CDT 2013
+WebLogic Server Temporary Patch for BUG16104758 Thu Jan 17 00:49:16 CST 2013
+WebLogic Server Temporary Patch for BUG16358443 Thu Mar 14 22:50:09 MDT 2013 
+WebLogic Server 10.3.6.0.3 PSU Patch for BUG14736139 Fri Nov 23 10:16:54 IST 2012
+WebLogic Server Temporary Patch for BUG14742729 Tue Oct 30 06:33:25 CDT 2012
+WebLogic Server Temporary Patch for BUG14182177 Fri Nov 23 04:04:58 CST 2012
+WebLogic Server Temporary Patch for BUG14702608 Thu May 23 18:26:37 MDT 2013
+WebLogic Server Temporary Patch for BUG16582503 Wed Apr 03 23:52:28 MDT 2013 
+WebLogic Server Temporary Patch for BUG18298000 Wed Mar 19 09:59:08 IST 2014
+WebLogic Server Temporary Patch for BUG16199510 Mon Feb 04 12:11:02 IST 2013
+WebLogic Server 10.3.6.0  Tue Nov 15 08:52:36 PST 2011 1441050 > 
+<Jul 31, 2017 9:24:00 AM UTC> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to STARTING> 
+<Jul 31, 2017 9:24:00 AM UTC> <Info> <WorkManager> <BEA-002900> <Initializing self-tuning thread pool> 
+<Jul 31, 2017 9:24:01 AM UTC> <Notice> <Log Management> <BEA-170019> <The server log file /scratch/aime/work/CLOUDTOP/Middleware/user_projects/domains/cpserver/MyServices/servers/AdminServer/logs/AdminServer.log is opened. All server side log events will be written to this file.> 
+<Jul 31, 2017 9:24:10 AM UTC> <Notice> <Security> <BEA-090082> <Security initializing using security realm myrealm.> 
+Jul 31, 2017 9:24:13 AM oracle.ods.virtualization.engine.util.VDELogger info
+INFO: Notification sent for Mapping config object reloaded
+Jul 31, 2017 9:24:14 AM oracle.ods.virtualization.engine.util.VDELogger info
+INFO: Notification sent for Mapping config object reloaded
+<Jul 31, 2017 9:24:16 AM UTC> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to STANDBY> 
+<Jul 31, 2017 9:24:16 AM UTC> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to STARTING> 
+<Jul 31, 2017 9:24:21 AM UTC> <Warning> <Security> <BEA-090668> <Ignored deployment of role "Admin" for resource "type=<url>, application=DMS Application#11.1.1.1.0, contextPath=/dms, uri=/"> 
+<Jul 31, 2017 9:24:21 AM UTC> <Warning> <J2EE> <BEA-160195> <The application version lifecycle event listener oracle.security.jps.wls.listeners.JpsAppVersionLifecycleListener is ignored because the application em is not versioned.> 
+<Jul 31, 2017 9:24:27 AM UTC> <Warning> <J2EE> <BEA-160140> <Unresolved optional package references (in META-INF/MANIFEST.MF): [Extension-Name: oracle.rules, referenced from: /scratch/aime/work/CLOUDTOP/Middleware/user_projects/domains/cpserver/MyServices/servers/AdminServer/tmp/_WL_user/emai/xalnv4]. Make sure the referenced optional package has been deployed as a library.> 
+<Jul 31, 2017 9:24:28 AM UTC> <Error> <org.apache.beehive.netui.pageflow.internal.AdapterManager> <BEA-000000> <ServletContainerAdapter manager not initialized correctly.> 
+PostInstallConfigIntegration:oracle_ias_farm target auth registration is done.
+<Jul 31, 2017 9:24:49 AM UTC> <Warning> <oracle.adfinternal.view.faces.partition.FeatureUtils> <ADF_FACES-30130> <Ignoring feature-dependency on feature "AdfDvtCommon".  No such feature exists.> 
+<Jul 31, 2017 9:24:50 AM UTC> <Warning> <org.apache.myfaces.trinidadinternal.config.GlobalConfiguratorImpl> <BEA-000000> <Configurator services already initialized.> 
+<Jul 31, 2017 9:24:57 AM UTC> <Notice> <Log Management> <BEA-170027> <The Server has established connection with the Domain level Diagnostic Service successfully.> 
+<Jul 31, 2017 9:24:57 AM UTC> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to ADMIN> 
+<Jul 31, 2017 9:24:57 AM UTC> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to RESUMING> 
+<Jul 31, 2017 9:24:57 AM UTC> <Notice> <Server> <BEA-002613> <Channel "Default" is now listening on 10.245.137.216:5530 for protocols iiop, t3, ldap, snmp, http.> 
+<Jul 31, 2017 9:24:57 AM UTC> <Notice> <WebLogicServer> <BEA-000329> <Started WebLogic Admin Server "AdminServer" for domain "MyServices" running in Production Mode> 
+<Jul 31, 2017 9:24:57 AM UTC> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to RUNNING> 
+<Jul 31, 2017 9:24:57 AM UTC> <Notice> <WebLogicServer> <BEA-000360> <Server started in RUNNING mode> 
+<Jul 31, 2017 9:29:03 AM UTC> <Notice> <Security> <BEA-090171> <Loading the identity certificate and private key stored under the alias DemoIdentity from the jks keystore file /scratch/aime/work/CLOUDTOP/Middleware/wlserver_10.3/server/lib/DemoIdentity.jks.> 
+<Jul 31, 2017 9:29:03 AM UTC> <Notice> <Security> <BEA-090169> <Loading trusted certificates from the jks keystore file /scratch/aime/work/CLOUDTOP/Middleware/wlserver_10.3/server/lib/DemoTrust.jks.> 
+<Jul 31, 2017 9:29:03 AM UTC> <Notice> <Security> <BEA-090169> <Loading trusted certificates from the jks keystore file /scratch/aime/work/CLOUDTOP/Middleware/jrockit-jdk1.6.0_37/jre/lib/security/cacerts.> 
+<Jul 31, 2017 9:29:03 AM UTC> <Notice> <Security> <BEA-090898> <Ignoring the trusted CA certificate "1.2.840.113549.1.9.1=#161a646a6d75727261795f6f72675f7777406f7261636c652e636f6d,L=Bozeman,C=US,ST=Montana,OU=Development,O=RightNow,CN=RightNow Cloud Development Certificate Authority". The loading of the trusted certificate list raised a certificate parsing exception PKIX: Unsupported OID in the AlgorithmIdentifier object: 1.2.840.113549.1.1.11.> 
+<Jul 31, 2017 9:29:03 AM UTC> <Notice> <Security> <BEA-090898> <Ignoring the trusted CA certificate "CN=Entrust Root Certification Authority - G2,OU=(c) 2009 Entrust\, Inc. - for authorized use only,OU=See www.entrust.net/legal-terms,O=Entrust\, Inc.,C=US". The loading of the trusted certificate list raised a certificate parsing exception PKIX: Unsupported OID in the AlgorithmIdentifier object: 1.2.840.113549.1.1.11.> 
+<Jul 31, 2017 9:29:03 AM UTC> <Notice> <Security> <BEA-090898> <Ignoring the trusted CA certificate "CN=thawte Primary Root CA - G3,OU=(c) 2008 thawte\, Inc. - For authorized use only,OU=Certification Services Division,O=thawte\, Inc.,C=US". The loading of the trusted certificate list raised a certificate parsing exception PKIX: Unsupported OID in the AlgorithmIdentifier object: 1.2.840.113549.1.1.11.> 
+<Jul 31, 2017 9:29:03 AM UTC> <Notice> <Security> <BEA-090898> <Ignoring the trusted CA certificate "CN=T-TeleSec GlobalRoot Class 3,OU=T-Systems Trust Center,O=T-Systems Enterprise Services GmbH,C=DE". The loading of the trusted certificate list raised a certificate parsing exception PKIX: Unsupported OID in the AlgorithmIdentifier object: 1.2.840.113549.1.1.11.> 
+<Jul 31, 2017 9:29:03 AM UTC> <Notice> <Security> <BEA-090898> <Ignoring the trusted CA certificate "CN=T-TeleSec GlobalRoot Class 2,OU=T-Systems Trust Center,O=T-Systems Enterprise Services GmbH,C=DE". The loading of the trusted certificate list raised a certificate parsing exception PKIX: Unsupported OID in the AlgorithmIdentifier object: 1.2.840.113549.1.1.11.> 
+<Jul 31, 2017 9:29:03 AM UTC> <Notice> <Security> <BEA-090898> <Ignoring the trusted CA certificate "CN=GlobalSign,O=GlobalSign,OU=GlobalSign Root CA - R3". The loading of the trusted certificate list raised a certificate parsing exception PKIX: Unsupported OID in the AlgorithmIdentifier object: 1.2.840.113549.1.1.11.> 
+<Jul 31, 2017 9:29:03 AM UTC> <Notice> <Security> <BEA-090898> <Ignoring the trusted CA certificate "OU=Security Communication RootCA2,O=SECOM Trust Systems CO.\,LTD.,C=JP". The loading of the trusted certificate list raised a certificate parsing exception PKIX: Unsupported OID in the AlgorithmIdentifier object: 1.2.840.113549.1.1.11.> 
+<Jul 31, 2017 9:29:03 AM UTC> <Notice> <Security> <BEA-090898> <Ignoring the trusted CA certificate "CN=VeriSign Universal Root Certification Authority,OU=(c) 2008 VeriSign\, Inc. - For authorized use only,OU=VeriSign Trust Network,O=VeriSign\, Inc.,C=US". The loading of the trusted certificate list raised a certificate parsing exception PKIX: Unsupported OID in the AlgorithmIdentifier object: 1.2.840.113549.1.1.11.> 
+<Jul 31, 2017 9:29:03 AM UTC> <Notice> <Security> <BEA-090898> <Ignoring the trusted CA certificate "CN=KEYNECTIS ROOT CA,OU=ROOT,O=KEYNECTIS,C=FR". The loading of the trusted certificate list raised a certificate parsing exception PKIX: Unsupported OID in the AlgorithmIdentifier object: 1.2.840.113549.1.1.11.> 
+<Jul 31, 2017 9:29:03 AM UTC> <Notice> <Security> <BEA-090898> <Ignoring the trusted CA certificate "CN=GeoTrust Primary Certification Authority - G3,OU=(c) 2008 GeoTrust Inc. - For authorized use only,O=GeoTrust Inc.,C=US". The loading of the trusted certificate list raised a certificate parsing exception PKIX: Unsupported OID in the AlgorithmIdentifier object: 1.2.840.113549.1.1.11.> 
+<Aug 4, 2017 6:16:51 AM UTC> <Warning> <Socket> <BEA-000449> <Closing socket as no data read from it on 10.176.181.122:55,017 during the configured idle timeout of 5 secs> 
+<Aug 4, 2017 6:17:16 AM UTC> <Warning> <JMX> <BEA-149504> <The adminstration server was unable to establish JMX Connectivity with the CloudConsoleServer at the JMX Service URL of service:jmx:t3://slc03wel.us.oracle.com:5631/jndi/weblogic.management.mbeanservers.runtime.> 
+<Aug 4, 2017 6:17:36 AM UTC> <Alert> <WebLogicServer> <BEA-000396> <Server shutdown has been requested by <WLS Kernel>> 
+<Aug 4, 2017 6:17:36 AM UTC> <Notice> <WebLogicServer> <BEA-000365> <Server sta<Aug 11, 2017 5:31:13 AM UTC> <Alert> <WebLogicServer> <BEA-000396> <Server shutdown has been requested by weblogic> 
+<Aug 11, 2017 5:31:13 AM UTC> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to FORCE_SUSPENDING> 
+<Aug 11, 2017 5:31:13 AM UTC> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to ADMIN> 
+<Aug 11, 2017 5:31:13 AM UTC> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to FORCE_SHUTTING_DOWN> 
+<Aug 11, 2017 5:31:13 AM UTC> <Notice> <Server> <BEA-002607> <Channel "Default" listening on 10.245.145.43:5530 was shutdown.> 

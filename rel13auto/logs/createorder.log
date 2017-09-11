@@ -1,0 +1,773 @@
+2017,Wed May 3  23:12:24    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh listOVS -filter -hostname slcak536;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact' | awk -F '|' '{ if ($1 !~ /spawn/ && $1 !~ /aime/ && $1 !~ /Warning:/ && $1 !~ /Connect/ && $1 !~ /---/ && $1 !~ /Filter/ && $1 !~ /OVS/) print "ovs_id::"$1",,hostname::"$2",,server_pool::"$3",,seed_pool::"$4",,running_pool::"$5",,username::"$6}'
+2017,Wed May 3  23:12:32    [INFO] :  ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::Found 0 rows.,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+
+2017,Wed May 3  23:12:32    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh listOVS -filter -hostname slcak525;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact' | awk -F '|' '{ if ($1 !~ /spawn/ && $1 !~ /aime/ && $1 !~ /Warning:/ && $1 !~ /Connect/ && $1 !~ /---/ && $1 !~ /Filter/ && $1 !~ /OVS/) print "ovs_id::"$1",,hostname::"$2",,server_pool::"$3",,seed_pool::"$4",,running_pool::"$5",,username::"$6}'
+2017,Wed May 3  23:12:40    [INFO] :  ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::Found 0 rows.,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+
+2017,Wed May 3  23:12:40    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh register_tag -tagName autotag_postqm;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Wed May 3  23:12:48    [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh register_tag -tagName autotag_postqm
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Successfully registered tag: autotag_postqm
+ 
+
+2017,Wed May 3  23:12:48    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh lstcc;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact' | awk -F '|' '/slc05jll/ { if ($1 !~ /spawn/ && $1 !~ /aime/ && $1 !~ /Connect/ && $1 !~ /^---/ && $1 !~ /Found/ && $1 !~ /Request/) print "name::"$1",,isdefault::"$2",,dcshortname::"$3",,host::"$4",,port::"$5",,httpsport::"$6",,protocol::"$7",,jvmdport::"$8",,omsagentport::"$9",,omsuploadport::"$10" ,,fasaasuser::"$11" ,,fasaaspasswd::"$12",,monitoruser::"$13",,monitorpasswd::"$14",,javaassembly::"$14}'
+2017,Wed May 3  23:12:56    [INFO] :  name:: slc05jll   ,,isdefault:: false      ,,dcshortname:: US1           ,,host:: slc05jll.us.oracle.com ,,port:: 7788 ,,httpsport:: 7799       ,,protocol:: HTTP     ,,jvmdport:: 3800      ,,omsagentport:: 3872           ,,omsuploadport:: 4889             ,,fasaasuser:: emcmon                   ,,fasaaspasswd:: *****                       ,,monitoruser:: em_svc_monitor  ,,monitorpasswd:: *****                    ,,javaassembly:: *****                    
+
+2017,Wed May 3  23:12:56    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name fads -db_name fadb -port 1530 -host_name1 slc03wfs.us.oracle.com -sid1 fadb1 -db_service_name fadb -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type MAIN_DB -db_version  12.1.0.2.0 -host_name2 slc03wft.us.oracle.com -sid2 fadb2 -cluster_host1 slc03wfr.us.oracle.com -cluster_host2 slc03wfq.us.oracle.com -cluster_name slc03wfu -crs_scan_name slc03wfu.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_FADS -oracle_base /u01/app/oracle -em_registration slc05jll;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Wed May 3  23:13:5    [ERROR] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name fads -db_name fadb -port 1530 -host_name1 slc03wfs.us.oracle.com -sid1 fadb1 -db_service_name fadb -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type MAIN_DB -db_version 12.1.0.2.0 -host_name2 slc03wft.us.oracle.com -sid2 fadb2 -cluster_host1 slc03wfr.us.oracle.com -cluster_host2 slc03wfq.us.oracle.com -cluster_name slc03wfu -crs_scan_name slc03wfu.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_FADS -oracle_base /u01/app/oracle -em_registration slc05jll
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Add FA database error: Illegal Argument: FaDatabase already exists with dbname and standby combination value (fadb,false)
+ 
+
+2017,Wed May 3  23:17:35    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh listOVS -filter -hostname slcak536;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact' | awk -F '|' '{ if ($1 !~ /spawn/ && $1 !~ /aime/ && $1 !~ /Warning:/ && $1 !~ /Connect/ && $1 !~ /---/ && $1 !~ /Filter/ && $1 !~ /OVS/) print "ovs_id::"$1",,hostname::"$2",,server_pool::"$3",,seed_pool::"$4",,running_pool::"$5",,username::"$6}'
+2017,Wed May 3  23:17:43    [INFO] :  ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::Found 0 rows.,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+
+2017,Wed May 3  23:17:43    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh listOVS -filter -hostname slcak525;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact' | awk -F '|' '{ if ($1 !~ /spawn/ && $1 !~ /aime/ && $1 !~ /Warning:/ && $1 !~ /Connect/ && $1 !~ /---/ && $1 !~ /Filter/ && $1 !~ /OVS/) print "ovs_id::"$1",,hostname::"$2",,server_pool::"$3",,seed_pool::"$4",,running_pool::"$5",,username::"$6}'
+2017,Wed May 3  23:17:51    [INFO] :  ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::Found 0 rows.,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+
+2017,Wed May 3  23:17:51    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh register_tag -tagName autotag_postqm;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Wed May 3  23:17:59    [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh register_tag -tagName autotag_postqm
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Successfully registered tag: autotag_postqm
+ 
+
+2017,Wed May 3  23:17:59    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh lstcc;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact' | awk -F '|' '/slc05jll/ { if ($1 !~ /spawn/ && $1 !~ /aime/ && $1 !~ /Connect/ && $1 !~ /^---/ && $1 !~ /Found/ && $1 !~ /Request/) print "name::"$1",,isdefault::"$2",,dcshortname::"$3",,host::"$4",,port::"$5",,httpsport::"$6",,protocol::"$7",,jvmdport::"$8",,omsagentport::"$9",,omsuploadport::"$10" ,,fasaasuser::"$11" ,,fasaaspasswd::"$12",,monitoruser::"$13",,monitorpasswd::"$14",,javaassembly::"$14}'
+2017,Wed May 3  23:18:8     [INFO] :  name:: slc05jll   ,,isdefault:: false      ,,dcshortname:: US1           ,,host:: slc05jll.us.oracle.com ,,port:: 7788 ,,httpsport:: 7799       ,,protocol:: HTTP     ,,jvmdport:: 3800      ,,omsagentport:: 3872           ,,omsuploadport:: 4889             ,,fasaasuser:: emcmon                   ,,fasaaspasswd:: *****                       ,,monitoruser:: em_svc_monitor  ,,monitorpasswd:: *****                    ,,javaassembly:: *****                    
+
+2017,Wed May 3  23:18:8     [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name fads -db_name fadb -port 1530 -host_name1 slc03wfs.us.oracle.com -sid1 fadb1 -db_service_name fadb -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type MAIN_DB -db_version  12.1.0.2.0 -host_name2 slc03wft.us.oracle.com -sid2 fadb2 -cluster_host1 slc03wfr.us.oracle.com -cluster_host2 slc03wfq.us.oracle.com -cluster_name slc03wfu -crs_scan_name slc03wfu.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_FADS -oracle_base /u01/app/oracle -em_registration slc05jll;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Wed May 3  23:18:16    [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name fads -db_name fadb -port 1530 -host_name1 slc03wfs.us.oracle.com -sid1 fadb1 -db_service_name fadb -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type MAIN_DB -db_version 12.1.0.2.0 -host_name2 slc03wft.us.oracle.com -sid2 fadb2 -cluster_host1 slc03wfr.us.oracle.com -cluster_host2 slc03wfq.us.oracle.com -cluster_name slc03wfu -crs_scan_name slc03wfu.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_FADS -oracle_base /u01/app/oracle -em_registration slc05jll
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Added FA database with dbuniquename or dbname: fads
+ 
+
+2017,Wed May 3  23:18:16    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name oidds -db_name oiddb -port 1531 -host_name1 slc03wfs.us.oracle.com -sid1 oiddb1 -db_service_name oiddb -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type OID_DB -db_version  12.1.0.2.0 -host_name2 slc03wft.us.oracle.com -sid2 oiddb2 -cluster_host1 slc03wfr.us.oracle.com -cluster_host2 slc03wfq.us.oracle.com -cluster_name slc03wfu -crs_scan_name slc03wfu.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_OIDDS -oracle_base /u01/app/oracle;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Wed May 3  23:18:24    [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name oidds -db_name oiddb -port 1531 -host_name1 slc03wfs.us.oracle.com -sid1 oiddb1 -db_service_name oiddb -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type OID_DB -db_version 12.1.0.2.0 -host_name2 slc03wft.us.oracle.com -sid2 oiddb2 -cluster_host1 slc03wfr.us.oracle.com -cluster_host2 slc03wfq.us.oracle.com -cluster_name slc03wfu -crs_scan_name slc03wfu.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_OIDDS -oracle_base /u01/app/oracle
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Added FA database with dbuniquename or dbname: oidds
+ 
+
+2017,Wed May 3  23:18:24    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh updatefadb -db_unique_name fads -addtag autotag_postqm -addconstraint OPC_ORDER:+autotag_postqm -addconstraint OPC_RACK:+autotag_postqm;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Wed May 3  23:18:32    [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh updatefadb -db_unique_name fads -addtag autotag_postqm -addconstraint OPC_ORDER:+autotag_postqm -addconstraint OPC_RACK:+autotag_postqm
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Updated FA database :fads
+ Updated em_registration :[]
+ Added tags: [autotag_postqm]
+ Removed tags: []
+ Added constraints: [OPC_ORDER:+autotag_postqm, OPC_RACK:+autotag_postqm]
+ Removed constraints: []
+ Updated DG pre-configured listener name :
+ Updated DG pre-configured listener port: 
+ Updated DB Cluster Target Override: 
+ Updated Oracle Home: 
+ Updated Secured Oracle Home: 
+ Updated Oracle Base: 
+ Updated application listener name: 
+ Updated crs home: 
+ Updated crs scan port: 
+ Updated crs ons port: 
+ Updated standby: 
+ Updated DB Version: 
+ Updated EM Target Name: 
+ Updated crs scan name: 
+ Updated asm password: 
+ Removed service types: []
+ Added service types: []
+ Updated DB Name: 
+ Updated port: 
+ Updated hostname1: 
+ Updated sid1: 
+ Updated dbServiceName: 
+ Updated dataDisc: 
+ Updated recoDisc: 
+ Updated asm: 
+ Updated asmUser: 
+ Updated hostname2: 
+ Updated sid2: 
+ Updated clusterHost1: 
+ Updated clusterHost2: 
+ Updated clusterName: 
+ Updated asmSID1: 
+ Updated asmSID2: 
+ Updated force: 
+ Updated saasSkuName: 
+ Updated is_use_local_db_backup: 
+ Updated db_backup_path: 
+ Updated CompanionCDBName: 
+ Updated CDB DeploymentType: 
+ Updated Datacenter id: 
+ 
+
+2017,Wed May 3  23:18:32    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh updatefadb -db_unique_name oidds -addtag autotag_postqm -addconstraint OPC_ORDER:+autotag_postqm -addconstraint OPC_RACK:+autotag_postqm;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Wed May 3  23:18:40    [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh updatefadb -db_unique_name oidds -addtag autotag_postqm -addconstraint OPC_ORDER:+autotag_postqm -addconstraint OPC_RACK:+autotag_postqm
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Updated FA database :oidds
+ Updated em_registration :[]
+ Added tags: [autotag_postqm]
+ Removed tags: []
+ Added constraints: [OPC_ORDER:+autotag_postqm, OPC_RACK:+autotag_postqm]
+ Removed constraints: []
+ Updated DG pre-configured listener name :
+ Updated DG pre-configured listener port: 
+ Updated DB Cluster Target Override: 
+ Updated Oracle Home: 
+ Updated Secured Oracle Home: 
+ Updated Oracle Base: 
+ Updated application listener name: 
+ Updated crs home: 
+ Updated crs scan port: 
+ Updated crs ons port: 
+ Updated standby: 
+ Updated DB Version: 
+ Updated EM Target Name: 
+ Updated crs scan name: 
+ Updated asm password: 
+ Removed service types: []
+ Added service types: []
+ Updated DB Name: 
+ Updated port: 
+ Updated hostname1: 
+ Updated sid1: 
+ Updated dbServiceName: 
+ Updated dataDisc: 
+ Updated recoDisc: 
+ Updated asm: 
+ Updated asmUser: 
+ Updated hostname2: 
+ Updated sid2: 
+ Updated clusterHost1: 
+ Updated clusterHost2: 
+ Updated clusterName: 
+ Updated asmSID1: 
+ Updated asmSID2: 
+ Updated force: 
+ Updated saasSkuName: 
+ Updated is_use_local_db_backup: 
+ Updated db_backup_path: 
+ Updated CompanionCDBName: 
+ Updated CDB DeploymentType: 
+ Updated Datacenter id: 
+ 
+
+2017,Wed May 3  23:18:40    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addrack -id autorack_postqm -frontend 255.255.248.0:10.240.112.1:10.240.115.167:10.240.115.168:10.240.115.169:10.240.115.170:10.240.115.171:10.240.115.172 -ovsServerpool autorack_postqm -type FA_GSI -prefLevel 100 -zfs zfs_29398615 -networkBridge0 xenbr0;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Wed May 3  23:18:49    [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addrack -id autorack_postqm -frontend 255.255.248.0:10.240.112.1:10.240.115.167:10.240.115.168:10.240.115.169:10.240.115.170:10.240.115.171:10.240.115.172 -ovsServerpool autorack_postqm -type FA_GSI -prefLevel 100 -zfs zfs_29398615 -networkBridge0 xenbr0
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Added rack with rackId: autorack_postqm
+ 
+ 
+
+2017,Wed May 3  23:18:49    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh updaterack -id autorack_postqm -addtag autotag_postqm -addconstraint OPC_ORDER:+autotag_postqm -addconstraint OPC_FADATABASE:+autotag_postqm;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Wed May 3  23:18:57    [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh updaterack -id autorack_postqm -addtag autotag_postqm -addconstraint OPC_ORDER:+autotag_postqm -addconstraint OPC_FADATABASE:+autotag_postqm
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Updated rack with rackId: autorack_postqm
+ Added tags: [autotag_postqm]
+ Added constraints: [OPC_ORDER:+autotag_postqm, OPC_FADATABASE:+autotag_postqm]
+ 
+ 
+
+2017,Wed May 3  23:18:57    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addOVS -ovsId slcak536 -hostname slcak536 -username ovmroot -password  welcome1 -server_pool autorack_postqm -seed_pool /OVS/seed_pool -running_pool /OVS/running_pool;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Wed May 3  23:19:5     [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addOVS -ovsId slcak536 -hostname slcak536 -username ovmroot -password welcome1 -server_pool autorack_postqm -seed_pool /OVS/seed_pool -running_pool /OVS/running_pool
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Successfully added OVS with hostname: slcak536 to ServerPool: autorack_postqm
+ 
+
+2017,Wed May 3  23:19:5     [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addOVS -ovsId slcak525 -hostname slcak525 -username ovmroot -password  welcome1 -server_pool autorack_postqm -seed_pool /OVS/seed_pool -running_pool /OVS/running_pool;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Wed May 3  23:19:14    [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addOVS -ovsId slcak525 -hostname slcak525 -username ovmroot -password welcome1 -server_pool autorack_postqm -seed_pool /OVS/seed_pool -running_pool /OVS/running_pool
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Successfully added OVS with hostname: slcak525 to ServerPool: autorack_postqm
+ 
+
+2017,Wed May 3  23:19:14    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh list_fa_templates;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact' | awk -F '|' '/REL13_ST2/ { if ($1 !~ /spawn/ && $1 !~ /aime/ && $1 !~ /Connect/ && $1 !~ /^---/ && $1 !~ /Found/ && $1 !~ /Request/) print "relver::"$1",,patchrelver::"$2",,relname::"$3",,patchbundle::"$4",,servicebundle::"$5",,langlist::"$6",,servicetype::"$7",,istrail::"$8",,template::"$9",,ispreferred::"$10}'
+2017,Wed May 3  23:19:22    [INFO] :  relver:: 11.13.17.6.0    ,,patchrelver:: REL13_ST2               ,,relname:: REL13_ST2            ,,patchbundle:: ---          ,,servicebundle:: ---                   ,,langlist:: ---                     ,,servicetype:: FA_GSI       ,,istrail:: false    ,,template:: REL13_GSI_ST2          ,,ispreferred:: true         
+
+2017,Wed May 3  23:19:22    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak536 mkdir -p /OVS/seed_pool/REL13_GSI_ST2;
+                   expect "password:" ;
+                   send "welcome1\r";
+                   send "exit\r";
+                   interact'
+2017,Wed May 3  23:19:24    [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak536 mkdir -p /OVS/seed_pool/REL13_GSI_ST2
+ Warning: Permanently added 'slcak536,10.240.115.93' (RSA) to the list of known hosts.
+ ovmroot@slcak536's password: 
+
+2017,Wed May 3  23:19:24    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak525 mkdir -p /OVS/seed_pool/REL13_GSI_ST2;
+                   expect "password:" ;
+                   send "welcome1\r";
+                   send "exit\r";
+                   interact'
+2017,Wed May 3  23:19:26    [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak525 mkdir -p /OVS/seed_pool/REL13_GSI_ST2
+ Warning: Permanently added 'slcak525,10.240.115.82' (RSA) to the list of known hosts.
+ ovmroot@slcak525's password: 
+
+2017,Wed May 3  23:19:38    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak536 /tmp/slcak536.script.12072.sh;
+                   expect "password:" ;
+                   send "welcome1\r";
+                   send "exit\r";
+                   interact'
+2017,Wed May 3  23:19:41    [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak536 /tmp/slcak536.script.12072.sh
+ Warning: Permanently added 'slcak536,10.240.115.93' (RSA) to the list of known hosts.
+ ovmroot@slcak536's password: 
+
+2017,Wed May 3  23:19:41    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak536 rm -rf /tmp/slcak536.script.12072.sh;
+                   expect "password:" ;
+                   send "welcome1\r";
+                   send "exit\r";
+                   interact'
+2017,Wed May 3  23:19:43    [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak536 rm -rf /tmp/slcak536.script.12072.sh
+ Warning: Permanently added 'slcak536,10.240.115.93' (RSA) to the list of known hosts.
+ ovmroot@slcak536's password: 
+
+2017,Wed May 3  23:19:55    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak525 /tmp/slcak525.script.12072.sh;
+                   expect "password:" ;
+                   send "welcome1\r";
+                   send "exit\r";
+                   interact'
+2017,Wed May 3  23:19:57    [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak525 /tmp/slcak525.script.12072.sh
+ Warning: Permanently added 'slcak525,10.240.115.82' (RSA) to the list of known hosts.
+ ovmroot@slcak525's password: 
+
+2017,Wed May 3  23:19:57    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak525 rm -rf /tmp/slcak525.script.12072.sh;
+                   expect "password:" ;
+                   send "welcome1\r";
+                   send "exit\r";
+                   interact'
+2017,Wed May 3  23:19:59    [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak525 rm -rf /tmp/slcak525.script.12072.sh
+ Warning: Permanently added 'slcak525,10.240.115.82' (RSA) to the list of known hosts.
+ ovmroot@slcak525's password: 
+
+2017,Wed May 3  23:20:12    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wne "cd /tmp; ./gsi_bundle.sh 3390 627 ERP NONE DEPLOY_TEST_INSTANCE_FALSE";
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Wed May 3  23:20:16    [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wne cd /tmp; ./gsi_bundle.sh 3390 627 ERP NONE DEPLOY_TEST_INSTANCE_FALSE
+ Warning: Permanently added 'slc03wne,10.245.144.207' (RSA) to the list of known hosts.
+ aime@slc03wne's password: 
+ TERM environment variable not set.
+  
+ Submitting GSI bundle order .................
+  
+ @submit_bundle.sql 3390 627 ERP DEPLOY_TEST_INSTANCE_FALSE
+ Response status: IDS_GENERATED
+ Response organization_id: 3390
+ Response order_number: 627
+ Response item line_id: 100
+ Response item subscription_id: 500061659
+ Response item line_id: 200
+ Response item subscription_id: 500061659
+ 
+ PL/SQL procedure successfully completed.
+ 
+ End of Submit Bundle
+  
+ Completing the order .........................
+  
+ @comp.sql NONE ser3390627 
+      11281 
+ 4EADC403809204B9E053CF90F50AAF9E
+ old  44:	 service_display_name	    => '&2',
+ new  44:	 service_display_name	    => 'ser3390627',
+ old  49:	 l_dr_config := '&1';
+ new  49:	 l_dr_config := 'NONE';
+ Enter value for 3: old  54:	 l_order_item.item_id := &3;
+ new  54:	 l_order_item.item_id :=      11281 ;
+ old  57:   l_order_item.system_name := 'fadrsdigsi'|| '&2';
+ new  57:   l_order_item.system_name := 'fadrsdigsi'|| 'ser3390627';
+ Enter value for 4: old  75:				       i_order_passkey => '&4');
+ new  75:				       i_order_passkey => '4EADC403809204B9E053CF90F50AAF9E');
+ 
+ PL/SQL procedure successfully completed.
+ 
+
+2017,Fri May 5  7:4:31      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh listOVS -filter -hostname slcak536;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact' | awk -F '|' '{ if ($1 !~ /spawn/ && $1 !~ /aime/ && $1 !~ /Warning:/ && $1 !~ /Connect/ && $1 !~ /---/ && $1 !~ /Filter/ && $1 !~ /OVS/) print "ovs_id::"$1",,hostname::"$2",,server_pool::"$3",,seed_pool::"$4",,running_pool::"$5",,username::"$6}'
+2017,Fri May 5  7:4:39      [INFO] :  ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::Found 0 rows.,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+
+2017,Fri May 5  7:4:39      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh listOVS -filter -hostname slcak525;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact' | awk -F '|' '{ if ($1 !~ /spawn/ && $1 !~ /aime/ && $1 !~ /Warning:/ && $1 !~ /Connect/ && $1 !~ /---/ && $1 !~ /Filter/ && $1 !~ /OVS/) print "ovs_id::"$1",,hostname::"$2",,server_pool::"$3",,seed_pool::"$4",,running_pool::"$5",,username::"$6}'
+2017,Fri May 5  7:4:48      [INFO] :  ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::Found 0 rows.,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+
+2017,Fri May 5  7:4:48      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh register_tag -tagName autotag_postqm;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Fri May 5  7:4:56     [ERROR] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh register_tag -tagName autotag_postqm
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Register tag failed with error: com.oracle.cloud9.sdi.controlservice.ControlServiceException_Exception: Active tag with the same tagName already exist in database 
+ 
+
+2017,Fri May 5  7:6:3       [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh listOVS -filter -hostname slcak536;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact' | awk -F '|' '{ if ($1 !~ /spawn/ && $1 !~ /aime/ && $1 !~ /Warning:/ && $1 !~ /Connect/ && $1 !~ /---/ && $1 !~ /Filter/ && $1 !~ /OVS/) print "ovs_id::"$1",,hostname::"$2",,server_pool::"$3",,seed_pool::"$4",,running_pool::"$5",,username::"$6}'
+2017,Fri May 5  7:6:11      [INFO] :  ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::Found 0 rows.,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+
+2017,Fri May 5  7:6:11      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh listOVS -filter -hostname slcak525;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact' | awk -F '|' '{ if ($1 !~ /spawn/ && $1 !~ /aime/ && $1 !~ /Warning:/ && $1 !~ /Connect/ && $1 !~ /---/ && $1 !~ /Filter/ && $1 !~ /OVS/) print "ovs_id::"$1",,hostname::"$2",,server_pool::"$3",,seed_pool::"$4",,running_pool::"$5",,username::"$6}'
+2017,Fri May 5  7:6:19      [INFO] :  ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::Found 0 rows.,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+ ovs_id::,,hostname::,,server_pool::,,seed_pool::,,running_pool::,,username::
+
+2017,Fri May 5  7:6:19      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh register_tag -tagName autotag_postqm;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Fri May 5  7:6:27      [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh register_tag -tagName autotag_postqm
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Successfully registered tag: autotag_postqm
+ 
+
+2017,Fri May 5  7:6:27      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh lstcc;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact' | awk -F '|' '/slc05jll/ { if ($1 !~ /spawn/ && $1 !~ /aime/ && $1 !~ /Connect/ && $1 !~ /^---/ && $1 !~ /Found/ && $1 !~ /Request/) print "name::"$1",,isdefault::"$2",,dcshortname::"$3",,host::"$4",,port::"$5",,httpsport::"$6",,protocol::"$7",,jvmdport::"$8",,omsagentport::"$9",,omsuploadport::"$10" ,,fasaasuser::"$11" ,,fasaaspasswd::"$12",,monitoruser::"$13",,monitorpasswd::"$14",,javaassembly::"$14}'
+2017,Fri May 5  7:6:35      [INFO] :  name:: slc05jll   ,,isdefault:: false      ,,dcshortname:: US1           ,,host:: slc05jll.us.oracle.com ,,port:: 7788 ,,httpsport:: 7799       ,,protocol:: HTTP     ,,jvmdport:: 3800      ,,omsagentport:: 3872           ,,omsuploadport:: 4889             ,,fasaasuser:: emcmon                   ,,fasaaspasswd:: *****                       ,,monitoruser:: em_svc_monitor  ,,monitorpasswd:: *****                    ,,javaassembly:: *****                    
+
+2017,Fri May 5  7:6:35      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name fadb73p -db_name fadb73p -port 1530 -host_name1 slc03wfs.us.oracle.com -sid1 fadb73p1 -db_service_name fadb73p -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type MAIN_DB -db_version  12.1.0.2.0 -host_name2 slc03wft.us.oracle.com -sid2 fadb73p2 -cluster_host1 slc03wfr.us.oracle.com -cluster_host2 slc03wfq.us.oracle.com -cluster_name slc03wfu -crs_scan_name slc03wfu.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_FADB73P -oracle_base /u01/app/oracle -em_registration slc05jll;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Fri May 5  7:6:44      [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name fadb73p -db_name fadb73p -port 1530 -host_name1 slc03wfs.us.oracle.com -sid1 fadb73p1 -db_service_name fadb73p -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type MAIN_DB -db_version 12.1.0.2.0 -host_name2 slc03wft.us.oracle.com -sid2 fadb73p2 -cluster_host1 slc03wfr.us.oracle.com -cluster_host2 slc03wfq.us.oracle.com -cluster_name slc03wfu -crs_scan_name slc03wfu.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_FADB73P -oracle_base /u01/app/oracle -em_registration slc05jll
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Added FA database with dbuniquename or dbname: fadb73p
+ 
+
+2017,Fri May 5  7:6:44      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name oiddb73p -db_name oiddb73p -port 1531 -host_name1 slc03wfs.us.oracle.com -sid1 oiddb73p1 -db_service_name oiddb73p -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type OID_DB -db_version  12.1.0.2.0 -host_name2 slc03wft.us.oracle.com -sid2 oiddb73p2 -cluster_host1 slc03wfr.us.oracle.com -cluster_host2 slc03wfq.us.oracle.com -cluster_name slc03wfu -crs_scan_name slc03wfu.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_OIDDB73P -oracle_base /u01/app/oracle;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Fri May 5  7:6:52      [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name oiddb73p -db_name oiddb73p -port 1531 -host_name1 slc03wfs.us.oracle.com -sid1 oiddb73p1 -db_service_name oiddb73p -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type OID_DB -db_version 12.1.0.2.0 -host_name2 slc03wft.us.oracle.com -sid2 oiddb73p2 -cluster_host1 slc03wfr.us.oracle.com -cluster_host2 slc03wfq.us.oracle.com -cluster_name slc03wfu -crs_scan_name slc03wfu.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_OIDDB73P -oracle_base /u01/app/oracle
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Added FA database with dbuniquename or dbname: oiddb73p
+ 
+
+2017,Fri May 5  7:6:52      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh updatefadb -db_unique_name fadb73p -addtag autotag_postqm -addconstraint OPC_ORDER:+autotag_postqm -addconstraint OPC_RACK:+autotag_postqm;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Fri May 5  7:7:0       [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh updatefadb -db_unique_name fadb73p -addtag autotag_postqm -addconstraint OPC_ORDER:+autotag_postqm -addconstraint OPC_RACK:+autotag_postqm
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Updated FA database :fadb73p
+ Updated em_registration :[]
+ Added tags: [autotag_postqm]
+ Removed tags: []
+ Added constraints: [OPC_ORDER:+autotag_postqm, OPC_RACK:+autotag_postqm]
+ Removed constraints: []
+ Updated DG pre-configured listener name :
+ Updated DG pre-configured listener port: 
+ Updated DB Cluster Target Override: 
+ Updated Oracle Home: 
+ Updated Secured Oracle Home: 
+ Updated Oracle Base: 
+ Updated application listener name: 
+ Updated crs home: 
+ Updated crs scan port: 
+ Updated crs ons port: 
+ Updated standby: 
+ Updated DB Version: 
+ Updated EM Target Name: 
+ Updated crs scan name: 
+ Updated asm password: 
+ Removed service types: []
+ Added service types: []
+ Updated DB Name: 
+ Updated port: 
+ Updated hostname1: 
+ Updated sid1: 
+ Updated dbServiceName: 
+ Updated dataDisc: 
+ Updated recoDisc: 
+ Updated asm: 
+ Updated asmUser: 
+ Updated hostname2: 
+ Updated sid2: 
+ Updated clusterHost1: 
+ Updated clusterHost2: 
+ Updated clusterName: 
+ Updated asmSID1: 
+ Updated asmSID2: 
+ Updated force: 
+ Updated saasSkuName: 
+ Updated is_use_local_db_backup: 
+ Updated db_backup_path: 
+ Updated CompanionCDBName: 
+ Updated CDB DeploymentType: 
+ Updated Datacenter id: 
+ 
+
+2017,Fri May 5  7:7:0       [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh updatefadb -db_unique_name oiddb73p -addtag autotag_postqm -addconstraint OPC_ORDER:+autotag_postqm -addconstraint OPC_RACK:+autotag_postqm;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Fri May 5  7:7:8       [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh updatefadb -db_unique_name oiddb73p -addtag autotag_postqm -addconstraint OPC_ORDER:+autotag_postqm -addconstraint OPC_RACK:+autotag_postqm
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Updated FA database :oiddb73p
+ Updated em_registration :[]
+ Added tags: [autotag_postqm]
+ Removed tags: []
+ Added constraints: [OPC_ORDER:+autotag_postqm, OPC_RACK:+autotag_postqm]
+ Removed constraints: []
+ Updated DG pre-configured listener name :
+ Updated DG pre-configured listener port: 
+ Updated DB Cluster Target Override: 
+ Updated Oracle Home: 
+ Updated Secured Oracle Home: 
+ Updated Oracle Base: 
+ Updated application listener name: 
+ Updated crs home: 
+ Updated crs scan port: 
+ Updated crs ons port: 
+ Updated standby: 
+ Updated DB Version: 
+ Updated EM Target Name: 
+ Updated crs scan name: 
+ Updated asm password: 
+ Removed service types: []
+ Added service types: []
+ Updated DB Name: 
+ Updated port: 
+ Updated hostname1: 
+ Updated sid1: 
+ Updated dbServiceName: 
+ Updated dataDisc: 
+ Updated recoDisc: 
+ Updated asm: 
+ Updated asmUser: 
+ Updated hostname2: 
+ Updated sid2: 
+ Updated clusterHost1: 
+ Updated clusterHost2: 
+ Updated clusterName: 
+ Updated asmSID1: 
+ Updated asmSID2: 
+ Updated force: 
+ Updated saasSkuName: 
+ Updated is_use_local_db_backup: 
+ Updated db_backup_path: 
+ Updated CompanionCDBName: 
+ Updated CDB DeploymentType: 
+ Updated Datacenter id: 
+ 
+
+2017,Fri May 5  7:7:8       [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addrack -id autorack_postqm -frontend 255.255.248.0:10.240.112.1:10.240.115.167:10.240.115.168:10.240.115.169:10.240.115.170:10.240.115.171:10.240.115.172 -ovsServerpool autorack_postqm -type FA_GSI -prefLevel 100 -zfs zfs_29398615 -networkBridge0 xenbr0;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Fri May 5  7:7:17      [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addrack -id autorack_postqm -frontend 255.255.248.0:10.240.112.1:10.240.115.167:10.240.115.168:10.240.115.169:10.240.115.170:10.240.115.171:10.240.115.172 -ovsServerpool autorack_postqm -type FA_GSI -prefLevel 100 -zfs zfs_29398615 -networkBridge0 xenbr0
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Added rack with rackId: autorack_postqm
+ 
+ 
+
+2017,Fri May 5  7:7:17      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh updaterack -id autorack_postqm -addtag autotag_postqm -addconstraint OPC_ORDER:+autotag_postqm -addconstraint OPC_FADATABASE:+autotag_postqm;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Fri May 5  7:7:26      [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh updaterack -id autorack_postqm -addtag autotag_postqm -addconstraint OPC_ORDER:+autotag_postqm -addconstraint OPC_FADATABASE:+autotag_postqm
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Updated rack with rackId: autorack_postqm
+ Added tags: [autotag_postqm]
+ Added constraints: [OPC_ORDER:+autotag_postqm, OPC_FADATABASE:+autotag_postqm]
+ 
+ 
+
+2017,Fri May 5  7:7:26      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addOVS -ovsId slcak536 -hostname slcak536 -username ovmroot -password  welcome1 -server_pool autorack_postqm -seed_pool /OVS/seed_pool -running_pool /OVS/running_pool;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Fri May 5  7:7:36      [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addOVS -ovsId slcak536 -hostname slcak536 -username ovmroot -password welcome1 -server_pool autorack_postqm -seed_pool /OVS/seed_pool -running_pool /OVS/running_pool
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Successfully added OVS with hostname: slcak536 to ServerPool: autorack_postqm
+ 
+
+2017,Fri May 5  7:7:36      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addOVS -ovsId slcak525 -hostname slcak525 -username ovmroot -password  welcome1 -server_pool autorack_postqm -seed_pool /OVS/seed_pool -running_pool /OVS/running_pool;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Fri May 5  7:7:44      [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addOVS -ovsId slcak525 -hostname slcak525 -username ovmroot -password welcome1 -server_pool autorack_postqm -seed_pool /OVS/seed_pool -running_pool /OVS/running_pool
+ Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+ aime@slc03wnj's password: 
+ Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+ 
+ Successfully added OVS with hostname: slcak525 to ServerPool: autorack_postqm
+ 
+
+2017,Fri May 5  7:7:44      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh list_fa_templates;
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact' | awk -F '|' '/REL13_ST2/ { if ($1 !~ /spawn/ && $1 !~ /aime/ && $1 !~ /Connect/ && $1 !~ /^---/ && $1 !~ /Found/ && $1 !~ /Request/) print "relver::"$1",,patchrelver::"$2",,relname::"$3",,patchbundle::"$4",,servicebundle::"$5",,langlist::"$6",,servicetype::"$7",,istrail::"$8",,template::"$9",,ispreferred::"$10}'
+2017,Fri May 5  7:7:52      [INFO] :  relver:: 11.13.17.5.0    ,,patchrelver:: REL13_ST2_1315          ,,relname:: REL13_ST2_1315       ,,patchbundle:: ---          ,,servicebundle:: ---                   ,,langlist:: ---                     ,,servicetype:: FA_GSI       ,,istrail:: false    ,,template:: REL13_ST2_1315         ,,ispreferred:: true         
+ relver:: 11.13.17.6.0    ,,patchrelver:: REL13_ST2               ,,relname:: REL13_ST2            ,,patchbundle:: ---          ,,servicebundle:: ---                   ,,langlist:: ---                     ,,servicetype:: FA_GSI       ,,istrail:: false    ,,template:: REL13_GSI_ST2          ,,ispreferred:: true         
+
+2017,Fri May 5  7:7:52      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak536 mkdir -p /OVS/seed_pool/REL13_GSI_ST2;
+                   expect "password:" ;
+                   send "welcome1\r";
+                   send "exit\r";
+                   interact'
+2017,Fri May 5  7:7:54      [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak536 mkdir -p /OVS/seed_pool/REL13_GSI_ST2
+ Warning: Permanently added 'slcak536,10.240.115.93' (RSA) to the list of known hosts.
+ ovmroot@slcak536's password: 
+
+2017,Fri May 5  7:7:54      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak525 mkdir -p /OVS/seed_pool/REL13_GSI_ST2;
+                   expect "password:" ;
+                   send "welcome1\r";
+                   send "exit\r";
+                   interact'
+2017,Fri May 5  7:7:56      [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak525 mkdir -p /OVS/seed_pool/REL13_GSI_ST2
+ Warning: Permanently added 'slcak525,10.240.115.82' (RSA) to the list of known hosts.
+ ovmroot@slcak525's password: 
+
+2017,Fri May 5  7:8:9       [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak536 /tmp/slcak536.script.19167.sh;
+                   expect "password:" ;
+                   send "welcome1\r";
+                   send "exit\r";
+                   interact'
+2017,Fri May 5  7:8:11      [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak536 /tmp/slcak536.script.19167.sh
+ Warning: Permanently added 'slcak536,10.240.115.93' (RSA) to the list of known hosts.
+ ovmroot@slcak536's password: 
+
+2017,Fri May 5  7:8:11      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak536 rm -rf /tmp/slcak536.script.19167.sh;
+                   expect "password:" ;
+                   send "welcome1\r";
+                   send "exit\r";
+                   interact'
+2017,Fri May 5  7:8:13      [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak536 rm -rf /tmp/slcak536.script.19167.sh
+ Warning: Permanently added 'slcak536,10.240.115.93' (RSA) to the list of known hosts.
+ ovmroot@slcak536's password: 
+
+2017,Fri May 5  7:8:25      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak525 /tmp/slcak525.script.19167.sh;
+                   expect "password:" ;
+                   send "welcome1\r";
+                   send "exit\r";
+                   interact'
+2017,Fri May 5  7:8:27      [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak525 /tmp/slcak525.script.19167.sh
+ Warning: Permanently added 'slcak525,10.240.115.82' (RSA) to the list of known hosts.
+ ovmroot@slcak525's password: 
+
+2017,Fri May 5  7:8:27      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak525 rm -rf /tmp/slcak525.script.19167.sh;
+                   expect "password:" ;
+                   send "welcome1\r";
+                   send "exit\r";
+                   interact'
+2017,Fri May 5  7:8:29      [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcak525 rm -rf /tmp/slcak525.script.19167.sh
+ Warning: Permanently added 'slcak525,10.240.115.82' (RSA) to the list of known hosts.
+ ovmroot@slcak525's password: 
+
+2017,Fri May 5  7:8:42      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wne "cd /tmp; ./gsi_bundle.sh 1829 594 ERP NONE DEPLOY_TEST_INSTANCE_FALSE";
+                   expect "password:" ;
+                   send "Or@ClE\r";
+                   send "exit\r";
+                   interact'
+2017,Fri May 5  7:8:45      [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wne cd /tmp; ./gsi_bundle.sh 1829 594 ERP NONE DEPLOY_TEST_INSTANCE_FALSE
+ Warning: Permanently added 'slc03wne,10.245.144.207' (RSA) to the list of known hosts.
+ aime@slc03wne's password: 
+ TERM environment variable not set.
+  
+ Submitting GSI bundle order .................
+  
+ @submit_bundle.sql 1829 594 ERP DEPLOY_TEST_INSTANCE_FALSE
+ Response status: IDS_GENERATED
+ Response organization_id: 1829
+ Response order_number: 594
+ Response item line_id: 100
+ Response item subscription_id: 500061689
+ Response item line_id: 200
+ Response item subscription_id: 500061689
+ 
+ PL/SQL procedure successfully completed.
+ 
+ End of Submit Bundle
+  
+ Completing the order .........................
+  
+ @comp.sql NONE ser1829594 
+      11302 
+ 4EC86D49FF0E35FCE053CF90F50A00C0
+ old  44:	 service_display_name	    => '&2',
+ new  44:	 service_display_name	    => 'ser1829594',
+ old  49:	 l_dr_config := '&1';
+ new  49:	 l_dr_config := 'NONE';
+ Enter value for 3: old  54:	 l_order_item.item_id := &3;
+ new  54:	 l_order_item.item_id :=      11302 ;
+ old  57:   l_order_item.system_name := 'fadrsdigsi'|| '&2';
+ new  57:   l_order_item.system_name := 'fadrsdigsi'|| 'ser1829594';
+ Enter value for 4: old  75:				       i_order_passkey => '&4');
+ new  75:				       i_order_passkey => '4EC86D49FF0E35FCE053CF90F50A00C0');
+ 
+ PL/SQL procedure successfully completed.
+ 
+

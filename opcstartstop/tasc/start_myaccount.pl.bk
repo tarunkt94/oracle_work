@@ -1,0 +1,33 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use Cwd;
+use File::Basename;
+
+
+my $scriptloc = dirname($0);
+chdir($scriptloc);
+$scriptloc = getcwd();
+my $myAccountLog = "$scriptloc/myAccountAdmin.log";
+
+#Starting the MyAccount Admin Server
+my $myAccountScript = "/scratch/aime/work/CLOUDTOP/Middleware/user_projects/domains/cpserver/MyAccount/bin/startWebLogic.sh";
+die "\nThe script $myAccountScript does not exist\n" unless (-f $myAccountScript);
+my $myAccountAdminStart = "nohup $myAccountScript >& $myAccountLog &";
+print "\nGoing to run the command $myAccountAdminStart\n";
+system($myAccountAdminStart);
+
+
+print "\nSleeping for 300 seconds for the Admin Server to start\n";
+sleep(300);
+
+print "Out of sleep, will bring up the managed servers now \n";
+
+#starting the Managed Servers
+chdir($scriptloc);
+my $startMScmd = './WLS_Script.sh start_myaccount_managed.py';
+my $retCode = system($startMScmd);
+if($retCode !=0){
+	exit(1);
+}

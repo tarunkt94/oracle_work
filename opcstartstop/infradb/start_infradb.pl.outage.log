@@ -1,0 +1,146 @@
+
+==Currently in the directory /net/slc03wlx/scratch/aime/tarun/infradb
+
+LSNRCTL for Linux: Version 11.2.0.4.0 - Production on 03-MAR-2017 01:47:21
+
+Copyright (c) 1991, 2013, Oracle.  All rights reserved.
+
+Starting /scratch/aime/work/oracle/product/11.2.0.4/dbhome_2/bin/tnslsnr: please wait...
+
+TNSLSNR for Linux: Version 11.2.0.4.0 - Production
+System parameter file is /scratch/aime/work/oracle/product/11.2.0.4/dbhome_2/network/admin/listener.ora
+Log messages written to /scratch/aime/work/oracle/diag/tnslsnr/slc04qnm/listener/alert/log.xml
+Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=slc04qnm.us.oracle.com)(PORT=1521)))
+Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))
+
+Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=slc04qnm.us.oracle.com)(PORT=1521)))
+STATUS of the LISTENER
+------------------------
+Alias                     LISTENER
+Version                   TNSLSNR for Linux: Version 11.2.0.4.0 - Production
+Start Date                03-MAR-2017 01:47:22
+Uptime                    0 days 0 hr. 0 min. 0 sec
+Trace Level               off
+Security                  ON: Local OS Authentication
+SNMP                      OFF
+Listener Parameter File   /scratch/aime/work/oracle/product/11.2.0.4/dbhome_2/network/admin/listener.ora
+Listener Log File         /scratch/aime/work/oracle/diag/tnslsnr/slc04qnm/listener/alert/log.xml
+Listening Endpoints Summary...
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=slc04qnm.us.oracle.com)(PORT=1521)))
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))
+The listener supports no services
+The command completed successfully
+
+SQL*Plus: Release 11.2.0.4.0 Production on Fri Mar 3 01:47:23 2017
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+Connected to an idle instance.
+
+SQL> ORACLE instance started.
+
+Total System Global Area 3858223104 bytes
+Fixed Size		    2259080 bytes
+Variable Size		 1207961464 bytes
+Database Buffers	 2634022912 bytes
+Redo Buffers		   13979648 bytes
+Database mounted.
+Database opened.
+SQL> Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+LSNRCTL for Linux: Version 11.2.0.4.0 - Production on 03-MAR-2017 01:47:44
+
+Copyright (c) 1991, 2013, Oracle.  All rights reserved.
+
+TNS-01106: Listener using listener name LISTENER has already been started
+
+SQL*Plus: Release 11.2.0.4.0 Production on Fri Mar 3 01:47:44 2017
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+Connected to an idle instance.
+
+SQL> ORACLE instance started.
+
+Total System Global Area 3858223104 bytes
+Fixed Size		    2259080 bytes
+Variable Size		  956303224 bytes
+Database Buffers	 2885681152 bytes
+Redo Buffers		   13979648 bytes
+Database mounted.
+Database opened.
+SQL> Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+LSNRCTL for Linux: Version 11.2.0.4.0 - Production on 03-MAR-2017 01:48:02
+
+Copyright (c) 1991, 2013, Oracle.  All rights reserved.
+
+TNS-01106: Listener using listener name LISTENER has already been started
+
+SQL*Plus: Release 11.2.0.4.0 Production on Fri Mar 3 01:48:02 2017
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+Connected to an idle instance.
+
+SQL> ORACLE instance started.
+
+Total System Global Area 3858223104 bytes
+Fixed Size		    2259080 bytes
+Variable Size		  838862712 bytes
+Database Buffers	 3003121664 bytes
+Redo Buffers		   13979648 bytes
+Database mounted.
+Database opened.
+SQL> Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+LSNRCTL for Linux: Version 11.2.0.4.0 - Production on 03-MAR-2017 01:48:29
+
+Copyright (c) 1991, 2013, Oracle.  All rights reserved.
+
+TNS-01106: Listener using listener name LISTENER has already been started
+
+SQL*Plus: Release 11.2.0.4.0 Production on Fri Mar 3 01:48:29 2017
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+Connected to an idle instance.
+
+SQL> ORACLE instance started.
+
+Total System Global Area 3858223104 bytes
+Fixed Size		    2259080 bytes
+Variable Size		  956303224 bytes
+Database Buffers	 2885681152 bytes
+Redo Buffers		   13979648 bytes
+Database mounted.
+Database opened.
+SQL> Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+LSNRCTL for Linux: Version 11.2.0.4.0 - Production on 03-MAR-2017 01:48:37
+
+Copyright (c) 1991, 2013, Oracle.  All rights reserved.
+
+TNS-01106: Listener using listener name LISTENER has already been started
+
+SQL*Plus: Release 11.2.0.4.0 Production on Fri Mar 3 01:48:37 2017
+
+Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+
+Connected to an idle instance.
+
+SQL> ORACLE instance started.
+
+Total System Global Area 3858223104 bytes
+Fixed Size		    2259080 bytes
+Variable Size		  838862712 bytes
+Database Buffers	 3003121664 bytes
+Redo Buffers		   13979648 bytes
+Database mounted.
+Database opened.
+SQL> Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options

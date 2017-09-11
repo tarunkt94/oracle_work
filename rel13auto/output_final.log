@@ -1,0 +1,63 @@
+
+/scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh register_tag -tagName rel13taruntag
+
+Will run the command /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh register_tag -tagName rel13taruntag on the SDI host
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/04/27 10:02:22 (no timeout)
+#| expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh register_tag -tagName rel13taruntag;
+#|                    expect "password:" ;
+#|                    send "Or@ClE\r";
+#|                    send "exit\r";
+#|                    interact'
+#| Program Output:
+spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh register_tag -tagName rel13taruntag
+Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+aime@slc03wnj's password: 
+Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+
+Successfully registered tag: rel13taruntag
+
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/04/27 10:02:30 (no timeout)
+#| expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh lstcc;
+#|                    expect "password:" ;
+#|                    send "Or@ClE\r";
+#|                    send "exit\r";
+#|                    interact' | awk -F '|' '/slc05jll/ { if ($1 !~ /spawn/ && $1 !~ /aime/ && $1 !~ /Connect/ && $1 !~ /^---/ && $1 !~ /Found/ && $1 !~ /Request/) print "name::"$1",,isdefault::"$2",,dcshortname::"$3",,host::"$4",,port::"$5",,httpsport::"$6",,protocol::"$7",,jvmdport::"$8",,omsagentport::"$9",,omsuploadport::"$10" ,,fasaasuser::"$11" ,,fasaaspasswd::"$12",,monitoruser::"$13",,monitorpasswd::"$14",,javaassembly::"$14}'
+#| Program Output:
+name:: slc05jll   ,,isdefault:: false      ,,dcshortname:: US1           ,,host:: slc05jll.us.oracle.com ,,port:: 7788 ,,httpsport:: 7799       ,,protocol:: HTTP     ,,jvmdport:: 3800      ,,omsagentport:: 3872           ,,omsuploadport:: 4889             ,,fasaasuser:: emcmon                   ,,fasaaspasswd:: *****                       ,,monitoruser:: em_svc_monitor  ,,monitorpasswd:: *****                    ,,javaassembly:: *****                    
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+The em registration is slc05jll
+
+/scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name fadb -db_name fadb -port 1530 -host_name1 slc09mqv.us.oracle.com -sid1 fadb1 -db_service_name fadb -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type MAIN_DB -db_version  12.1.0.2.0 -host_name2 slc09mqu.us.oracle.com -sid2 fadb2 -cluster_host1 slc09mqz.us.oracle.com -cluster_host2 slc09mqy.us.oracle.com -cluster_name slc09mqt -crs_scan_name slc09mqt.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_fadb -oracle_base /u01/app/oracle -em_registration slc05jll
+
+Will run the command /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name fadb -db_name fadb -port 1530 -host_name1 slc09mqv.us.oracle.com -sid1 fadb1 -db_service_name fadb -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type MAIN_DB -db_version  12.1.0.2.0 -host_name2 slc09mqu.us.oracle.com -sid2 fadb2 -cluster_host1 slc09mqz.us.oracle.com -cluster_host2 slc09mqy.us.oracle.com -cluster_name slc09mqt -crs_scan_name slc09mqt.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_fadb -oracle_base /u01/app/oracle -em_registration slc05jll on the SDI host
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/04/27 10:02:38 (60 sec timeout)
+#| expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name fadb -db_name fadb -port 1530 -host_name1 slc09mqv.us.oracle.com -sid1 fadb1 -db_service_name fadb -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type MAIN_DB -db_version  12.1.0.2.0 -host_name2 slc09mqu.us.oracle.com -sid2 fadb2 -cluster_host1 slc09mqz.us.oracle.com -cluster_host2 slc09mqy.us.oracle.com -cluster_name slc09mqt -crs_scan_name slc09mqt.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_fadb -oracle_base /u01/app/oracle -em_registration slc05jll;
+#|                    expect "password:" ;
+#|                    send "Or@ClE\r";
+#|                    send "exit\r";
+#|                    interact'
+#| Program Output:
+spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name fadb -db_name fadb -port 1530 -host_name1 slc09mqv.us.oracle.com -sid1 fadb1 -db_service_name fadb -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type MAIN_DB -db_version 12.1.0.2.0 -host_name2 slc09mqu.us.oracle.com -sid2 fadb2 -cluster_host1 slc09mqz.us.oracle.com -cluster_host2 slc09mqy.us.oracle.com -cluster_name slc09mqt -crs_scan_name slc09mqt.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_fadb -oracle_base /u01/app/oracle -em_registration slc05jll
+Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+aime@slc03wnj's password: 
+Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+
+Add FA database error: Illegal Argument: FaDatabase already exists with dbUniqueName: fadb
+
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+Error in executing the command /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name fadb -db_name fadb -port 1530 -host_name1 slc09mqv.us.oracle.com -sid1 fadb1 -db_service_name fadb -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type MAIN_DB -db_version  12.1.0.2.0 -host_name2 slc09mqu.us.oracle.com -sid2 fadb2 -cluster_host1 slc09mqz.us.oracle.com -cluster_host2 slc09mqy.us.oracle.com -cluster_name slc09mqt -crs_scan_name slc09mqt.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_fadb -oracle_base /u01/app/oracle -em_registration slc05jll on SDI host slc03wnj

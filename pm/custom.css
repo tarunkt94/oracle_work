@@ -1,0 +1,485 @@
+A:link
+{
+
+<!--    Lite weight css-->
+        font-family:Tahoma;
+        font-size:9pt;
+        color:#2b7c92
+}
+A:active
+{
+        font-family:Tahoma;
+        font-size:9pt;
+        color:#2b7c92
+}
+A:visited
+{
+        font-family:Tahoma;
+        font-size:9pt;
+        color:#2b7c92
+}
+.OraGlobalLink:link, .OraGlobalLink:active, .OraGlobalLink:visited
+{
+    font-family:Arial;
+    font-size:9pt;
+    color:#ffffff;
+    text-decoration:none
+}
+.OraGlobalLink:hover
+{
+    font-family:Arial;
+    font-size:9pt;
+    color:#ffffff;
+    text-decoration:underline
+}
+.OraBGColorVeryDark
+{
+        background-color:#003366
+}
+.OraBGColorDark
+{
+        background-color:#c3d4e8
+}
+.OraBGColorMedium
+{
+        background-color:#d9e5ef
+}
+.OraBGColorLight
+{
+        background-color:#99ccff
+}
+.OraBGGrayVeryDark
+{
+        background-color:#c3d4e8
+}
+.OraBGGrayDark
+{
+        background-color:#666666
+}
+.OraBGGrayMedium
+{
+        background-color:#999999
+}
+.OraBGGrayLight
+{
+        background-color:#cccccc
+}
+.OraBGAccentVeryDark
+{
+        background-color:#c3d4e8
+}
+.OraBGAccentVeryVeryDark
+{
+        background-color:#8aa9cd
+}
+.OraBGAccentDark
+{
+        background-color:#cfe0f1
+}
+.OraBGAccentMedium
+{
+        background-color:#ffffcc
+}
+.OraBGAccentLight
+{
+
+        background-color:#f2f2f5;
+}
+.OraBody
+{
+        background-color:#ffffff;
+        font-family:Tahoma
+}
+
+.OraDataText
+{
+        font-family:Arial,Helvetica,Geneva,sans-serif;
+        font-size:10pt;
+        font-weight:bold;color:#000000
+}
+
+.OraHeader
+{
+	font-family:Tahoma,Helvetica,Geneva,sans-serif;
+	font-size:14pt;
+	color:#3a5a87;
+        text-align:center
+}
+
+.OraHeaderSub
+{
+        font-family:Tahoma,Helvetica,Geneva,sans-serif;
+        font-size:9pt;
+        color:#3a5a87;
+        font-weight:bold
+}
+.OraHeaderSubSub
+{
+        font-family:Tahoma,Helvetica,Geneva,sans-serif;
+        font-size:8pt;
+        color:#3a5a87;
+        font-weight:bold;
+}
+
+.OraTable
+{
+        background-color:#f2f2f5
+}
+.OraTableColumnHeaderNumber
+{
+
+        font-family:Arial,Helvetica,Geneva,sans-serif;
+        font-size:10pt;
+        font-weight:bold;
+        background-color:#a3c2df;
+        color:#336699;
+        vertical-align:bottom;
+        text-align:right
+}
+.OraTableColumnFooter
+{
+       font-family:Arial,Helvetica,Geneva,sans-serif;
+       font-size:10pt;
+       font-weight:bold;
+       text-align:left;
+       background-color:#a3c2df;
+       color:#336699
+}
+.OraTableTotal
+{
+       font-family:Arial,Helvetica,Geneva,sans-serif;
+       font-size:10pt;
+       font-weight:bold;
+       text-align:right;
+       background-color:#a3c2df;
+       color:#336699
+}
+.OraTableAddTotal
+{
+       font-family:Arial,Helvetica,Geneva,sans-serif;
+       font-size:10pt;
+       font-weight:bold;
+       text-align:left;
+       background-color:#a3c2df;
+       color:#336699;
+}
+.OraTableTotalNumber
+{
+       font-family:Arial,Helvetica,Geneva,sans-serif;
+       font-size:10pt;
+       font-weight:bold;
+       text-align:right;
+       background-color:#a3c2df;
+       color:#000000;
+       vertical-align:baseline
+}
+.OraTableTotalText
+{
+       font-family:Arial,Helvetica,Geneva,sans-serif;
+       font-size:10pt;
+       font-weight:bold;
+       text-align:left;
+       background-color:#a3c2df;
+       color:#000000;
+       vertical-align:baseline
+}
+.OraTableCellTextBand
+{
+       font-family:Arial,Helvetica,Geneva,sans-serif;
+       font-size:10pt;
+       color:#000000;
+       vertical-align:baseline;
+       background-color:#ffffff
+}
+.OraTableCellNumber
+{
+       font-family:Arial,Helvetica,Geneva,sans-serif;
+       font-size:10pt;
+       text-align:right;
+       background-color:#3c3c3c;
+       color:#000000;
+       vertical-align:baseline
+}
+.OraTableCellNumberBand
+{
+       font-family:Arial,Helvetica,Geneva,sans-serif;
+       font-size:10pt;
+       text-align:right;
+       color:#000000;
+       vertical-align:baseline;
+       background-color:#ffffff
+}
+.OraTableCellSelect
+{
+       font-family:Arial,Helvetica,Geneva,sans-serif;
+       font-size:10pt;
+       text-align:center;
+       background-color:#eaeff5;
+       color:#000000;
+       vertical-align:baseline
+}
+.OraTableCellSelectBand
+{
+       font-family:Arial,Helvetica,Geneva,sans-serif;
+       font-size:10pt;
+       text-align:center;
+       color:#000000;
+       vertical-align:baseline;
+       background-color:#ffffff
+}
+.OraTableVerticalGrid
+{
+       background-color:#a3c2df;
+       width:1px
+}
+.OraTableVerticalHeaderGrid
+{
+       background-color:#eaeff5;
+       width:1px
+}
+.OraTableHorizontalGrid
+{
+       background-color:#a3c2df;
+       width:1px
+}
+.OraTableHorizontalHeaderGrid
+{
+       background-color:#eaeff5;
+       width:1px
+}
+.OraTableShadowHeaderGrid
+{
+       background-color:#666633;
+       width:1px
+}
+.OraTableHeaderLink
+{
+       font-family:Tahoma,Helvetica,Geneva,sans-serif;
+       font-size:9pt;
+       font-weight:bold;
+       background-color:#cfe0f1;
+       color:#3c3c3c;
+       text-decoration:none
+}
+.OraTableBorder
+{
+       border-top: 1px #a3c2df solid;
+       border-left: 1px #a3c2df solid;
+       border-right: 1px #a3c2df solid;
+       border-bottom: 1px #a3c2df solid;
+}
+.OraTableDetail
+{
+       font-family:Arial,Helvetica,Geneva,sans-serif;
+       font-size:10pt;
+       color:#000000;
+       background-color:#ffffff
+}
+.OraTableColumnHeader
+{
+        font-family:Tahoma;
+        font-size:9pt;
+        font-weight:bold;
+        text-align:left;
+        background-color:#cfe0f1;
+        color:#3c3c3c;
+}
+.OraTableColumnHeader A:link
+{
+        font-size:9pt;
+        font-weight:bold;
+        text-align:left;
+        background-color:#cfe0f1;
+        color:#3c3c3c;
+}
+.OraTableColumnHeader A:active
+{
+        font-size:9pt;
+        font-weight:bold;
+        text-align:left;
+        background-color:#cfe0f1;
+        color:#3c3c3c;
+}
+.OraTableColumnHeader A:visited
+{
+        font-size:9pt;
+        font-weight:bold;
+        text-align:left;
+        background-color:#cfe0f1;
+        color:#3c3c3c;
+}
+
+.OraTableRowHeader
+{
+        font-family:Tahoma,Helvetica,Geneva,sans-serif;
+        font-size:9pt;
+        font-weight:bold;
+        text-align:right;
+        background-color:#cfef01;
+        color:#3c3c3c
+}
+
+.OraTableCellText
+{
+<!-- used-->
+
+        font-family:Tahoma,Helvetica,Geneva,sans-serif;
+        font-size:9pt;
+        background-color:#3c3c3c;
+        color:#000000;
+        vertical-align:baseline
+}
+
+
+
+/*  ARU specific style sheet. */
+
+
+td
+{
+        font-family:Tahoma, Helvetica, Geneva, sans-serif;
+        font-size:10pt;
+        background-color:#f2f2f5;
+        color:#3c3c3c;
+
+}
+
+th
+{
+        font-family:Tahoma, Helvetica, Geneva, sans-serif;
+        font-size:9pt;
+        font-weight:bold;
+        text-align:center;
+        background-color:#cfe0f1;
+        color:#3c3c3c;
+        text-indent:1
+}
+
+
+
+
+
+.AruTableCellText
+{
+<!--used
+-->
+        font-family:Tahoma;
+        font-size:9pt;
+        background-color:#f2f2f5;
+        color:#3c3c3c;
+}
+
+
+/* Overriding styles which got changed in latest style sheet */
+
+.OraTableRowHeader
+{
+        font-family:Tahoma, Helvetica, Geneva, sans-serif;
+        font-size:9pt;
+        font-weight:bold;
+        text-align:left;
+        background-color:#cfe0f1;
+        color:#3c3c3c;
+        text-indent:1
+}
+.OraTableRowHeader A:link
+{
+        font-size:9pt;
+        font-weight:bold;
+        text-align:left;
+        background-color:#cfe0f1;
+        color:#3c3c3c;
+        text-indent:1
+}
+.OraTableRowHeader A:active
+{
+        font-size:9pt;
+        font-weight:bold;
+        text-align:left;
+        background-color:#cfe0f1;
+        color:#3c3c3c;
+        text-indent:1
+}
+.OraTableRowHeader A:visited
+{
+<!-- used-->
+        font-size:9pt;
+        font-weight:bold;
+        text-align:left;
+        background-color:#cfe0f1;
+        color:#3c3c3c;
+        text-indent:1
+}
+
+.OraTableCellText
+{
+ <!-- used-->
+        font-family:Tahoma, Helvetica, Geneva, sans-serif;
+        font-size:10pt;
+        background-color:#f2f2f5;
+        color:#3c3c3c;
+        text-indent:1
+}
+
+.shadow
+{
+      background-image: url(/olaf/images/tab/jtfutrpx.gif);
+      background-repeat: repeat-x;
+      background-color: #ffffff;
+
+}
+
+
+.submitButtonEnable
+{
+    margin: 2px;
+    padding: 4px;
+    border-top: 1px solid #a5a9b6;
+    border-left: 1px solid #a5a9b6;
+    border-bottom: 1px solid #7b8194;
+    border-right: 1px solid #7b8194;
+    background-repeat: repeat-x;
+    background-position: bottom left;
+    background-color: #ffffff;
+    font-size: 9pt!important;
+    font-family: Tahoma;
+    font-weight: bold;
+    color: #586073!important;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    #background-image: url(http://isd.us.oracle.com/olaf/images/btn-bg1.gif);
+    white-space: nowrap;
+}
+.OraTipLabel
+{
+    font-family:Tahoma;
+    font-size:10pt;
+    color:#234a82;
+    font-weight:bold
+}
+.OraInlineInfoText
+{
+        font-family:Arial,Helvetica,Geneva,sans-serif;
+        font-size:9pt;color:#336699
+}
+
+
+.AruErrorNameText
+{
+        font-family:Arial, Helvetica, Geneva, sans-serif;
+        font-size:10pt;
+        font-weight:bold;
+        color:#cc0000;
+        background-color:#ffffff;
+}
+HR { color: #eaeff5; height: 1px; }
+
+.SaasHeader
+ {
+ 	font-family:Tahoma,Helvetica,Geneva,sans-serif;
+ 	font-size:14pt;
+ 	color:#3a5a87;
+    text-align:left
+ }
+.anchorLink {}

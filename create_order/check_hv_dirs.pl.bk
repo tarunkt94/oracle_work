@@ -1,0 +1,198 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+BEGIN{
+	push(@INC,'/scratch/aime/tarun/create_order/validations/pm');
+}
+
+use SDI;
+use RemoteCmd;
+use Logger;
+
+my ($seed_pool,$running_pool,$relname,$pillar,$hypusername,$hyppasswd,$sdiuser,$sdipasswd,$sdihost,$sdiscript);
+my(%templateHash,$sdiObj,$hvObj,$templatekey,$sys_img_loc,$sys_img_bi_loc,$hyp);
+
+$seed_pool = '/OVS/seed_pool';
+$relname = 'REL12.1_ST16_STARTER';
+$pillar = 'HCM';
+$hypusername = 'ovmroot';
+$hyppasswd = 'welcome1';
+$sdiuser = 'aime';
+$sdipasswd = 'Or@cle';
+$sdihost = 'slc03wnj';
+$sdiscript = 'sdictl.sh';
+$hyp = 'slcah779.us.oracle.com';
+
+#get_input();
+
+create_object();
+
+get_template_details();
+
+create_dirs();
+
+#check_img_exists();
+
+#copy_sys_img();
+
+#untar_imgs();
+sub get_input{
+	GetOptions('seed_pool=s' => \$seed_pool,
+		   'running_pool=s' => \$running_pool,
+		   'relname=s' => \$relname,
+		   'pillar=s' => \$pillar);
+}
+
+sub create_object{
+        my $logObj = Logger->new(
+                      {'loggerLogFile' => "/tmp/test.log",
+                      'maxLogLevel' => 4}
+                      );
+
+	$hvObj = RemoteCmd->new(user=> $hypusername,
+				   passwd => $hyppasswd,
+				   logObj => $logObj);
+
+
+	$sdiObj =  SDI->new(user => $sdiuser,
+			       passwd => $sdipasswd,
+			       host => $sdihost,
+			       sdiscript => $sdiscript,
+			       logObj => $logObj);
+}
+
+sub get_template_details{
+	%templateHash = $sdiObj->getTemplateDetails(relname => $relname);
+
+	if($templateHash{0}{relver} eq ''){
+		print "\nThere is no template registered in SDI with the release name $relname\n";
+		exit 1;
+	}
+
+	my $flag = 'false';
+	
+	my $servicetype = 'FA_'.uc($pillar);
+
+	for my $keycount(keys %templateHash){
+		if(($templateHash{$keycount}{servicetype} eq $servicetype) and ($templateHash{$keycount}{ispreferred} eq 'true')){
+			$flag = 'true';
+			$templatekey = $keycount;
+			last;
+		}
+	}
+	
+	if( $flag eq 'false'){
+		print "\nNo template found with relname $relname and pillar $pillar with ispreferred as true\n";
+		exit 1;
+	}
+	
+	print "\ntemplate name is $templateHash{$templatekey}{template} and $templateHash{$templatekey}{patchrelver} and $templateHash{$templatekey}{relver}\n";
+	return 0;
+	
+}
+
+sub create_dirs{
+
+	my $template_name = $templateHash{$templatekey}{template};
+	
+	$sys_img_loc = "$seed_pool/$template_name";
+	$sys_img_bi_loc = $sys_img_loc . '_bi';
+
+	
+	my $cmd = "\"mkdir -p $sys_img_loc;mkdir -p $sys_img_bi_loc\"";
+
+	my $out = $hvObj->executeCommandsonRemote(cmd => $cmd,
+						 host => $hyp);
+
+	if (grep(/error|no such|failed|Fail/i, @$out)) {
+		exit 1, "@$out";
+    	}
+
+	$cmd = "mkdir -p $sys_img_bi_loc";
+	
+        $out = $hvObj->executeCommandsonRemote(cmd => $cmd,
+                                                 host => $hyp);
+
+        if (grep(/error|no such|failed|Fail/i, @$out)) {
+                exit 1, "@$out";
+        }
+
+}
+
+sub check_img_exists{
+	
+	my $sys_img_file = $sys_img_loc . "/SystemImg.tar.gz";
+
+	my $cmd = "#!/bin/bash 
+		   
+		   if [ ! -f '$sys_img_file' ]; then
+			echo '$sys_img_file does not exist. No such file'
+			exit 1;
+		   fi" ; 
+
+	my ( $ret_code , $out );
+	($ret_code,$out ) = $hvObj->createAndRunScript(host=> $hyp,
+							  cmd => $cmd);
+
+	if($ret_code == 1 ){
+		print "\nSystem images do not exist in $sys_img_loc .  Copying them from SDI host\n";
+		copy_sys_img();
+	}
+	else{
+		print "\nSystem images already exist in the hypervisor\n";
+	}
+}
+
+sub copy_sys_img{
+	
+	my $img_loc_sdi = "/fa_template/$relname/DedicatedIdm/paid/".uc($pillar)."/OVAB_HOME/vm";
+
+	my $img_file_sdi = "$img_loc_sdi/SystemImg.tar.gz";
+
+	my $destdir = $sys_img_loc;
+	
+	$sdiObj->{'remoteObj'}->copySrcToDest( host => $sdiObj->{host},
+					       file => $img_file_sdi,
+					       username => $hypusername,
+					       hostname => $hyp,
+					       destdir => $destdir,
+					       hostpasswd => $hyppasswd);
+
+	my $bi_img_loc_sdi .= $img_loc_sdi . '/bi';
+
+	$img_file_sdi = "$bi_img_loc_sdi/SystemImg.tar.gz";
+	
+	$destdir = $sys_img_bi_loc;
+	
+	$sdiObj->{'remoteObj'}->copySrcToDest( host => $sdiObj->{host},
+                                               file => $img_file_sdi,
+                                               username => $hypusername,
+                                               hostname => $hyp,
+                                               destdir => $destdir,
+                                               hostpasswd => $hyppasswd);
+
+}
+
+sub untar_imgs{
+	my $cmd = "tar -xvf $sys_img_loc/SystemImg.tar.gz -C $sys_img_loc";
+
+	my $out = $hvObj->executeCommandsonRemote(cmd => $cmd,
+                                                 host => $hyp);
+
+        if (grep(/error|no such|failed|Fail/i, @$out)) {
+                return 1, "@$out";
+        }
+
+	$cmd = "tar -xvf $sys_img_bi_loc/SystemImg.tar.gz -C $sys_img_bi_loc";
+
+        $out = $hvObj->executeCommandsonRemote(cmd => $cmd,
+                                                 host => $hyp);
+
+        if (grep(/error|no such|failed|Fail/i, @$out)) {
+                return 1, "@$out";
+        }
+
+	
+}
+

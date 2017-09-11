@@ -1,0 +1,593 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<procedureInstanceStatusDetails GUID="43885528084F6219E053BA74F00A2F75" name="fadrsdi141pdr02_sw_from_us1 1481623597975" >
+   <procedureGUID>42EC3D2CBC4156EBE053BA74F00AB322</procedureGUID>
+   <createdBy>CLOUDINFRA.OCLOUD9_SDI_APPID</createdBy>
+   <status>COMPLETED</status>
+   <elapsedTime>4514 seconds</elapsedTime>
+   <errorHandling>stop</errorHandling>
+   <dataGUID>4388552807AD6219E053BA74F00A2F75</dataGUID>
+   <step isEnabled="true" name="RunPrechecks" stepType="">
+      <GUID>RunPrechecks</GUID>
+      <errorModeString>stop</errorModeString>
+      <typeStep>Step</typeStep>
+      <status></status>
+      <startedOn>2016-12-13 02:06:47.0</startedOn>
+      <lastUpdatedOn>2016-12-13 02:09:24.0</lastUpdatedOn>
+      <completedOn>2016-12-13 02:09:24.0</completedOn>
+      <stateDetails>
+         <GUID>4387DCD9351C08B5E053BA74F00A5135</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4388552808426219E053BA74F00A2F75</parentGUID>
+         <innerGUID>4387DCD9352B08B5E053BA74F00A5135</innerGUID>
+         <startedOn>2016-12-13 02:06:47.0</startedOn>
+         <lastUpdatedOn>2016-12-13 02:09:24.0</lastUpdatedOn>
+         <completedOn>2016-12-13 02:09:24.0</completedOn>
+      </stateDetails>
+   </step>
+   <step isEnabled="true" name="RunPrecheckCustomScript" stepType="">
+      <GUID>RunPrecheckCustomScript</GUID>
+      <errorModeString>stop</errorModeString>
+      <typeStep>Step</typeStep>
+      <status></status>
+      <startedOn>2016-12-13 02:09:24.0</startedOn>
+      <lastUpdatedOn>2016-12-13 02:09:40.0</lastUpdatedOn>
+      <completedOn>2016-12-13 02:09:40.0</completedOn>
+      <stateDetails>
+         <GUID>4387DCD9479E08B5E053BA74F00A5135</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4388552808426219E053BA74F00A2F75</parentGUID>
+         <innerGUID>4387DCD9483A08B5E053BA74F00A5135</innerGUID>
+         <startedOn>2016-12-13 02:09:24.0</startedOn>
+         <lastUpdatedOn>2016-12-13 02:09:40.0</lastUpdatedOn>
+         <completedOn>2016-12-13 02:09:40.0</completedOn>
+      </stateDetails>
+   </step>
+   <step isEnabled="true" name="RunPrimaryGlobalPreScripts" stepType="">
+      <GUID>RunPrimaryGlobalPreScripts</GUID>
+      <errorModeString>stop</errorModeString>
+      <typeStep>Step</typeStep>
+      <status></status>
+      <startedOn>2016-12-13 02:09:41.0</startedOn>
+      <lastUpdatedOn>2016-12-13 02:09:49.0</lastUpdatedOn>
+      <completedOn>2016-12-13 02:09:49.0</completedOn>
+      <stateDetails>
+         <GUID>4387D61C412B04BAE053BA74F00ABABC</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4388552808426219E053BA74F00A2F75</parentGUID>
+         <innerGUID>4387D61C41C604BAE053BA74F00ABABC</innerGUID>
+         <startedOn>2016-12-13 02:09:41.0</startedOn>
+         <lastUpdatedOn>2016-12-13 02:09:49.0</lastUpdatedOn>
+         <completedOn>2016-12-13 02:09:49.0</completedOn>
+      </stateDetails>
+   </step>
+   <step isEnabled="true" name="RunPrimaryPreScripts" stepType="">
+      <GUID>RunPrimaryPreScripts</GUID>
+      <errorModeString>stop</errorModeString>
+      <typeStep>Step</typeStep>
+      <status></status>
+      <startedOn>2016-12-13 02:09:50.0</startedOn>
+      <lastUpdatedOn>2016-12-13 02:16:36.0</lastUpdatedOn>
+      <completedOn>2016-12-13 02:16:36.0</completedOn>
+      <stateDetails>
+         <GUID>4387D61C426F04BAE053BA74F00ABABC</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4388552808426219E053BA74F00A2F75</parentGUID>
+         <innerGUID>4387D61C430D04BAE053BA74F00ABABC</innerGUID>
+         <startedOn>2016-12-13 02:09:50.0</startedOn>
+         <lastUpdatedOn>2016-12-13 02:16:36.0</lastUpdatedOn>
+         <completedOn>2016-12-13 02:16:36.0</completedOn>
+      </stateDetails>
+   </step>
+   <step isEnabled="true" name="StopPrimary" stepType="">
+      <GUID>StopPrimary</GUID>
+      <errorModeString>stop</errorModeString>
+      <typeStep>Step</typeStep>
+      <status></status>
+      <startedOn>2016-12-13 02:16:37.0</startedOn>
+      <lastUpdatedOn>2016-12-13 02:18:57.0</lastUpdatedOn>
+      <completedOn>2016-12-13 02:18:57.0</completedOn>
+      <stateDetails>
+         <GUID>4387DCD95CC008B5E053BA74F00A5135</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4388552808426219E053BA74F00A2F75</parentGUID>
+         <innerGUID>4387DCD95D5F08B5E053BA74F00A5135</innerGUID>
+         <startedOn>2016-12-13 02:16:37.0</startedOn>
+         <lastUpdatedOn>2016-12-13 02:18:57.0</lastUpdatedOn>
+         <completedOn>2016-12-13 02:18:57.0</completedOn>
+      </stateDetails>
+   </step>
+   <step isEnabled="true" name="RunPrimaryPostScripts" stepType="">
+      <GUID>RunPrimaryPostScripts</GUID>
+      <errorModeString>stop</errorModeString>
+      <typeStep>Step</typeStep>
+      <status></status>
+      <startedOn>2016-12-13 02:18:58.0</startedOn>
+      <lastUpdatedOn>2016-12-13 02:21:41.0</lastUpdatedOn>
+      <completedOn>2016-12-13 02:21:41.0</completedOn>
+      <stateDetails>
+         <GUID>4387DCD9672608B5E053BA74F00A5135</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4388552808426219E053BA74F00A2F75</parentGUID>
+         <innerGUID>4387DCD967C708B5E053BA74F00A5135</innerGUID>
+         <startedOn>2016-12-13 02:18:58.0</startedOn>
+         <lastUpdatedOn>2016-12-13 02:21:41.0</lastUpdatedOn>
+         <completedOn>2016-12-13 02:21:41.0</completedOn>
+      </stateDetails>
+   </step>
+   <step isEnabled="true" name="RunPrimaryUMountScripts" stepType="">
+      <GUID>RunPrimaryUMountScripts</GUID>
+      <errorModeString>stop</errorModeString>
+      <typeStep>Step</typeStep>
+      <status></status>
+      <startedOn>2016-12-13 02:21:43.0</startedOn>
+      <lastUpdatedOn>2016-12-13 02:22:44.0</lastUpdatedOn>
+      <completedOn>2016-12-13 02:22:44.0</completedOn>
+      <stateDetails>
+         <GUID>43887ADF683C1C7FE053BA74F00ADD9A</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4388552808426219E053BA74F00A2F75</parentGUID>
+         <innerGUID>43887ADF69161C7FE053BA74F00ADD9A</innerGUID>
+         <startedOn>2016-12-13 02:21:43.0</startedOn>
+         <lastUpdatedOn>2016-12-13 02:22:44.0</lastUpdatedOn>
+         <completedOn>2016-12-13 02:22:44.0</completedOn>
+      </stateDetails>
+   </step>
+   <step isEnabled="true" name="RunRoleReverseStorage" stepType="">
+      <GUID>RunRoleReverseStorage</GUID>
+      <errorModeString>stop</errorModeString>
+      <typeStep>Step</typeStep>
+      <status></status>
+      <startedOn>2016-12-13 02:22:45.0</startedOn>
+      <lastUpdatedOn>2016-12-13 02:27:28.0</lastUpdatedOn>
+      <completedOn>2016-12-13 02:27:28.0</completedOn>
+      <stateDetails>
+         <GUID>43887ADF6BC51C7FE053BA74F00ADD9A</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4388552808426219E053BA74F00A2F75</parentGUID>
+         <innerGUID>43887ADF6CAC1C7FE053BA74F00ADD9A</innerGUID>
+         <startedOn>2016-12-13 02:22:45.0</startedOn>
+         <lastUpdatedOn>2016-12-13 02:27:28.0</lastUpdatedOn>
+         <completedOn>2016-12-13 02:27:28.0</completedOn>
+      </stateDetails>
+   </step>
+   <step isEnabled="true" name="RunStandbyMountScripts" stepType="">
+      <GUID>RunStandbyMountScripts</GUID>
+      <errorModeString>stop</errorModeString>
+      <typeStep>Step</typeStep>
+      <status></status>
+      <startedOn>2016-12-13 02:27:30.0</startedOn>
+      <lastUpdatedOn>2016-12-13 02:29:12.0</lastUpdatedOn>
+      <completedOn>2016-12-13 02:29:12.0</completedOn>
+      <stateDetails>
+         <GUID>43887ADF81D51C7FE053BA74F00ADD9A</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4388552808426219E053BA74F00A2F75</parentGUID>
+         <innerGUID>43887ADF82F41C7FE053BA74F00ADD9A</innerGUID>
+         <startedOn>2016-12-13 02:27:30.0</startedOn>
+         <lastUpdatedOn>2016-12-13 02:29:12.0</lastUpdatedOn>
+         <completedOn>2016-12-13 02:29:12.0</completedOn>
+      </stateDetails>
+   </step>
+   <step isEnabled="true" name="Switchover_Database_Parent" stepType="Rolling Phase">
+      <GUID>Switchover_Database_Parent</GUID>
+      <errorModeString>stop</errorModeString>
+      <typeStep>Phase Step</typeStep>
+      <status></status>
+      <startedOn>2016-12-13 02:29:13.0</startedOn>
+      <lastUpdatedOn>2016-12-13 02:32:53.0</lastUpdatedOn>
+      <completedOn>2016-12-13 02:32:53.0</completedOn>
+      <stateDetails>
+         <GUID>4387DCD98D9F08B5E053BA74F00A5135</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4388552808426219E053BA74F00A2F75</parentGUID>
+         <startedOn>2016-12-13 02:29:13.0</startedOn>
+         <lastUpdatedOn>2016-12-13 02:32:53.0</lastUpdatedOn>
+         <completedOn>2016-12-13 02:32:53.0</completedOn>
+      </stateDetails>
+      <step isEnabled="true" name="UPDATE_TARGET_LIST_SWITCHOVER_DATABASE" stepType="Computational Step">
+         <GUID>UPDATE_TARGET_LIST_SWITCHOVER_DATABASE</GUID>
+         <parentGUID>Switchover_Database_Parent</parentGUID>
+         <errorModeString>stop</errorModeString>
+         <typeStep>Step</typeStep>
+         <status></status>
+         <startedOn>2016-12-13 02:29:13.0</startedOn>
+         <lastUpdatedOn>2016-12-13 02:29:23.0</lastUpdatedOn>
+         <completedOn>2016-12-13 02:29:23.0</completedOn>
+         <stateDetails>
+            <GUID>4387DCD98EBB08B5E053BA74F00A5135</GUID>
+            <status>COMPLETED</status>
+            <parentGUID>4387DCD98EBA08B5E053BA74F00A5135</parentGUID>
+            <startedOn>2016-12-13 02:29:13.0</startedOn>
+            <lastUpdatedOn>2016-12-13 02:29:23.0</lastUpdatedOn>
+            <completedOn>2016-12-13 02:29:23.0</completedOn>
+            <phaseDetails>
+               <targetName>Execution Group : 1</targetName>
+               <targetType>host</targetType>
+            </phaseDetails>
+         </stateDetails>
+      </step>
+      <step isEnabled="true" name="Switchover_Database" stepType="">
+         <GUID>Switchover_Database</GUID>
+         <parentGUID>Switchover_Database_Parent</parentGUID>
+         <errorModeString>stop</errorModeString>
+         <typeStep>Phase Step</typeStep>
+         <status></status>
+         <startedOn>2016-12-13 02:29:23.0</startedOn>
+         <lastUpdatedOn>2016-12-13 02:32:53.0</lastUpdatedOn>
+         <completedOn>2016-12-13 02:32:53.0</completedOn>
+         <stateDetails>
+            <GUID>4388565C787F6433E053BA74F00A9F5A</GUID>
+            <status>COMPLETED</status>
+            <parentGUID>4387DCD98EBA08B5E053BA74F00A5135</parentGUID>
+            <startedOn>2016-12-13 02:29:23.0</startedOn>
+            <lastUpdatedOn>2016-12-13 02:32:53.0</lastUpdatedOn>
+            <completedOn>2016-12-13 02:32:53.0</completedOn>
+            <phaseDetails>
+               <targetName>Execution Group : 1</targetName>
+               <targetType>host</targetType>
+            </phaseDetails>
+         </stateDetails>
+         <step isEnabled="true" name="Switchover_Database_step" stepType="Directive Step">
+            <GUID>Switchover_Database_step</GUID>
+            <parentGUID>Switchover_Database</parentGUID>
+            <errorModeString>${target.errorMode}</errorModeString>
+            <typeStep>Step</typeStep>
+            <status></status>
+            <startedOn>2016-12-13 02:29:23.0</startedOn>
+            <lastUpdatedOn>2016-12-13 02:32:53.0</lastUpdatedOn>
+            <completedOn>2016-12-13 02:32:53.0</completedOn>
+            <stateDetails>
+               <GUID>4388565C78836433E053BA74F00A9F5A</GUID>
+               <status>COMPLETED</status>
+               <parentGUID>4388565C78806433E053BA74F00A9F5A</parentGUID>
+               <startedOn>2016-12-13 02:29:23.0</startedOn>
+               <lastUpdatedOn>2016-12-13 02:31:59.0</lastUpdatedOn>
+               <completedOn>2016-12-13 02:31:59.0</completedOn>
+               <phaseDetails>
+                  <targetName>Execution Group : 1 - ucldx0001.usdv1.oraclecorp.com</targetName>
+                  <targetType>host</targetType>
+               </phaseDetails>
+            </stateDetails>
+            <stateDetails>
+               <GUID>4388565C788B6433E053BA74F00A9F5A</GUID>
+               <status>COMPLETED</status>
+               <parentGUID>4388565C78816433E053BA74F00A9F5A</parentGUID>
+               <startedOn>2016-12-13 02:29:23.0</startedOn>
+               <lastUpdatedOn>2016-12-13 02:32:53.0</lastUpdatedOn>
+               <completedOn>2016-12-13 02:32:53.0</completedOn>
+               <phaseDetails>
+                  <targetName>Execution Group : 1 - ucldx0001.usdv1.oraclecorp.com</targetName>
+                  <targetType>host</targetType>
+               </phaseDetails>
+            </stateDetails>
+            <stateDetails>
+               <GUID>4388565C78936433E053BA74F00A9F5A</GUID>
+               <status>COMPLETED</status>
+               <parentGUID>4388565C78826433E053BA74F00A9F5A</parentGUID>
+               <startedOn>2016-12-13 02:29:24.0</startedOn>
+               <lastUpdatedOn>2016-12-13 02:32:00.0</lastUpdatedOn>
+               <completedOn>2016-12-13 02:32:00.0</completedOn>
+               <phaseDetails>
+                  <targetName>Execution Group : 1 - ucldx0001.usdv1.oraclecorp.com</targetName>
+                  <targetType>host</targetType>
+               </phaseDetails>
+            </stateDetails>
+         </step>
+      </step>
+   </step>
+   <step isEnabled="true" name="UPDATE_TARGET_LIST_SWITCHOVER_DATABASE" stepType="Computational Step">
+      <GUID>UPDATE_TARGET_LIST_SWITCHOVER_DATABASE</GUID>
+      <parentGUID>Switchover_Database_Parent</parentGUID>
+      <errorModeString>stop</errorModeString>
+      <typeStep>Step</typeStep>
+      <status></status>
+      <startedOn>2016-12-13 02:29:13.0</startedOn>
+      <lastUpdatedOn>2016-12-13 02:29:23.0</lastUpdatedOn>
+      <completedOn>2016-12-13 02:29:23.0</completedOn>
+      <stateDetails>
+         <GUID>4387DCD98EBB08B5E053BA74F00A5135</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4387DCD98EBA08B5E053BA74F00A5135</parentGUID>
+         <startedOn>2016-12-13 02:29:13.0</startedOn>
+         <lastUpdatedOn>2016-12-13 02:29:23.0</lastUpdatedOn>
+         <completedOn>2016-12-13 02:29:23.0</completedOn>
+         <jobDetails>
+            <jobID>4387DCD98EBC08B5E053BA74F00A5135</jobID>
+            <jobExecID>4387DCD98EBF08B5E053BA74F00A5135</jobExecID>
+            <jobName>UPDATE_TARGET_LIST_SWITCHOV...._4387DCD98EBB08B5E053BA74F00A5135</jobName>
+            <jobType>PAFComputeStepJob</jobType>
+            <jobStatus>Completed</jobStatus>
+            <jobStartTime>2016-12-13 10:29:13.0 GMT</jobStartTime>
+            <jobStep>
+               <name>evaluateExpression</name>
+               <command>PAFExecuteComputeStepCommand</command>
+               <status>Completed</status>
+               <output>Step: Prepare Execution Group has been executed successfully.</output>
+            </jobStep>
+         </jobDetails>
+         <phaseDetails>
+            <targetName>Execution Group : 1</targetName>
+            <targetType>host</targetType>
+         </phaseDetails>
+      </stateDetails>
+   </step>
+   <step isEnabled="true" name="Switchover_Database" stepType="">
+      <GUID>Switchover_Database</GUID>
+      <parentGUID>Switchover_Database_Parent</parentGUID>
+      <errorModeString>stop</errorModeString>
+      <typeStep>Phase Step</typeStep>
+      <status></status>
+      <startedOn>2016-12-13 02:29:23.0</startedOn>
+      <lastUpdatedOn>2016-12-13 02:32:53.0</lastUpdatedOn>
+      <completedOn>2016-12-13 02:32:53.0</completedOn>
+      <stateDetails>
+         <GUID>4388565C787F6433E053BA74F00A9F5A</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4387DCD98EBA08B5E053BA74F00A5135</parentGUID>
+         <startedOn>2016-12-13 02:29:23.0</startedOn>
+         <lastUpdatedOn>2016-12-13 02:32:53.0</lastUpdatedOn>
+         <completedOn>2016-12-13 02:32:53.0</completedOn>
+         <phaseDetails>
+            <targetName>Execution Group : 1</targetName>
+            <targetType>host</targetType>
+         </phaseDetails>
+      </stateDetails>
+      <step isEnabled="true" name="Switchover_Database_step" stepType="Directive Step">
+         <GUID>Switchover_Database_step</GUID>
+         <parentGUID>Switchover_Database</parentGUID>
+         <errorModeString>${target.errorMode}</errorModeString>
+         <typeStep>Step</typeStep>
+         <status></status>
+         <startedOn>2016-12-13 02:29:23.0</startedOn>
+         <lastUpdatedOn>2016-12-13 02:32:53.0</lastUpdatedOn>
+         <completedOn>2016-12-13 02:32:53.0</completedOn>
+         <stateDetails>
+            <GUID>4388565C78836433E053BA74F00A9F5A</GUID>
+            <status>COMPLETED</status>
+            <parentGUID>4388565C78806433E053BA74F00A9F5A</parentGUID>
+            <startedOn>2016-12-13 02:29:23.0</startedOn>
+            <lastUpdatedOn>2016-12-13 02:31:59.0</lastUpdatedOn>
+            <completedOn>2016-12-13 02:31:59.0</completedOn>
+            <phaseDetails>
+               <targetName>Execution Group : 1 - ucldx0001.usdv1.oraclecorp.com</targetName>
+               <targetType>host</targetType>
+            </phaseDetails>
+         </stateDetails>
+         <stateDetails>
+            <GUID>4388565C788B6433E053BA74F00A9F5A</GUID>
+            <status>COMPLETED</status>
+            <parentGUID>4388565C78816433E053BA74F00A9F5A</parentGUID>
+            <startedOn>2016-12-13 02:29:23.0</startedOn>
+            <lastUpdatedOn>2016-12-13 02:32:53.0</lastUpdatedOn>
+            <completedOn>2016-12-13 02:32:53.0</completedOn>
+            <phaseDetails>
+               <targetName>Execution Group : 1 - ucldx0001.usdv1.oraclecorp.com</targetName>
+               <targetType>host</targetType>
+            </phaseDetails>
+         </stateDetails>
+         <stateDetails>
+            <GUID>4388565C78936433E053BA74F00A9F5A</GUID>
+            <status>COMPLETED</status>
+            <parentGUID>4388565C78826433E053BA74F00A9F5A</parentGUID>
+            <startedOn>2016-12-13 02:29:24.0</startedOn>
+            <lastUpdatedOn>2016-12-13 02:32:00.0</lastUpdatedOn>
+            <completedOn>2016-12-13 02:32:00.0</completedOn>
+            <phaseDetails>
+               <targetName>Execution Group : 1 - ucldx0001.usdv1.oraclecorp.com</targetName>
+               <targetType>host</targetType>
+            </phaseDetails>
+         </stateDetails>
+      </step>
+   </step>
+   <step isEnabled="true" name="Switchover_Database_step" stepType="Directive Step">
+      <GUID>Switchover_Database_step</GUID>
+      <parentGUID>Switchover_Database</parentGUID>
+      <errorModeString>${target.errorMode}</errorModeString>
+      <typeStep>Step</typeStep>
+      <status></status>
+      <startedOn>2016-12-13 02:29:23.0</startedOn>
+      <lastUpdatedOn>2016-12-13 02:32:53.0</lastUpdatedOn>
+      <completedOn>2016-12-13 02:32:53.0</completedOn>
+      <stateDetails>
+         <GUID>4388565C78836433E053BA74F00A9F5A</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4388565C78806433E053BA74F00A9F5A</parentGUID>
+         <startedOn>2016-12-13 02:29:23.0</startedOn>
+         <lastUpdatedOn>2016-12-13 02:31:59.0</lastUpdatedOn>
+         <completedOn>2016-12-13 02:31:59.0</completedOn>
+         <jobDetails>
+            <jobID>4388565C78846433E053BA74F00A9F5A</jobID>
+            <jobExecID>4388565C78876433E053BA74F00A9F5A</jobExecID>
+            <jobName>SWITCHOVER_DATABASE_STEP_4388565C78836433E053BA74F00A9F5A</jobName>
+            <jobType>EntityTransferAndExecute</jobType>
+            <jobStatus>Completed</jobStatus>
+            <jobStartTime>2016-12-13 10:29:24.0 GMT</jobStartTime>
+            <jobStep>
+               <name>inlineTransferExec</name>
+               <command>PAFInlineTransferExec</command>
+               <status>Completed</status>
+               <output>Running in inline mode
+
+
+Ran script successfully
+
+Deleted temporary destination directory /tmp/JOB_4388565C78876433E053BA74F00A9F5A</output>
+            </jobStep>
+            <target hostname="ucldx0001.usdv1.oraclecorp.com" name="ucldx0001.usdv1.oraclecorp.com" type="host"/>
+         </jobDetails>
+         <phaseDetails>
+            <targetName>Execution Group : 1 - ucldx0001.usdv1.oraclecorp.com</targetName>
+            <targetType>host</targetType>
+         </phaseDetails>
+      </stateDetails>
+      <stateDetails>
+         <GUID>4388565C788B6433E053BA74F00A9F5A</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4388565C78816433E053BA74F00A9F5A</parentGUID>
+         <startedOn>2016-12-13 02:29:23.0</startedOn>
+         <lastUpdatedOn>2016-12-13 02:32:53.0</lastUpdatedOn>
+         <completedOn>2016-12-13 02:32:53.0</completedOn>
+         <jobDetails>
+            <jobID>4388565C788C6433E053BA74F00A9F5A</jobID>
+            <jobExecID>4388565C788F6433E053BA74F00A9F5A</jobExecID>
+            <jobName>SWITCHOVER_DATABASE_STEP_4388565C788B6433E053BA74F00A9F5A</jobName>
+            <jobType>EntityTransferAndExecute</jobType>
+            <jobStatus>Completed</jobStatus>
+            <jobStartTime>2016-12-13 10:29:24.0 GMT</jobStartTime>
+            <jobStep>
+               <name>inlineTransferExec</name>
+               <command>PAFInlineTransferExec</command>
+               <status>Completed</status>
+               <output>Running in inline mode
+
+Compression is enabled
+
+Ran script successfully
+
+Deleted temporary destination directory /tmp/JOB_4388565C788F6433E053BA74F00A9F5A</output>
+            </jobStep>
+            <target hostname="ucldx0001.usdv1.oraclecorp.com" name="ucldx0001.usdv1.oraclecorp.com" type="host"/>
+         </jobDetails>
+         <phaseDetails>
+            <targetName>Execution Group : 1 - ucldx0001.usdv1.oraclecorp.com</targetName>
+            <targetType>host</targetType>
+         </phaseDetails>
+      </stateDetails>
+      <stateDetails>
+         <GUID>4388565C78936433E053BA74F00A9F5A</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4388565C78826433E053BA74F00A9F5A</parentGUID>
+         <startedOn>2016-12-13 02:29:24.0</startedOn>
+         <lastUpdatedOn>2016-12-13 02:32:00.0</lastUpdatedOn>
+         <completedOn>2016-12-13 02:32:00.0</completedOn>
+         <jobDetails>
+            <jobID>4388565C78946433E053BA74F00A9F5A</jobID>
+            <jobExecID>4388565C78976433E053BA74F00A9F5A</jobExecID>
+            <jobName>SWITCHOVER_DATABASE_STEP_4388565C78936433E053BA74F00A9F5A</jobName>
+            <jobType>EntityTransferAndExecute</jobType>
+            <jobStatus>Completed</jobStatus>
+            <jobStartTime>2016-12-13 10:29:24.0 GMT</jobStartTime>
+            <jobStep>
+               <name>inlineTransferExec</name>
+               <command>PAFInlineTransferExec</command>
+               <status>Completed</status>
+               <output>Running in inline mode
+
+Compression is enabled
+
+Ran script successfully
+
+Deleted temporary destination directory /tmp/JOB_4388565C78976433E053BA74F00A9F5A</output>
+            </jobStep>
+            <target hostname="ucldx0001.usdv1.oraclecorp.com" name="ucldx0001.usdv1.oraclecorp.com" type="host"/>
+         </jobDetails>
+         <phaseDetails>
+            <targetName>Execution Group : 1 - ucldx0001.usdv1.oraclecorp.com</targetName>
+            <targetType>host</targetType>
+         </phaseDetails>
+      </stateDetails>
+   </step>
+   <step isEnabled="true" name="RunStandbyPreScripts" stepType="">
+      <GUID>RunStandbyPreScripts</GUID>
+      <errorModeString>stop</errorModeString>
+      <typeStep>Step</typeStep>
+      <status></status>
+      <startedOn>2016-12-13 02:32:55.0</startedOn>
+      <lastUpdatedOn>2016-12-13 03:18:34.0</lastUpdatedOn>
+      <completedOn>2016-12-13 03:18:34.0</completedOn>
+      <stateDetails>
+         <GUID>4388565C8E676433E053BA74F00A9F5A</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4388552808426219E053BA74F00A2F75</parentGUID>
+         <innerGUID>4388565C8F896433E053BA74F00A9F5A</innerGUID>
+         <startedOn>2016-12-13 02:32:55.0</startedOn>
+         <lastUpdatedOn>2016-12-13 03:18:34.0</lastUpdatedOn>
+         <completedOn>2016-12-13 03:18:34.0</completedOn>
+      </stateDetails>
+   </step>
+   <step isEnabled="true" name="StartStandby" stepType="">
+      <GUID>StartStandby</GUID>
+      <errorModeString>stop</errorModeString>
+      <typeStep>Step</typeStep>
+      <status></status>
+      <startedOn>2016-12-13 03:18:35.0</startedOn>
+      <lastUpdatedOn>2016-12-13 03:19:26.0</lastUpdatedOn>
+      <completedOn>2016-12-13 03:19:26.0</completedOn>
+      <stateDetails>
+         <GUID>4387DCD9BCF708B5E053BA74F00A5135</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4388552808426219E053BA74F00A2F75</parentGUID>
+         <innerGUID>4387DCD9BE1A08B5E053BA74F00A5135</innerGUID>
+         <startedOn>2016-12-13 03:18:35.0</startedOn>
+         <lastUpdatedOn>2016-12-13 03:19:26.0</lastUpdatedOn>
+         <completedOn>2016-12-13 03:19:26.0</completedOn>
+      </stateDetails>
+   </step>
+   <step isEnabled="true" name="RunStandbyPostScripts" stepType="">
+      <GUID>RunStandbyPostScripts</GUID>
+      <errorModeString>stop</errorModeString>
+      <typeStep>Step</typeStep>
+      <status></status>
+      <startedOn>2016-12-13 03:19:27.0</startedOn>
+      <lastUpdatedOn>2016-12-13 03:21:38.0</lastUpdatedOn>
+      <completedOn>2016-12-13 03:21:38.0</completedOn>
+      <stateDetails>
+         <GUID>438936D007D517CFE053BA74F00A1CEF</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4388552808426219E053BA74F00A2F75</parentGUID>
+         <innerGUID>438936D008FA17CFE053BA74F00A1CEF</innerGUID>
+         <startedOn>2016-12-13 03:19:27.0</startedOn>
+         <lastUpdatedOn>2016-12-13 03:21:38.0</lastUpdatedOn>
+         <completedOn>2016-12-13 03:21:38.0</completedOn>
+      </stateDetails>
+   </step>
+   <step isEnabled="true" name="RunStandbyGlobalPostScripts" stepType="">
+      <GUID>RunStandbyGlobalPostScripts</GUID>
+      <errorModeString>stop</errorModeString>
+      <typeStep>Step</typeStep>
+      <status></status>
+      <startedOn>2016-12-13 03:21:39.0</startedOn>
+      <lastUpdatedOn>2016-12-13 03:21:49.0</lastUpdatedOn>
+      <completedOn>2016-12-13 03:21:49.0</completedOn>
+      <stateDetails>
+         <GUID>438936D010DA17CFE053BA74F00A1CEF</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4388552808426219E053BA74F00A2F75</parentGUID>
+         <innerGUID>438936D011FF17CFE053BA74F00A1CEF</innerGUID>
+         <startedOn>2016-12-13 03:21:39.0</startedOn>
+         <lastUpdatedOn>2016-12-13 03:21:49.0</lastUpdatedOn>
+         <completedOn>2016-12-13 03:21:49.0</completedOn>
+      </stateDetails>
+   </step>
+   <step isEnabled="true" name="UPDATE_SCHEMA_COMP_STEP" stepType="Computational Step">
+      <GUID>UPDATE_SCHEMA_COMP_STEP</GUID>
+      <errorModeString>stop</errorModeString>
+      <typeStep>Step</typeStep>
+      <status></status>
+      <startedOn>2016-12-13 03:21:49.0</startedOn>
+      <lastUpdatedOn>2016-12-13 03:21:59.0</lastUpdatedOn>
+      <completedOn>2016-12-13 03:21:59.0</completedOn>
+      <stateDetails>
+         <GUID>438936D0133517CFE053BA74F00A1CEF</GUID>
+         <status>COMPLETED</status>
+         <parentGUID>4388552808426219E053BA74F00A2F75</parentGUID>
+         <startedOn>2016-12-13 03:21:49.0</startedOn>
+         <lastUpdatedOn>2016-12-13 03:21:59.0</lastUpdatedOn>
+         <completedOn>2016-12-13 03:21:59.0</completedOn>
+         <jobDetails>
+            <jobID>438936D0145617CFE053BA74F00A1CEF</jobID>
+            <jobExecID>438936D0145917CFE053BA74F00A1CEF</jobExecID>
+            <jobName>UPDATE_SCHEMA_COMP_STEP_438936D0133517CFE053BA74F00A1CEF</jobName>
+            <jobType>PAFComputeStepJob</jobType>
+            <jobStatus>Completed</jobStatus>
+            <jobStartTime>2016-12-13 11:21:50.0 GMT</jobStartTime>
+            <jobStep>
+               <name>evaluateExpression</name>
+               <command>PAFExecuteComputeStepCommand</command>
+               <status>Completed</status>
+               <output>Step: Update Site Guard Schema has been executed successfully.</output>
+            </jobStep>
+         </jobDetails>
+      </stateDetails>
+   </step>
+</procedureInstanceStatusDetails>

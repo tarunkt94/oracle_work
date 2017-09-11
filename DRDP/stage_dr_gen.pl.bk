@@ -1,0 +1,64 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use Getopt::Long;
+use Pod::Usage;
+use Cwd;
+
+my ($cmd,$stage,$utils_zip,$fsnadmin,$pillar,$help);
+
+$fsnadmin = 'fsnadmin';
+
+GetOptions('stage=s' => \$stage,
+	   'utils_zip =s ' => \$utils_zip,
+	   'fsnadmin=s' => \$fsnadmin,
+	   'pillar=s' => \$pillar,
+	   'help' => \$help) or pod2usage(2);
+
+if(!($stage && $utils_zip && $pillar ) || $help){
+	pod2usage(2);
+}
+
+die "No file exists at the given utils zip location $utils_zip\n" unless (-f $utils_zip);
+
+my $gen_param_dir = "/$fsnadmin/SDI_FA_DR_DP_TOOLS/$stage/DedicatedIdm/paid/$pillar/";
+
+chdir($gen_param_dir) or die "The directory $gen_param_dir does not exist";
+
+
+if(-d './fa_drdp_conversiontool_master_home/fa_dr_genparams'){
+	chdir('./fa_drdp_conversiontool_master_home') or die "Could not change directory  to $gen_param_dir/fa_drdp_conversiontool_master_home \n";
+	$cmd = 'mv fa_dr_genparams fa_dr_genparams.bak.kt';
+	run_system_cmd($cmd,"Could not create backup directory of fa_dr_genparams\n");
+}
+
+chdir($gen_param_dir);
+$cmd = "mkdir -p fa_drdp_conversiontool_master_home/fa_dr_genparams";
+run_system_cmd($cmd,"The command $cmd returned with errors\n");
+
+chdir('./fa_drdp_conversiontool_master_home/fa_dr_genparams') or die("Couldnt go to $gen_param_dir/fa_drdp_conversiontool_master_home/fa_dr_genparams");
+
+$cmd = "unzip $utils_zip ";
+run_system_cmd($cmd,"Could not unzip the utils zip\n");
+
+
+
+sub run_system_cmd{
+	my ($cmd,$fail_msg) = @_;
+	my $ret_code = system($cmd);
+	die "\n$fail_msg\n" unless $ret_code ==0;
+}
+
+__END__ 
+
+=head1 NAME
+
+apply_patch.pl
+
+=head1 SYNOPSIS
+
+The arguments ORACLE_HOME, version of the DRDP patch and ARU number and patch location are mandatory
+The version should be given in 5 numbers format , ex : 1.8.2.0.0
+
+=cut 

@@ -1,0 +1,2109 @@
+2017,Wed Apr 5  1:53:10     [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/rollback_drdp.pl -patch_loc /scratch/aime/DRDP_1.8.3/25578368 -id 25578368 -oms_oracle_home /scratch/emcc/Middleware1/em132gc;
+                   expect "password:" ;
+                   send "2cool\r";
+                   send "exit\r";
+                   interact'
+2017,Wed Apr 5  1:53:35     [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/rollback_drdp.pl -patch_loc /scratch/aime/DRDP_1.8.3/25578368 -id 25578368 -oms_oracle_home /scratch/emcc/Middleware1/em132gc
+ Warning: Permanently added 'slc05bpl.us.oracle.com,10.241.116.131' (RSA) to the list of known hosts.
+ aime@slc05bpl.us.oracle.com's password: 
+ Rollback has succeeded
+
+2017,Wed Apr 5  2:0:8       [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password  -unzip_loc /scratch/aime/DRDP_1.8.3;
+                   expect "password:" ;
+                   send "2cool\r";
+                   send "exit\r";
+                   interact'
+2017,Wed Apr 5  2:0:10      [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password -unzip_loc /scratch/aime/DRDP_1.8.3
+ Warning: Permanently added 'slc05bpl.us.oracle.com,10.241.116.131' (RSA) to the list of known hosts.
+ aime@slc05bpl.us.oracle.com's password: 
+ Usage:
+     The arguments oms_oracle_home, version of the DRDP patch, ARU number,
+     patch location , unzip location and sysman password for EMGC are
+     mandatory
+ 
+     The version should be given in 5 numbers format , ex : 1.8.2.0.0
+ 
+     Options :
+ 
+     oms_oracle_home : Location of OMS on the host version : THE DRDP version
+     to be installed , give it in 5 numbers format , ex : 1.8.2.0.0 ARU : Bug
+     Number of the patch drdp_zip : location of the DRDP patch
+     oms_sysman_password : password for the sysman account unzip_loc :
+     Location where the DRDP patch should be applied
+ 
+     Ex : apply_patch.pl -oms_oracle_home
+     /scratch/aime/work/CLOUDTOP/Middleware/MIDDLEWARE/EM/oms -version
+     1.8.2.0.0 -ARU 25293218 -drdp_zip
+     /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/161222.0818/lcmservice/
+     dist/zips/opatch/fadr_161222_25293218.zip -oms_sysman_password *** -
+     unzip_loc /scratch/aime/LCMDRPatch/DRDP_1.6.3.4
+ 
+
+2017,Wed Apr 5  2:2:56      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password Welcome1 -unzip_loc /scratch/aime/DRDP_1.8.3;
+                   expect "password:" ;
+                   send "2cool\r";
+                   send "exit\r";
+                   interact'
+2017,Wed Apr 5  2:2:58      [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password Welcome1 -unzip_loc /scratch/aime/DRDP_1.8.3
+ Warning: Permanently added 'slc05bpl.us.oracle.com,10.241.116.131' (RSA) to the list of known hosts.
+ aime@slc05bpl.us.oracle.com's password: 
+ Archive:  /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip
+    creating: ./25578368/
+   inflating: ./25578368/README.txt   
+    creating: ./25578368/files/
+    creating: ./25578368/files/sysman/
+    creating: ./25578368/files/sysman/metadata/
+    creating: ./25578368/files/sysman/metadata/procedures/
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonMTDBCleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRACDBCleanupWrapper.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_PreReq.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MT_PAUSERESUME.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Scale.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DisasterRecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_ScaleClean.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPOD_DP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Replay.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_CONFIG.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonDGConfig.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPODPDB_DP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_SSReconfig.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_SETUPDG.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonDGConfigFinish.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRACDBCleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_CloneClean.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/ReloadDatabaseTargetDP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPOD_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRMANRun.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Clone.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_PauseResumeRep.xml  
+    creating: ./25578368/files/sysman/metadata/swlib/
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/
+  extracting: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/FILELIST_pbu_swlib_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/registerDRDP.sh  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/components/
+  extracting: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/components/fa_dr_component.zip  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_zdt.txt  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_regen_drapi_metadata.txt  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_sync_metadata.txt  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_getZfsRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/dpInputFileGen.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/getZfsRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_drCommonUtil.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/zfsReplicationPauseResume.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/drCommonUtil.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_zfsReplicationPauseResume.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_retrieveRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/extract_component.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/drBlackout.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/retrieveRepServiceStatus.sh  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_properties_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_extract_component.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_fa_disasterrecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_fa_disasterrecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_dr_blackout.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_properties_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_dictionary_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_extract_component.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_dpinputfile_gen.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_dr_blackout.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_dictionary_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_dpinputfile_gen.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/swlib.xml  
+    creating: ./25578368/files/sysman/metadata/jobs/
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/FILELIST_pbu_jobs_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeTnsSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/checkDBTargetHostStatusjob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePodJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeDBPauseResume.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/blkTargetByEmcliJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeReloadDBTraget.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/UmountSharedStorageJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/discoverFADatabaseTargetsJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/verifyInputFileJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_VerifyInputVersion.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/drCreateStandbySnapshot.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSqlOnPrimaryStandbyDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/drCreatePhysicalStandby.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeEmcli.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeBlackoutLsnr.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeCommonSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSetupDG.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/blkLsnrJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/UmountSharesJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeScript.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/dpLevelLockJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/sgLCMWrapperGenjob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/dumpDRDPInputFileJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_blkTargetByEmcliJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePdbMigrationJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeSqlOnPrimaryStandbyDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/createStandbyFromBackup.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executePluginJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeTDECheckJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/checkSourceListenerJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executePrerequisiteJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/modifyNamedCredentialJob.xml  
+    creating: ./25578368/etc/
+    creating: ./25578368/etc/config/
+   inflating: ./25578368/etc/config/inventory.xml  
+   inflating: ./25578368/etc/config/actions.xml  
+ Could not go to 1/25578368
+
+2017,Wed Apr 5  2:4:5       [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password Welcome1 -unzip_loc /scratch/aime/DRDP_1.8.3;
+                   expect "password:" ;
+                   send "2cool\r";
+                   send "exit\r";
+                   interact'
+2017,Wed Apr 5  2:5:0      [ERROR] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password Welcome1 -unzip_loc /scratch/aime/DRDP_1.8.3
+ Warning: Permanently added 'slc05bpl.us.oracle.com,10.241.116.131' (RSA) to the list of known hosts.
+ aime@slc05bpl.us.oracle.com's password: 
+ Archive:  /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip
+    creating: ./25578368/
+   inflating: ./25578368/README.txt   
+    creating: ./25578368/files/
+    creating: ./25578368/files/sysman/
+    creating: ./25578368/files/sysman/metadata/
+    creating: ./25578368/files/sysman/metadata/procedures/
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonMTDBCleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRACDBCleanupWrapper.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_PreReq.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MT_PAUSERESUME.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Scale.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DisasterRecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_ScaleClean.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPOD_DP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Replay.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_CONFIG.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonDGConfig.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPODPDB_DP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_SSReconfig.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_SETUPDG.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonDGConfigFinish.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRACDBCleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_CloneClean.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/ReloadDatabaseTargetDP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPOD_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRMANRun.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Clone.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_PauseResumeRep.xml  
+    creating: ./25578368/files/sysman/metadata/swlib/
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/
+  extracting: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/FILELIST_pbu_swlib_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/registerDRDP.sh  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/components/
+  extracting: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/components/fa_dr_component.zip  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_zdt.txt  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_regen_drapi_metadata.txt  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_sync_metadata.txt  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_getZfsRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/dpInputFileGen.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/getZfsRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_drCommonUtil.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/zfsReplicationPauseResume.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/drCommonUtil.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_zfsReplicationPauseResume.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_retrieveRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/extract_component.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/drBlackout.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/retrieveRepServiceStatus.sh  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_properties_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_extract_component.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_fa_disasterrecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_fa_disasterrecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_dr_blackout.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_properties_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_dictionary_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_extract_component.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_dpinputfile_gen.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_dr_blackout.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_dictionary_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_dpinputfile_gen.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/swlib.xml  
+    creating: ./25578368/files/sysman/metadata/jobs/
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/FILELIST_pbu_jobs_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeTnsSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/checkDBTargetHostStatusjob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePodJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeDBPauseResume.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/blkTargetByEmcliJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeReloadDBTraget.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/UmountSharedStorageJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/discoverFADatabaseTargetsJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/verifyInputFileJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_VerifyInputVersion.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/drCreateStandbySnapshot.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSqlOnPrimaryStandbyDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/drCreatePhysicalStandby.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeEmcli.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeBlackoutLsnr.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeCommonSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSetupDG.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/blkLsnrJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/UmountSharesJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeScript.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/dpLevelLockJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/sgLCMWrapperGenjob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/dumpDRDPInputFileJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_blkTargetByEmcliJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePdbMigrationJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeSqlOnPrimaryStandbyDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/createStandbyFromBackup.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executePluginJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeTDECheckJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/checkSourceListenerJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executePrerequisiteJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/modifyNamedCredentialJob.xml  
+    creating: ./25578368/etc/
+    creating: ./25578368/etc/config/
+   inflating: ./25578368/etc/config/inventory.xml  
+   inflating: ./25578368/etc/config/actions.xml  
+ 
+ Oracle Interim Patch Installer version 13.8.0.0.0
+ Copyright (c) 2017, Oracle Corporation.  All rights reserved.
+ 
+ 
+ Oracle Home       : /scratch/emcc/Middleware1/em132gc
+ Central Inventory : /scratch/emcc/oraInventory
+    from           : /scratch/emcc/Middleware1/em132gc/oraInst.loc
+ OPatch version    : 13.8.0.0.0
+ OUI version       : 13.8.0.0.0
+ Log file location : /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_04_11/apply2017-04-05_09-04-06AM_1.log
+ 
+ 
+ OPatch detects the Middleware Home as "/scratch/emcc/Middleware1/em132gc"
+ 
+ Verifying environment and performing prerequisite checks...
+ OPatch continues with these patches:   25578368  
+ 
+ Do you want to proceed? [y|n]
+ User Responded with: Y
+ All checks passed.
+ Backing up files...
+ Applying interim patch '25578368' to OH '/scratch/emcc/Middleware1/em132gc'
+ ApplySession: Optional component(s) [ oracle.sysman.oms.core, 12.1.0.3.0 ] , [ oracle.sysman.oms.core, 12.1.0.5.0 ] , [ oracle.sysman.oms.core, 12.1.0.4.0 ]  not present in the Oracle Home or a higher version is found.
+ 
+ Patching component oracle.sysman.top.oms, 13.2.0.0.0...
+ Patch 25578368 successfully applied.
+ Log file location: /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_04_11/apply2017-04-05_09-04-06AM_1.log
+ 
+ OPatch succeeded.
+ 
+ OPatch has succeeded
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service swlib -core -file_list /scratch/emcc/Middleware1/em132gc/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/FILELIST_pbu_swlib_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ Total 0 errors, 8 warnings. 0 entities imported.
+ Metadata registration successful
+ 
+ 
+ Registration of service successful
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service  procedures -core -file_list/scratch/emcc/Middleware1/em132gc/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ Found unrecognized argument: -file_list/scratch/emcc/Middleware1/em132gc/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery
+ Invalid arguments!
+ EM-04034: Usage: 
+       emctl register oms metadata -service <Metadata Service Id> (-file <Metadata Instance file> | -file_list <File containing list of files to register>)  (-core | -pluginId <Plug-in Id>) [-sysman_pwd <sysman password>] 
+ 
+       emctl deregister oms metadata -service <Metadata Service Id> (-file <Metadata Instance file> && (-old_file <File containing previous metadata instances> | -no_old_file <in case there are no previous metadata instances>)) | -file_list <File containing list of ';' separeated new and old files to deregister>) (-core | -pluginId <Plug-in Id>) [-sysman_pwd <sysman password>] 
+ 
+ 
+ 
+ 
+ Registration of service successful
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service jobTypes -core -file_list/scratch/emcc/Middleware1/em132gc/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/FILELIST_pbu_jobs_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ Found unrecognized argument: -file_list/scratch/emcc/Middleware1/em132gc/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/FILELIST_pbu_jobs_core_disasterrecovery
+ Invalid arguments!
+ EM-04034: Usage: 
+       emctl register oms metadata -service <Metadata Service Id> (-file <Metadata Instance file> | -file_list <File containing list of files to register>)  (-core | -pluginId <Plug-in Id>) [-sysman_pwd <sysman password>] 
+ 
+       emctl deregister oms metadata -service <Metadata Service Id> (-file <Metadata Instance file> && (-old_file <File containing previous metadata instances> | -no_old_file <in case there are no previous metadata instances>)) | -file_list <File containing list of ';' separeated new and old files to deregister>) (-core | -pluginId <Plug-in Id>) [-sysman_pwd <sysman password>] 
+ 
+ 
+ 
+ 
+ Registration of service successful
+ Registered the services and applied the patch on EM, will stage fa_dr_genparams now
+
+2017,Wed Apr 5  2:9:13      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password Welcome1 -unzip_loc /scratch/aime/DRDP_1.8.3;
+                   expect "password:" ;
+                   send "2cool\r";
+                   send "exit\r";
+                   interact'
+2017,Wed Apr 5  2:9:22     [ERROR] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password Welcome1 -unzip_loc /scratch/aime/DRDP_1.8.3
+ Warning: Permanently added 'slc05bpl.us.oracle.com,10.241.116.131' (RSA) to the list of known hosts.
+ aime@slc05bpl.us.oracle.com's password: 
+ Archive:  /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip
+    creating: ./25578368/
+   inflating: ./25578368/README.txt   
+    creating: ./25578368/files/
+    creating: ./25578368/files/sysman/
+    creating: ./25578368/files/sysman/metadata/
+    creating: ./25578368/files/sysman/metadata/procedures/
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonMTDBCleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRACDBCleanupWrapper.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_PreReq.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MT_PAUSERESUME.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Scale.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DisasterRecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_ScaleClean.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPOD_DP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Replay.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_CONFIG.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonDGConfig.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPODPDB_DP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_SSReconfig.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_SETUPDG.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonDGConfigFinish.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRACDBCleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_CloneClean.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/ReloadDatabaseTargetDP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPOD_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRMANRun.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Clone.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_PauseResumeRep.xml  
+    creating: ./25578368/files/sysman/metadata/swlib/
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/
+  extracting: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/FILELIST_pbu_swlib_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/registerDRDP.sh  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/components/
+  extracting: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/components/fa_dr_component.zip  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_zdt.txt  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_regen_drapi_metadata.txt  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_sync_metadata.txt  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_getZfsRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/dpInputFileGen.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/getZfsRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_drCommonUtil.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/zfsReplicationPauseResume.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/drCommonUtil.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_zfsReplicationPauseResume.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_retrieveRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/extract_component.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/drBlackout.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/retrieveRepServiceStatus.sh  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_properties_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_extract_component.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_fa_disasterrecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_fa_disasterrecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_dr_blackout.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_properties_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_dictionary_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_extract_component.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_dpinputfile_gen.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_dr_blackout.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_dictionary_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_dpinputfile_gen.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/swlib.xml  
+    creating: ./25578368/files/sysman/metadata/jobs/
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/FILELIST_pbu_jobs_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeTnsSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/checkDBTargetHostStatusjob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePodJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeDBPauseResume.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/blkTargetByEmcliJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeReloadDBTraget.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/UmountSharedStorageJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/discoverFADatabaseTargetsJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/verifyInputFileJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_VerifyInputVersion.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/drCreateStandbySnapshot.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSqlOnPrimaryStandbyDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/drCreatePhysicalStandby.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeEmcli.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeBlackoutLsnr.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeCommonSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSetupDG.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/blkLsnrJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/UmountSharesJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeScript.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/dpLevelLockJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/sgLCMWrapperGenjob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/dumpDRDPInputFileJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_blkTargetByEmcliJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePdbMigrationJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeSqlOnPrimaryStandbyDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/createStandbyFromBackup.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executePluginJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeTDECheckJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/checkSourceListenerJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executePrerequisiteJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/modifyNamedCredentialJob.xml  
+    creating: ./25578368/etc/
+    creating: ./25578368/etc/config/
+   inflating: ./25578368/etc/config/inventory.xml  
+   inflating: ./25578368/etc/config/actions.xml  
+ OPatch Session completed with warnings.
+ 
+ Oracle Interim Patch Installer version 13.8.0.0.0
+ Copyright (c) 2017, Oracle Corporation.  All rights reserved.
+ 
+ 
+ Oracle Home       : /scratch/emcc/Middleware1/em132gc
+ Central Inventory : /scratch/emcc/oraInventory
+    from           : /scratch/emcc/Middleware1/em132gc/oraInst.loc
+ OPatch version    : 13.8.0.0.0
+ OUI version       : 13.8.0.0.0
+ Log file location : /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_09_17/apply2017-04-05_09-09-14AM_1.log
+ 
+ 
+ OPatch detects the Middleware Home as "/scratch/emcc/Middleware1/em132gc"
+ 
+ Verifying environment and performing prerequisite checks...
+ 
+ The following patch(es) are duplicate patches with patches installed in the Oracle Home.
+  [ 25578368]
+ You have already installed same patch(es) with same UPI(s) or same version(s).
+ These patch(es) will be skipped.
+ 
+ 
+ Log file location: /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_09_17/apply2017-04-05_09-09-14AM_1.log
+ 
+ OPatch completed with warnings.
+ 
+ OPatch has failed
+  Look into it
+
+2017,Wed Apr 5  2:10:21     [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/rollback_drdp.pl -patch_loc /scratch/aime/DRDP_1.8.3/25578368 -id 25578368 -oms_oracle_home /scratch/emcc/Middleware1/em132gc;
+                   expect "password:" ;
+                   send "2cool\r";
+                   send "exit\r";
+                   interact'
+2017,Wed Apr 5  2:10:39     [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/rollback_drdp.pl -patch_loc /scratch/aime/DRDP_1.8.3/25578368 -id 25578368 -oms_oracle_home /scratch/emcc/Middleware1/em132gc
+ Warning: Permanently added 'slc05bpl.us.oracle.com,10.241.116.131' (RSA) to the list of known hosts.
+ aime@slc05bpl.us.oracle.com's password: 
+ 
+ Oracle Interim Patch Installer version 13.8.0.0.0
+ Copyright (c) 2017, Oracle Corporation.  All rights reserved.
+ 
+ 
+ Oracle Home       : /scratch/emcc/Middleware1/em132gc
+ Central Inventory : /scratch/emcc/oraInventory
+    from           : /scratch/emcc/Middleware1/em132gc/oraInst.loc
+ OPatch version    : 13.8.0.0.0
+ OUI version       : 13.8.0.0.0
+ Log file location : /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_10_25/rollback2017-04-05_09-10-22AM_1.log
+ 
+ 
+ OPatch detects the Middleware Home as "/scratch/emcc/Middleware1/em132gc"
+ 
+ RollbackSession rolling back interim patch '25578368' from OH '/scratch/emcc/Middleware1/em132gc'
+ 
+ Patching component oracle.sysman.top.oms, 13.2.0.0.0...
+ RollbackSession removing interim patch '25578368' from inventory
+ Log file location: /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_10_25/rollback2017-04-05_09-10-22AM_1.log
+ 
+ OPatch succeeded.
+ 
+ Rollback has succeeded
+
+2017,Wed Apr 5  2:13:21     [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password Welcome1 -unzip_loc /scratch/aime/DRDP_1.8.3;
+                   expect "password:" ;
+                   send "2cool\r";
+                   send "exit\r";
+                   interact'
+2017,Wed Apr 5  2:13:48    [ERROR] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password Welcome1 -unzip_loc /scratch/aime/DRDP_1.8.3
+ Warning: Permanently added 'slc05bpl.us.oracle.com,10.241.116.131' (RSA) to the list of known hosts.
+ aime@slc05bpl.us.oracle.com's password: 
+ Archive:  /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip
+    creating: ./25578368/
+   inflating: ./25578368/README.txt   
+    creating: ./25578368/files/
+    creating: ./25578368/files/sysman/
+    creating: ./25578368/files/sysman/metadata/
+    creating: ./25578368/files/sysman/metadata/procedures/
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonMTDBCleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRACDBCleanupWrapper.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_PreReq.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MT_PAUSERESUME.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Scale.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DisasterRecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_ScaleClean.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPOD_DP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Replay.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_CONFIG.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonDGConfig.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPODPDB_DP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_SSReconfig.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_SETUPDG.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonDGConfigFinish.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRACDBCleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_CloneClean.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/ReloadDatabaseTargetDP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPOD_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRMANRun.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Clone.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_PauseResumeRep.xml  
+    creating: ./25578368/files/sysman/metadata/swlib/
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/
+  extracting: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/FILELIST_pbu_swlib_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/registerDRDP.sh  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/components/
+  extracting: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/components/fa_dr_component.zip  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_zdt.txt  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_regen_drapi_metadata.txt  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_sync_metadata.txt  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_getZfsRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/dpInputFileGen.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/getZfsRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_drCommonUtil.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/zfsReplicationPauseResume.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/drCommonUtil.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_zfsReplicationPauseResume.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_retrieveRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/extract_component.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/drBlackout.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/retrieveRepServiceStatus.sh  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_properties_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_extract_component.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_fa_disasterrecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_fa_disasterrecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_dr_blackout.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_properties_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_dictionary_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_extract_component.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_dpinputfile_gen.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_dr_blackout.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_dictionary_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_dpinputfile_gen.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/swlib.xml  
+    creating: ./25578368/files/sysman/metadata/jobs/
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/FILELIST_pbu_jobs_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeTnsSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/checkDBTargetHostStatusjob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePodJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeDBPauseResume.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/blkTargetByEmcliJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeReloadDBTraget.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/UmountSharedStorageJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/discoverFADatabaseTargetsJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/verifyInputFileJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_VerifyInputVersion.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/drCreateStandbySnapshot.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSqlOnPrimaryStandbyDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/drCreatePhysicalStandby.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeEmcli.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeBlackoutLsnr.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeCommonSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSetupDG.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/blkLsnrJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/UmountSharesJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeScript.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/dpLevelLockJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/sgLCMWrapperGenjob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/dumpDRDPInputFileJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_blkTargetByEmcliJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePdbMigrationJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeSqlOnPrimaryStandbyDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/createStandbyFromBackup.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executePluginJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeTDECheckJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/checkSourceListenerJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executePrerequisiteJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/modifyNamedCredentialJob.xml  
+    creating: ./25578368/etc/
+    creating: ./25578368/etc/config/
+   inflating: ./25578368/etc/config/inventory.xml  
+   inflating: ./25578368/etc/config/actions.xml  
+ 
+ Oracle Interim Patch Installer version 13.8.0.0.0
+ Copyright (c) 2017, Oracle Corporation.  All rights reserved.
+ 
+ 
+ Oracle Home       : /scratch/emcc/Middleware1/em132gc
+ Central Inventory : /scratch/emcc/oraInventory
+    from           : /scratch/emcc/Middleware1/em132gc/oraInst.loc
+ OPatch version    : 13.8.0.0.0
+ OUI version       : 13.8.0.0.0
+ Log file location : /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_13_25/apply2017-04-05_09-13-22AM_1.log
+ 
+ 
+ OPatch detects the Middleware Home as "/scratch/emcc/Middleware1/em132gc"
+ 
+ Verifying environment and performing prerequisite checks...
+ OPatch continues with these patches:   25578368  
+ 
+ Do you want to proceed? [y|n]
+ User Responded with: Y
+ All checks passed.
+ Backing up files...
+ Applying interim patch '25578368' to OH '/scratch/emcc/Middleware1/em132gc'
+ ApplySession: Optional component(s) [ oracle.sysman.oms.core, 12.1.0.3.0 ] , [ oracle.sysman.oms.core, 12.1.0.5.0 ] , [ oracle.sysman.oms.core, 12.1.0.4.0 ]  not present in the Oracle Home or a higher version is found.
+ 
+ Patching component oracle.sysman.top.oms, 13.2.0.0.0...
+ Patch 25578368 successfully applied.
+ Log file location: /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_13_25/apply2017-04-05_09-13-22AM_1.log
+ 
+ OPatch succeeded.
+ 
+ OPatch has succeeded
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service swlib -core -file_list /scratch/emcc/Middleware1/em132gc/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/FILELIST_pbu_swlib_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ Total 0 errors, 8 warnings. 0 entities imported.
+ Metadata registration successful
+ 
+ 
+ Registration of service successful
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service  procedures -core -file_list/scratch/emcc/Middleware1/em132gc/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ Found unrecognized argument: -file_list/scratch/emcc/Middleware1/em132gc/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery
+ Invalid arguments!
+ EM-04034: Usage: 
+       emctl register oms metadata -service <Metadata Service Id> (-file <Metadata Instance file> | -file_list <File containing list of files to register>)  (-core | -pluginId <Plug-in Id>) [-sysman_pwd <sysman password>] 
+ 
+       emctl deregister oms metadata -service <Metadata Service Id> (-file <Metadata Instance file> && (-old_file <File containing previous metadata instances> | -no_old_file <in case there are no previous metadata instances>)) | -file_list <File containing list of ';' separeated new and old files to deregister>) (-core | -pluginId <Plug-in Id>) [-sysman_pwd <sysman password>] 
+ 
+ 
+ 
+ 
+ Registration of service successful
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service jobTypes -core -file_list/scratch/emcc/Middleware1/em132gc/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/FILELIST_pbu_jobs_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ Found unrecognized argument: -file_list/scratch/emcc/Middleware1/em132gc/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/FILELIST_pbu_jobs_core_disasterrecovery
+ Invalid arguments!
+ EM-04034: Usage: 
+       emctl register oms metadata -service <Metadata Service Id> (-file <Metadata Instance file> | -file_list <File containing list of files to register>)  (-core | -pluginId <Plug-in Id>) [-sysman_pwd <sysman password>] 
+ 
+       emctl deregister oms metadata -service <Metadata Service Id> (-file <Metadata Instance file> && (-old_file <File containing previous metadata instances> | -no_old_file <in case there are no previous metadata instances>)) | -file_list <File containing list of ';' separeated new and old files to deregister>) (-core | -pluginId <Plug-in Id>) [-sysman_pwd <sysman password>] 
+ 
+ 
+ 
+ 
+ Registration of service successful
+ Registered the services and applied the patch on EM, will stage fa_dr_genparams now
+
+2017,Wed Apr 5  2:15:6      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/rollback_drdp.pl -patch_loc /scratch/aime/DRDP_1.8.3/25578368 -id 25578368 -oms_oracle_home /scratch/emcc/Middleware1/em132gc;
+                   expect "password:" ;
+                   send "2cool\r";
+                   send "exit\r";
+                   interact'
+2017,Wed Apr 5  2:15:23     [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/rollback_drdp.pl -patch_loc /scratch/aime/DRDP_1.8.3/25578368 -id 25578368 -oms_oracle_home /scratch/emcc/Middleware1/em132gc
+ Warning: Permanently added 'slc05bpl.us.oracle.com,10.241.116.131' (RSA) to the list of known hosts.
+ aime@slc05bpl.us.oracle.com's password: 
+ 
+ Oracle Interim Patch Installer version 13.8.0.0.0
+ Copyright (c) 2017, Oracle Corporation.  All rights reserved.
+ 
+ 
+ Oracle Home       : /scratch/emcc/Middleware1/em132gc
+ Central Inventory : /scratch/emcc/oraInventory
+    from           : /scratch/emcc/Middleware1/em132gc/oraInst.loc
+ OPatch version    : 13.8.0.0.0
+ OUI version       : 13.8.0.0.0
+ Log file location : /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_15_10/rollback2017-04-05_09-15-07AM_1.log
+ 
+ 
+ OPatch detects the Middleware Home as "/scratch/emcc/Middleware1/em132gc"
+ 
+ RollbackSession rolling back interim patch '25578368' from OH '/scratch/emcc/Middleware1/em132gc'
+ 
+ Patching component oracle.sysman.top.oms, 13.2.0.0.0...
+ RollbackSession removing interim patch '25578368' from inventory
+ Log file location: /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_15_10/rollback2017-04-05_09-15-07AM_1.log
+ 
+ OPatch succeeded.
+ 
+ Rollback has succeeded
+
+2017,Wed Apr 5  2:15:52     [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password Welcome1 -unzip_loc /scratch/aime/DRDP_1.8.3;
+                   expect "password:" ;
+                   send "2cool\r";
+                   send "exit\r";
+                   interact'
+2017,Wed Apr 5  2:16:18    [ERROR] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password Welcome1 -unzip_loc /scratch/aime/DRDP_1.8.3
+ Warning: Permanently added 'slc05bpl.us.oracle.com,10.241.116.131' (RSA) to the list of known hosts.
+ aime@slc05bpl.us.oracle.com's password: 
+ Archive:  /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip
+    creating: ./25578368/
+   inflating: ./25578368/README.txt   
+    creating: ./25578368/files/
+    creating: ./25578368/files/sysman/
+    creating: ./25578368/files/sysman/metadata/
+    creating: ./25578368/files/sysman/metadata/procedures/
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonMTDBCleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRACDBCleanupWrapper.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_PreReq.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MT_PAUSERESUME.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Scale.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DisasterRecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_ScaleClean.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPOD_DP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Replay.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_CONFIG.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonDGConfig.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPODPDB_DP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_SSReconfig.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_SETUPDG.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonDGConfigFinish.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRACDBCleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_CloneClean.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/ReloadDatabaseTargetDP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPOD_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRMANRun.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Clone.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_PauseResumeRep.xml  
+    creating: ./25578368/files/sysman/metadata/swlib/
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/
+  extracting: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/FILELIST_pbu_swlib_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/registerDRDP.sh  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/components/
+  extracting: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/components/fa_dr_component.zip  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_zdt.txt  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_regen_drapi_metadata.txt  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_sync_metadata.txt  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_getZfsRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/dpInputFileGen.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/getZfsRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_drCommonUtil.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/zfsReplicationPauseResume.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/drCommonUtil.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_zfsReplicationPauseResume.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_retrieveRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/extract_component.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/drBlackout.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/retrieveRepServiceStatus.sh  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_properties_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_extract_component.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_fa_disasterrecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_fa_disasterrecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_dr_blackout.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_properties_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_dictionary_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_extract_component.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_dpinputfile_gen.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_dr_blackout.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_dictionary_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_dpinputfile_gen.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/swlib.xml  
+    creating: ./25578368/files/sysman/metadata/jobs/
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/FILELIST_pbu_jobs_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeTnsSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/checkDBTargetHostStatusjob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePodJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeDBPauseResume.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/blkTargetByEmcliJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeReloadDBTraget.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/UmountSharedStorageJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/discoverFADatabaseTargetsJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/verifyInputFileJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_VerifyInputVersion.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/drCreateStandbySnapshot.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSqlOnPrimaryStandbyDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/drCreatePhysicalStandby.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeEmcli.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeBlackoutLsnr.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeCommonSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSetupDG.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/blkLsnrJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/UmountSharesJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeScript.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/dpLevelLockJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/sgLCMWrapperGenjob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/dumpDRDPInputFileJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_blkTargetByEmcliJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePdbMigrationJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeSqlOnPrimaryStandbyDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/createStandbyFromBackup.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executePluginJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeTDECheckJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/checkSourceListenerJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executePrerequisiteJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/modifyNamedCredentialJob.xml  
+    creating: ./25578368/etc/
+    creating: ./25578368/etc/config/
+   inflating: ./25578368/etc/config/inventory.xml  
+   inflating: ./25578368/etc/config/actions.xml  
+ 
+ Oracle Interim Patch Installer version 13.8.0.0.0
+ Copyright (c) 2017, Oracle Corporation.  All rights reserved.
+ 
+ 
+ Oracle Home       : /scratch/emcc/Middleware1/em132gc
+ Central Inventory : /scratch/emcc/oraInventory
+    from           : /scratch/emcc/Middleware1/em132gc/oraInst.loc
+ OPatch version    : 13.8.0.0.0
+ OUI version       : 13.8.0.0.0
+ Log file location : /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_15_56/apply2017-04-05_09-15-53AM_1.log
+ 
+ 
+ OPatch detects the Middleware Home as "/scratch/emcc/Middleware1/em132gc"
+ 
+ Verifying environment and performing prerequisite checks...
+ OPatch continues with these patches:   25578368  
+ 
+ Do you want to proceed? [y|n]
+ User Responded with: Y
+ All checks passed.
+ Backing up files...
+ Applying interim patch '25578368' to OH '/scratch/emcc/Middleware1/em132gc'
+ ApplySession: Optional component(s) [ oracle.sysman.oms.core, 12.1.0.3.0 ] , [ oracle.sysman.oms.core, 12.1.0.5.0 ] , [ oracle.sysman.oms.core, 12.1.0.4.0 ]  not present in the Oracle Home or a higher version is found.
+ 
+ Patching component oracle.sysman.top.oms, 13.2.0.0.0...
+ Patch 25578368 successfully applied.
+ Log file location: /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_15_56/apply2017-04-05_09-15-53AM_1.log
+ 
+ OPatch succeeded.
+ 
+ OPatch has succeeded
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service swlib -core -file_list /scratch/emcc/Middleware1/em132gc/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/FILELIST_pbu_swlib_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ Total 0 errors, 8 warnings. 0 entities imported.
+ Metadata registration successful
+ 
+ 
+ Registration of service successful
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service  procedures -core -file_list/scratch/emcc/Middleware1/em132gc/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ Found unrecognized argument: -file_list/scratch/emcc/Middleware1/em132gc/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery
+ Invalid arguments!
+ EM-04034: Usage: 
+       emctl register oms metadata -service <Metadata Service Id> (-file <Metadata Instance file> | -file_list <File containing list of files to register>)  (-core | -pluginId <Plug-in Id>) [-sysman_pwd <sysman password>] 
+ 
+       emctl deregister oms metadata -service <Metadata Service Id> (-file <Metadata Instance file> && (-old_file <File containing previous metadata instances> | -no_old_file <in case there are no previous metadata instances>)) | -file_list <File containing list of ';' separeated new and old files to deregister>) (-core | -pluginId <Plug-in Id>) [-sysman_pwd <sysman password>] 
+ 
+ 
+ 
+ 
+ Registration of service successful
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service jobTypes -core -file_list/scratch/emcc/Middleware1/em132gc/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/FILELIST_pbu_jobs_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ Found unrecognized argument: -file_list/scratch/emcc/Middleware1/em132gc/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/FILELIST_pbu_jobs_core_disasterrecovery
+ Invalid arguments!
+ EM-04034: Usage: 
+       emctl register oms metadata -service <Metadata Service Id> (-file <Metadata Instance file> | -file_list <File containing list of files to register>)  (-core | -pluginId <Plug-in Id>) [-sysman_pwd <sysman password>] 
+ 
+       emctl deregister oms metadata -service <Metadata Service Id> (-file <Metadata Instance file> && (-old_file <File containing previous metadata instances> | -no_old_file <in case there are no previous metadata instances>)) | -file_list <File containing list of ';' separeated new and old files to deregister>) (-core | -pluginId <Plug-in Id>) [-sysman_pwd <sysman password>] 
+ 
+ 
+ 
+ 
+ Registration of service successful
+ Registered the services and applied the patch on EM, will stage fa_dr_genparams now
+
+2017,Wed Apr 5  2:23:3      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/rollback_drdp.pl -patch_loc /scratch/aime/DRDP_1.8.3/25578368 -id 25578368 -oms_oracle_home /scratch/emcc/Middleware1/em132gc;
+                   expect "password:" ;
+                   send "2cool\r";
+                   send "exit\r";
+                   interact'
+2017,Wed Apr 5  2:23:22     [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/rollback_drdp.pl -patch_loc /scratch/aime/DRDP_1.8.3/25578368 -id 25578368 -oms_oracle_home /scratch/emcc/Middleware1/em132gc
+ Warning: Permanently added 'slc05bpl.us.oracle.com,10.241.116.131' (RSA) to the list of known hosts.
+ aime@slc05bpl.us.oracle.com's password: 
+ 
+ Oracle Interim Patch Installer version 13.8.0.0.0
+ Copyright (c) 2017, Oracle Corporation.  All rights reserved.
+ 
+ 
+ Oracle Home       : /scratch/emcc/Middleware1/em132gc
+ Central Inventory : /scratch/emcc/oraInventory
+    from           : /scratch/emcc/Middleware1/em132gc/oraInst.loc
+ OPatch version    : 13.8.0.0.0
+ OUI version       : 13.8.0.0.0
+ Log file location : /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_23_06/rollback2017-04-05_09-23-03AM_1.log
+ 
+ 
+ OPatch detects the Middleware Home as "/scratch/emcc/Middleware1/em132gc"
+ 
+ RollbackSession rolling back interim patch '25578368' from OH '/scratch/emcc/Middleware1/em132gc'
+ 
+ Patching component oracle.sysman.top.oms, 13.2.0.0.0...
+ RollbackSession removing interim patch '25578368' from inventory
+ Log file location: /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_23_06/rollback2017-04-05_09-23-03AM_1.log
+ 
+ OPatch succeeded.
+ 
+ Rollback has succeeded
+
+2017,Wed Apr 5  2:23:47     [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password Welcome1 -unzip_loc /scratch/aime/DRDP_1.8.3;
+                   expect "password:" ;
+                   send "2cool\r";
+                   send "exit\r";
+                   interact'
+2017,Wed Apr 5  2:24:13    [ERROR] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password Welcome1 -unzip_loc /scratch/aime/DRDP_1.8.3
+ Warning: Permanently added 'slc05bpl.us.oracle.com,10.241.116.131' (RSA) to the list of known hosts.
+ aime@slc05bpl.us.oracle.com's password: 
+ Archive:  /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip
+    creating: ./25578368/
+   inflating: ./25578368/README.txt   
+    creating: ./25578368/files/
+    creating: ./25578368/files/sysman/
+    creating: ./25578368/files/sysman/metadata/
+    creating: ./25578368/files/sysman/metadata/procedures/
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonMTDBCleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRACDBCleanupWrapper.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_PreReq.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MT_PAUSERESUME.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Scale.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DisasterRecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_ScaleClean.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPOD_DP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Replay.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_CONFIG.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonDGConfig.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPODPDB_DP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_SSReconfig.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_SETUPDG.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonDGConfigFinish.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRACDBCleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_CloneClean.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/ReloadDatabaseTargetDP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPOD_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRMANRun.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Clone.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_PauseResumeRep.xml  
+    creating: ./25578368/files/sysman/metadata/swlib/
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/
+  extracting: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/FILELIST_pbu_swlib_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/registerDRDP.sh  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/components/
+  extracting: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/components/fa_dr_component.zip  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_zdt.txt  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_regen_drapi_metadata.txt  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_sync_metadata.txt  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_getZfsRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/dpInputFileGen.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/getZfsRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_drCommonUtil.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/zfsReplicationPauseResume.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/drCommonUtil.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_zfsReplicationPauseResume.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_retrieveRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/extract_component.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/drBlackout.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/retrieveRepServiceStatus.sh  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_properties_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_extract_component.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_fa_disasterrecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_fa_disasterrecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_dr_blackout.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_properties_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_dictionary_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_extract_component.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_dpinputfile_gen.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_dr_blackout.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_dictionary_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_dpinputfile_gen.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/swlib.xml  
+    creating: ./25578368/files/sysman/metadata/jobs/
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/FILELIST_pbu_jobs_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeTnsSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/checkDBTargetHostStatusjob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePodJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeDBPauseResume.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/blkTargetByEmcliJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeReloadDBTraget.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/UmountSharedStorageJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/discoverFADatabaseTargetsJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/verifyInputFileJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_VerifyInputVersion.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/drCreateStandbySnapshot.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSqlOnPrimaryStandbyDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/drCreatePhysicalStandby.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeEmcli.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeBlackoutLsnr.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeCommonSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSetupDG.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/blkLsnrJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/UmountSharesJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeScript.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/dpLevelLockJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/sgLCMWrapperGenjob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/dumpDRDPInputFileJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_blkTargetByEmcliJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePdbMigrationJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeSqlOnPrimaryStandbyDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/createStandbyFromBackup.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executePluginJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeTDECheckJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/checkSourceListenerJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executePrerequisiteJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/modifyNamedCredentialJob.xml  
+    creating: ./25578368/etc/
+    creating: ./25578368/etc/config/
+   inflating: ./25578368/etc/config/inventory.xml  
+   inflating: ./25578368/etc/config/actions.xml  
+ 
+ Oracle Interim Patch Installer version 13.8.0.0.0
+ Copyright (c) 2017, Oracle Corporation.  All rights reserved.
+ 
+ 
+ Oracle Home       : /scratch/emcc/Middleware1/em132gc
+ Central Inventory : /scratch/emcc/oraInventory
+    from           : /scratch/emcc/Middleware1/em132gc/oraInst.loc
+ OPatch version    : 13.8.0.0.0
+ OUI version       : 13.8.0.0.0
+ Log file location : /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_23_51/apply2017-04-05_09-23-48AM_1.log
+ 
+ 
+ OPatch detects the Middleware Home as "/scratch/emcc/Middleware1/em132gc"
+ 
+ Verifying environment and performing prerequisite checks...
+ OPatch continues with these patches:   25578368  
+ 
+ Do you want to proceed? [y|n]
+ User Responded with: Y
+ All checks passed.
+ Backing up files...
+ Applying interim patch '25578368' to OH '/scratch/emcc/Middleware1/em132gc'
+ ApplySession: Optional component(s) [ oracle.sysman.oms.core, 12.1.0.3.0 ] , [ oracle.sysman.oms.core, 12.1.0.5.0 ] , [ oracle.sysman.oms.core, 12.1.0.4.0 ]  not present in the Oracle Home or a higher version is found.
+ 
+ Patching component oracle.sysman.top.oms, 13.2.0.0.0...
+ Patch 25578368 successfully applied.
+ Log file location: /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_23_51/apply2017-04-05_09-23-48AM_1.log
+ 
+ OPatch succeeded.
+ 
+ OPatch has succeeded
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service swlib -core -file_list /scratch/emcc/Middleware1/em132gc/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/FILELIST_pbu_swlib_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ Total 0 errors, 8 warnings. 0 entities imported.
+ Metadata registration successful
+ 
+ 
+ Registration of service successful
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service  procedures -core -file_list/scratch/emcc/Middleware1/em132gc/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ Found unrecognized argument: -file_list/scratch/emcc/Middleware1/em132gc/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery
+ Invalid arguments!
+ EM-04034: Usage: 
+       emctl register oms metadata -service <Metadata Service Id> (-file <Metadata Instance file> | -file_list <File containing list of files to register>)  (-core | -pluginId <Plug-in Id>) [-sysman_pwd <sysman password>] 
+ 
+       emctl deregister oms metadata -service <Metadata Service Id> (-file <Metadata Instance file> && (-old_file <File containing previous metadata instances> | -no_old_file <in case there are no previous metadata instances>)) | -file_list <File containing list of ';' separeated new and old files to deregister>) (-core | -pluginId <Plug-in Id>) [-sysman_pwd <sysman password>] 
+ 
+ 
+ 
+ 
+ Registration of service failed
+
+2017,Wed Apr 5  2:24:35     [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/rollback_drdp.pl -patch_loc /scratch/aime/DRDP_1.8.3/25578368 -id 25578368 -oms_oracle_home /scratch/emcc/Middleware1/em132gc;
+                   expect "password:" ;
+                   send "2cool\r";
+                   send "exit\r";
+                   interact'
+2017,Wed Apr 5  2:24:52     [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/rollback_drdp.pl -patch_loc /scratch/aime/DRDP_1.8.3/25578368 -id 25578368 -oms_oracle_home /scratch/emcc/Middleware1/em132gc
+ Warning: Permanently added 'slc05bpl.us.oracle.com,10.241.116.131' (RSA) to the list of known hosts.
+ aime@slc05bpl.us.oracle.com's password: 
+ 
+ Oracle Interim Patch Installer version 13.8.0.0.0
+ Copyright (c) 2017, Oracle Corporation.  All rights reserved.
+ 
+ 
+ Oracle Home       : /scratch/emcc/Middleware1/em132gc
+ Central Inventory : /scratch/emcc/oraInventory
+    from           : /scratch/emcc/Middleware1/em132gc/oraInst.loc
+ OPatch version    : 13.8.0.0.0
+ OUI version       : 13.8.0.0.0
+ Log file location : /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_24_38/rollback2017-04-05_09-24-35AM_1.log
+ 
+ 
+ OPatch detects the Middleware Home as "/scratch/emcc/Middleware1/em132gc"
+ 
+ RollbackSession rolling back interim patch '25578368' from OH '/scratch/emcc/Middleware1/em132gc'
+ 
+ Patching component oracle.sysman.top.oms, 13.2.0.0.0...
+ RollbackSession removing interim patch '25578368' from inventory
+ Log file location: /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_24_38/rollback2017-04-05_09-24-35AM_1.log
+ 
+ OPatch succeeded.
+ 
+ Rollback has succeeded
+
+2017,Wed Apr 5  2:25:53     [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password Welcome1 -unzip_loc /scratch/aime/DRDP_1.8.3;
+                   expect "password:" ;
+                   send "2cool\r";
+                   send "exit\r";
+                   interact'
+2017,Wed Apr 5  2:26:50    [ERROR] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password Welcome1 -unzip_loc /scratch/aime/DRDP_1.8.3
+ Warning: Permanently added 'slc05bpl.us.oracle.com,10.241.116.131' (RSA) to the list of known hosts.
+ aime@slc05bpl.us.oracle.com's password: 
+ Archive:  /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip
+    creating: ./25578368/
+   inflating: ./25578368/README.txt   
+    creating: ./25578368/files/
+    creating: ./25578368/files/sysman/
+    creating: ./25578368/files/sysman/metadata/
+    creating: ./25578368/files/sysman/metadata/procedures/
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonMTDBCleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRACDBCleanupWrapper.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_PreReq.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MT_PAUSERESUME.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Scale.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DisasterRecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_ScaleClean.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPOD_DP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Replay.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_CONFIG.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonDGConfig.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPODPDB_DP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_SSReconfig.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_SETUPDG.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonDGConfigFinish.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRACDBCleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_CloneClean.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/ReloadDatabaseTargetDP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPOD_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRMANRun.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Clone.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_PauseResumeRep.xml  
+    creating: ./25578368/files/sysman/metadata/swlib/
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/
+  extracting: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/FILELIST_pbu_swlib_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/registerDRDP.sh  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/components/
+  extracting: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/components/fa_dr_component.zip  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_zdt.txt  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_regen_drapi_metadata.txt  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_sync_metadata.txt  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_getZfsRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/dpInputFileGen.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/getZfsRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_drCommonUtil.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/zfsReplicationPauseResume.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/drCommonUtil.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_zfsReplicationPauseResume.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_retrieveRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/extract_component.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/drBlackout.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/retrieveRepServiceStatus.sh  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_properties_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_extract_component.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_fa_disasterrecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_fa_disasterrecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_dr_blackout.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_properties_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_dictionary_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_extract_component.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_dpinputfile_gen.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_dr_blackout.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_dictionary_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_dpinputfile_gen.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/swlib.xml  
+    creating: ./25578368/files/sysman/metadata/jobs/
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/FILELIST_pbu_jobs_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeTnsSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/checkDBTargetHostStatusjob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePodJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeDBPauseResume.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/blkTargetByEmcliJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeReloadDBTraget.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/UmountSharedStorageJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/discoverFADatabaseTargetsJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/verifyInputFileJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_VerifyInputVersion.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/drCreateStandbySnapshot.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSqlOnPrimaryStandbyDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/drCreatePhysicalStandby.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeEmcli.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeBlackoutLsnr.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeCommonSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSetupDG.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/blkLsnrJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/UmountSharesJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeScript.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/dpLevelLockJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/sgLCMWrapperGenjob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/dumpDRDPInputFileJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_blkTargetByEmcliJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePdbMigrationJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeSqlOnPrimaryStandbyDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/createStandbyFromBackup.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executePluginJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeTDECheckJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/checkSourceListenerJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executePrerequisiteJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/modifyNamedCredentialJob.xml  
+    creating: ./25578368/etc/
+    creating: ./25578368/etc/config/
+   inflating: ./25578368/etc/config/inventory.xml  
+   inflating: ./25578368/etc/config/actions.xml  
+ 
+ Oracle Interim Patch Installer version 13.8.0.0.0
+ Copyright (c) 2017, Oracle Corporation.  All rights reserved.
+ 
+ 
+ Oracle Home       : /scratch/emcc/Middleware1/em132gc
+ Central Inventory : /scratch/emcc/oraInventory
+    from           : /scratch/emcc/Middleware1/em132gc/oraInst.loc
+ OPatch version    : 13.8.0.0.0
+ OUI version       : 13.8.0.0.0
+ Log file location : /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_25_57/apply2017-04-05_09-25-54AM_1.log
+ 
+ 
+ OPatch detects the Middleware Home as "/scratch/emcc/Middleware1/em132gc"
+ 
+ Verifying environment and performing prerequisite checks...
+ OPatch continues with these patches:   25578368  
+ 
+ Do you want to proceed? [y|n]
+ User Responded with: Y
+ All checks passed.
+ Backing up files...
+ Applying interim patch '25578368' to OH '/scratch/emcc/Middleware1/em132gc'
+ ApplySession: Optional component(s) [ oracle.sysman.oms.core, 12.1.0.3.0 ] , [ oracle.sysman.oms.core, 12.1.0.5.0 ] , [ oracle.sysman.oms.core, 12.1.0.4.0 ]  not present in the Oracle Home or a higher version is found.
+ 
+ Patching component oracle.sysman.top.oms, 13.2.0.0.0...
+ Patch 25578368 successfully applied.
+ Log file location: /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_25_57/apply2017-04-05_09-25-54AM_1.log
+ 
+ OPatch succeeded.
+ 
+ OPatch has succeeded
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service swlib -core -file_list /scratch/emcc/Middleware1/em132gc/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/FILELIST_pbu_swlib_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ Total 0 errors, 8 warnings. 0 entities imported.
+ Metadata registration successful
+ 
+ 
+ Registration of service successful
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service  procedures -core -file_list /scratch/emcc/Middleware1/em132gc/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ CommonDGConfigFinish.xml: Metadata registration successful
+ CommonDGConfig.xml: Metadata registration successful
+ CommonMTDBCleanup.xml: Metadata registration successful
+ CommonRACDBCleanupWrapper.xml: Metadata registration successful
+ CommonRACDBCleanup.xml: Metadata registration successful
+ CommonRMANRun.xml: Metadata registration successful
+ FA_DisasterRecovery.xml: Metadata registration successful
+ FA_DR_Cleanup.xml: Metadata registration successful
+ FA_DR_CloneClean.xml: Metadata registration successful
+ FA_DR_Clone.xml: Metadata registration successful
+ FA_DR_CONFIG.xml: Metadata registration successful
+ FA_DR_MTDB_Cleanup.xml: Metadata registration successful
+ FA_DR_MTDB_PreReq.xml: Metadata registration successful
+ FA_DR_MTDB_SETUPDG.xml: Metadata registration successful
+ FA_DR_MTDB.xml: Metadata registration successful
+ FA_DR_MT_PAUSERESUME.xml: Metadata registration successful
+ FA_DR_MTPOD_Cleanup.xml: Metadata registration successful
+ FA_DR_MTPOD_DP.xml: Metadata registration successful
+ FA_DR_MTPODPDB_DP.xml: Metadata registration successful
+ FA_DR_PauseResumeRep.xml: Metadata registration successful
+ FA_DR_Replay.xml: Metadata registration successful
+ FA_DR_ScaleClean.xml: Metadata registration successful
+ FA_DR_Scale.xml: Metadata registration successful
+ FA_DR_SSReconfig.xml: Metadata registration successful
+ ReloadDatabaseTargetDP.xml: Metadata registration successful
+ 
+ 
+ Registration of service successful
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service jobTypes -core -file_list /scratch/emcc/Middleware1/em132gc/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/FILELIST_pbu_jobs_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ blkLsnrJob.xml: Metadata registration successful
+ blkTargetByEmcliJob.xml: Metadata registration successful
+ checkDBTargetHostStatusjob.xml: Metadata registration successful
+ checkSourceListenerJob.xml: Metadata registration successful
+ createStandbyFromBackup.xml: Metadata registration successful
+ discoverFADatabaseTargetsJob.xml: Metadata registration successful
+ dpLevelLockJob.xml: Metadata registration successful
+ drCreatePhysicalStandby.xml: Metadata registration successful
+ drCreateStandbySnapshot.xml: Metadata registration successful
+ dumpDRDPInputFileJob.xml: Metadata registration successful
+ executeCommonSqlJob.xml: Metadata registration successful
+ executeDBPauseResume.xml: Metadata registration successful
+ executePluginJob.xml: Metadata registration successful
+ executePrerequisiteJob.xml: Metadata registration successful
+ executeScript.xml: Metadata registration successful
+ executeSqlJob.xml: Metadata registration successful
+ executeSqlOnPrimaryStandbyDBJob.xml: Metadata registration successful
+ executeTDECheckJob.xml: Metadata registration successful
+ modifyNamedCredentialJob.xml: Metadata registration successful
+ mt_blkTargetByEmcliJob.xml: Metadata registration successful
+ mt_executeBlackoutLsnr.xml: Metadata registration successful
+ mt_executeEmcli.xml: Metadata registration successful
+ mt_executePDBJob.xml: Metadata registration successful
+ mt_executePdbMigrationJob.xml: Metadata registration successful
+ mt_executePodJob.xml: Metadata registration successful
+ mt_executeReloadDBTraget.xml: Metadata registration successful
+ mt_executeSetupDG.xml: Metadata registration successful
+ mt_executeSqlJob.xml: Metadata registration successful
+ mt_executeSqlOnPrimaryStandbyDBJob.xml: Metadata registration successful
+ mt_executeTnsSqlJob.xml: Metadata registration successful
+ mt_VerifyInputVersion.xml: Metadata registration successful
+ sgLCMWrapperGenjob.xml: Metadata registration successful
+ UmountSharedStorageJob.xml: Metadata registration successful
+ UmountSharesJob.xml: Metadata registration successful
+ verifyInputFileJob.xml: Metadata registration successful
+ 
+ 
+ Registration of service successful
+ Registered the services and applied the patch on EM, will stage fa_dr_genparams now
+
+2017,Wed Apr 5  2:28:12     [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/rollback_drdp.pl -patch_loc /scratch/aime/DRDP_1.8.3/25578368 -id 25578368 -oms_oracle_home /scratch/emcc/Middleware1/em132gc;
+                   expect "password:" ;
+                   send "2cool\r";
+                   send "exit\r";
+                   interact'
+2017,Wed Apr 5  2:28:29     [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/rollback_drdp.pl -patch_loc /scratch/aime/DRDP_1.8.3/25578368 -id 25578368 -oms_oracle_home /scratch/emcc/Middleware1/em132gc
+ Warning: Permanently added 'slc05bpl.us.oracle.com,10.241.116.131' (RSA) to the list of known hosts.
+ aime@slc05bpl.us.oracle.com's password: 
+ 
+ Oracle Interim Patch Installer version 13.8.0.0.0
+ Copyright (c) 2017, Oracle Corporation.  All rights reserved.
+ 
+ 
+ Oracle Home       : /scratch/emcc/Middleware1/em132gc
+ Central Inventory : /scratch/emcc/oraInventory
+    from           : /scratch/emcc/Middleware1/em132gc/oraInst.loc
+ OPatch version    : 13.8.0.0.0
+ OUI version       : 13.8.0.0.0
+ Log file location : /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_28_16/rollback2017-04-05_09-28-13AM_1.log
+ 
+ 
+ OPatch detects the Middleware Home as "/scratch/emcc/Middleware1/em132gc"
+ 
+ RollbackSession rolling back interim patch '25578368' from OH '/scratch/emcc/Middleware1/em132gc'
+ 
+ Patching component oracle.sysman.top.oms, 13.2.0.0.0...
+ RollbackSession removing interim patch '25578368' from inventory
+ Log file location: /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_28_16/rollback2017-04-05_09-28-13AM_1.log
+ 
+ OPatch succeeded.
+ 
+ Rollback has succeeded
+
+2017,Wed Apr 5  2:29:1      [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password Welcome1 -unzip_loc /scratch/aime/DRDP_1.8.3;
+                   expect "password:" ;
+                   send "2cool\r";
+                   send "exit\r";
+                   interact'
+2017,Wed Apr 5  2:29:52    [ERROR] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password Welcome1 -unzip_loc /scratch/aime/DRDP_1.8.3
+ Warning: Permanently added 'slc05bpl.us.oracle.com,10.241.116.131' (RSA) to the list of known hosts.
+ aime@slc05bpl.us.oracle.com's password: 
+ Archive:  /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip
+    creating: ./25578368/
+   inflating: ./25578368/README.txt   
+    creating: ./25578368/files/
+    creating: ./25578368/files/sysman/
+    creating: ./25578368/files/sysman/metadata/
+    creating: ./25578368/files/sysman/metadata/procedures/
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonMTDBCleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRACDBCleanupWrapper.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_PreReq.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MT_PAUSERESUME.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Scale.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DisasterRecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_ScaleClean.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPOD_DP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Replay.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_CONFIG.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonDGConfig.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPODPDB_DP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_SSReconfig.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_SETUPDG.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonDGConfigFinish.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRACDBCleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_CloneClean.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/ReloadDatabaseTargetDP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPOD_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRMANRun.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Clone.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_PauseResumeRep.xml  
+    creating: ./25578368/files/sysman/metadata/swlib/
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/
+  extracting: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/FILELIST_pbu_swlib_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/registerDRDP.sh  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/components/
+  extracting: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/components/fa_dr_component.zip  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_zdt.txt  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_regen_drapi_metadata.txt  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_sync_metadata.txt  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_getZfsRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/dpInputFileGen.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/getZfsRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_drCommonUtil.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/zfsReplicationPauseResume.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/drCommonUtil.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_zfsReplicationPauseResume.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_retrieveRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/extract_component.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/drBlackout.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/retrieveRepServiceStatus.sh  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_properties_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_extract_component.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_fa_disasterrecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_fa_disasterrecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_dr_blackout.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_properties_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_dictionary_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_extract_component.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_dpinputfile_gen.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_dr_blackout.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_dictionary_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_dpinputfile_gen.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/swlib.xml  
+    creating: ./25578368/files/sysman/metadata/jobs/
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/FILELIST_pbu_jobs_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeTnsSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/checkDBTargetHostStatusjob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePodJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeDBPauseResume.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/blkTargetByEmcliJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeReloadDBTraget.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/UmountSharedStorageJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/discoverFADatabaseTargetsJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/verifyInputFileJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_VerifyInputVersion.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/drCreateStandbySnapshot.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSqlOnPrimaryStandbyDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/drCreatePhysicalStandby.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeEmcli.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeBlackoutLsnr.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeCommonSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSetupDG.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/blkLsnrJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/UmountSharesJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeScript.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/dpLevelLockJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/sgLCMWrapperGenjob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/dumpDRDPInputFileJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_blkTargetByEmcliJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePdbMigrationJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeSqlOnPrimaryStandbyDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/createStandbyFromBackup.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executePluginJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeTDECheckJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/checkSourceListenerJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executePrerequisiteJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/modifyNamedCredentialJob.xml  
+    creating: ./25578368/etc/
+    creating: ./25578368/etc/config/
+   inflating: ./25578368/etc/config/inventory.xml  
+   inflating: ./25578368/etc/config/actions.xml  
+ 
+ Oracle Interim Patch Installer version 13.8.0.0.0
+ Copyright (c) 2017, Oracle Corporation.  All rights reserved.
+ 
+ 
+ Oracle Home       : /scratch/emcc/Middleware1/em132gc
+ Central Inventory : /scratch/emcc/oraInventory
+    from           : /scratch/emcc/Middleware1/em132gc/oraInst.loc
+ OPatch version    : 13.8.0.0.0
+ OUI version       : 13.8.0.0.0
+ Log file location : /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_29_05/apply2017-04-05_09-29-02AM_1.log
+ 
+ 
+ OPatch detects the Middleware Home as "/scratch/emcc/Middleware1/em132gc"
+ 
+ Verifying environment and performing prerequisite checks...
+ OPatch continues with these patches:   25578368  
+ 
+ Do you want to proceed? [y|n]
+ User Responded with: Y
+ All checks passed.
+ Backing up files...
+ Applying interim patch '25578368' to OH '/scratch/emcc/Middleware1/em132gc'
+ ApplySession: Optional component(s) [ oracle.sysman.oms.core, 12.1.0.3.0 ] , [ oracle.sysman.oms.core, 12.1.0.5.0 ] , [ oracle.sysman.oms.core, 12.1.0.4.0 ]  not present in the Oracle Home or a higher version is found.
+ 
+ Patching component oracle.sysman.top.oms, 13.2.0.0.0...
+ Patch 25578368 successfully applied.
+ Log file location: /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_09_29_05/apply2017-04-05_09-29-02AM_1.log
+ 
+ OPatch succeeded.
+ 
+ OPatch has succeeded
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service swlib -core -file_list /scratch/emcc/Middleware1/em132gc/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/FILELIST_pbu_swlib_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ Total 0 errors, 8 warnings. 0 entities imported.
+ Metadata registration successful
+ 
+ 
+ Registration of service successful
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service  procedures -core -file_list /scratch/emcc/Middleware1/em132gc/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ CommonDGConfigFinish.xml: Metadata registration successful
+ CommonDGConfig.xml: Metadata registration successful
+ CommonMTDBCleanup.xml: Metadata registration successful
+ CommonRACDBCleanupWrapper.xml: Metadata registration successful
+ CommonRACDBCleanup.xml: Metadata registration successful
+ CommonRMANRun.xml: Metadata registration successful
+ FA_DisasterRecovery.xml: Metadata registration successful
+ FA_DR_Cleanup.xml: Metadata registration successful
+ FA_DR_CloneClean.xml: Metadata registration successful
+ FA_DR_Clone.xml: Metadata registration successful
+ FA_DR_CONFIG.xml: Metadata registration successful
+ FA_DR_MTDB_Cleanup.xml: Metadata registration successful
+ FA_DR_MTDB_PreReq.xml: Metadata registration successful
+ FA_DR_MTDB_SETUPDG.xml: Metadata registration successful
+ FA_DR_MTDB.xml: Metadata registration successful
+ FA_DR_MT_PAUSERESUME.xml: Metadata registration successful
+ FA_DR_MTPOD_Cleanup.xml: Metadata registration successful
+ FA_DR_MTPOD_DP.xml: Metadata registration successful
+ FA_DR_MTPODPDB_DP.xml: Metadata registration successful
+ FA_DR_PauseResumeRep.xml: Metadata registration successful
+ FA_DR_Replay.xml: Metadata registration successful
+ FA_DR_ScaleClean.xml: Metadata registration successful
+ FA_DR_Scale.xml: Metadata registration successful
+ FA_DR_SSReconfig.xml: Metadata registration successful
+ ReloadDatabaseTargetDP.xml: Metadata registration successful
+ 
+ 
+ Registration of service successful
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service jobTypes -core -file_list /scratch/emcc/Middleware1/em132gc/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/FILELIST_pbu_jobs_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ blkLsnrJob.xml: Metadata registration successful
+ blkTargetByEmcliJob.xml: Metadata registration successful
+ checkDBTargetHostStatusjob.xml: Metadata registration successful
+ checkSourceListenerJob.xml: Metadata registration successful
+ createStandbyFromBackup.xml: Metadata registration successful
+ discoverFADatabaseTargetsJob.xml: Metadata registration successful
+ dpLevelLockJob.xml: Metadata registration successful
+ drCreatePhysicalStandby.xml: Metadata registration successful
+ drCreateStandbySnapshot.xml: Metadata registration successful
+ dumpDRDPInputFileJob.xml: Metadata registration successful
+ executeCommonSqlJob.xml: Metadata registration successful
+ executeDBPauseResume.xml: Metadata registration successful
+ executePluginJob.xml: Metadata registration successful
+ executePrerequisiteJob.xml: Metadata registration successful
+ executeScript.xml: Metadata registration successful
+ executeSqlJob.xml: Metadata registration successful
+ executeSqlOnPrimaryStandbyDBJob.xml: Metadata registration successful
+ executeTDECheckJob.xml: Metadata registration successful
+ modifyNamedCredentialJob.xml: Metadata registration successful
+ mt_blkTargetByEmcliJob.xml: Metadata registration successful
+ mt_executeBlackoutLsnr.xml: Metadata registration successful
+ mt_executeEmcli.xml: Metadata registration successful
+ mt_executePDBJob.xml: Metadata registration successful
+ mt_executePdbMigrationJob.xml: Metadata registration successful
+ mt_executePodJob.xml: Metadata registration successful
+ mt_executeReloadDBTraget.xml: Metadata registration successful
+ mt_executeSetupDG.xml: Metadata registration successful
+ mt_executeSqlJob.xml: Metadata registration successful
+ mt_executeSqlOnPrimaryStandbyDBJob.xml: Metadata registration successful
+ mt_executeTnsSqlJob.xml: Metadata registration successful
+ mt_VerifyInputVersion.xml: Metadata registration successful
+ sgLCMWrapperGenjob.xml: Metadata registration successful
+ UmountSharedStorageJob.xml: Metadata registration successful
+ UmountSharesJob.xml: Metadata registration successful
+ verifyInputFileJob.xml: Metadata registration successful
+ 
+ 
+ Registration of service successful
+ Registered the services and applied the patch on EM, will stage fa_dr_genparams now
+
+2017,Wed Apr 5  11:41:15    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/rollback_drdp.pl -patch_loc  -id 25578368 -oms_oracle_home /scratch/emcc/Middleware1/em132gc-patch_loc;
+                   expect "password:" ;
+                   send "2cool\r";
+                   send "exit\r";
+                   interact'
+2017,Wed Apr 5  11:41:17    [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/rollback_drdp.pl -patch_loc -id 25578368 -oms_oracle_home /scratch/emcc/Middleware1/em132gc-patch_loc
+ Warning: Permanently added 'slc05bpl.us.oracle.com,10.241.116.131' (RSA) to the list of known hosts.
+ aime@slc05bpl.us.oracle.com's password: 
+ Usage:
+     The arguments patch_loc, id and oms_oracle_home are mandatory
+ 
+     Options :
+ 
+     patch_loc : Location of the patch that you want to rollback
+ 
+     id : Patch id
+ 
+     oms_oracle_home : Location of OMS Oracle Home
+ 
+
+2017,Wed Apr 5  11:46:49    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/rollback_drdp.pl -patch_loc /scratch/aime/DRDP_1.8.3/25578368 -id 25578368 -oms_oracle_home /scratch/emcc/Middleware1/em132gc;
+                   expect "password:" ;
+                   send "2cool\r";
+                   send "exit\r";
+                   interact'
+2017,Wed Apr 5  11:47:17    [INFO] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/rollback_drdp.pl -patch_loc /scratch/aime/DRDP_1.8.3/25578368 -id 25578368 -oms_oracle_home /scratch/emcc/Middleware1/em132gc
+ Warning: Permanently added 'slc05bpl.us.oracle.com,10.241.116.131' (RSA) to the list of known hosts.
+ aime@slc05bpl.us.oracle.com's password: 
+ 
+ Oracle Interim Patch Installer version 13.8.0.0.0
+ Copyright (c) 2017, Oracle Corporation.  All rights reserved.
+ 
+ 
+ Oracle Home       : /scratch/emcc/Middleware1/em132gc
+ Central Inventory : /scratch/emcc/oraInventory
+    from           : /scratch/emcc/Middleware1/em132gc/oraInst.loc
+ OPatch version    : 13.8.0.0.0
+ OUI version       : 13.8.0.0.0
+ Log file location : /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_11_46_53/rollback2017-04-05_11-46-49AM_1.log
+ 
+ 
+ OPatch detects the Middleware Home as "/scratch/emcc/Middleware1/em132gc"
+ 
+ RollbackSession rolling back interim patch '25578368' from OH '/scratch/emcc/Middleware1/em132gc'
+ 
+ Patching component oracle.sysman.top.oms, 13.2.0.0.0...
+ RollbackSession removing interim patch '25578368' from inventory
+ Log file location: /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_11_46_53/rollback2017-04-05_11-46-49AM_1.log
+ 
+ OPatch succeeded.
+ 
+ Rollback has succeeded
+
+2017,Wed Apr 5  11:55:22    [INFO] :  Running Command: expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password Welcome1 -unzip_loc /scratch/aime/DRDP_1.8.3;
+                   expect "password:" ;
+                   send "2cool\r";
+                   send "exit\r";
+                   interact'
+2017,Wed Apr 5  11:56:50   [ERROR] :  spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc05bpl.us.oracle.com /tmp/apply_patch.pl -oms_oracle_home /scratch/emcc/Middleware1/em132gc -version 1.8.3.0.0 -drdp_zip /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip -oms_sysman_password Welcome1 -unzip_loc /scratch/aime/DRDP_1.8.3
+ Warning: Permanently added 'slc05bpl.us.oracle.com,10.241.116.131' (RSA) to the list of known hosts.
+ aime@slc05bpl.us.oracle.com's password: 
+ Archive:  /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/170221.1354/lcmservice/dist/zips/opatch/fadr_170221_25578368.zip
+    creating: ./25578368/
+   inflating: ./25578368/README.txt   
+    creating: ./25578368/files/
+    creating: ./25578368/files/sysman/
+    creating: ./25578368/files/sysman/metadata/
+    creating: ./25578368/files/sysman/metadata/procedures/
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonMTDBCleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRACDBCleanupWrapper.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_PreReq.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MT_PAUSERESUME.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Scale.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DisasterRecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_ScaleClean.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPOD_DP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Replay.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_CONFIG.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonDGConfig.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPODPDB_DP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_SSReconfig.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB_SETUPDG.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonDGConfigFinish.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRACDBCleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_CloneClean.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/ReloadDatabaseTargetDP.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTDB.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_MTPOD_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/CommonRMANRun.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Cleanup.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_Clone.xml  
+   inflating: ./25578368/files/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/disasterrecovery/FA_DR_PauseResumeRep.xml  
+    creating: ./25578368/files/sysman/metadata/swlib/
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/
+  extracting: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/FILELIST_pbu_swlib_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/registerDRDP.sh  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/components/
+  extracting: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/components/fa_dr_component.zip  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_zdt.txt  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_regen_drapi_metadata.txt  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/docs/README_sync_metadata.txt  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_getZfsRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/dpInputFileGen.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/getZfsRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_drCommonUtil.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/zfsReplicationPauseResume.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/drCommonUtil.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_zfsReplicationPauseResume.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/mt_retrieveRepServiceStatus.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/extract_component.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/drBlackout.sh  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/directives/retrieveRepServiceStatus.sh  
+    creating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_properties_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_extract_component.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_fa_disasterrecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_fa_disasterrecovery.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_dr_blackout.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_properties_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_dictionary_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_extract_component.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_zfs_replsvc_status.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_dpinputfile_gen.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_dr_blackout.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/properties_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/mt_dictionary_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_dpinputfile_gen.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/metadata/dictionary_zfs_pauseresume.xml  
+   inflating: ./25578368/files/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/disasterrecovery/swlib.xml  
+    creating: ./25578368/files/sysman/metadata/jobs/
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/FILELIST_pbu_jobs_core_disasterrecovery  
+    creating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeTnsSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/checkDBTargetHostStatusjob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePodJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeDBPauseResume.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/blkTargetByEmcliJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeReloadDBTraget.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/UmountSharedStorageJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/discoverFADatabaseTargetsJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/verifyInputFileJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_VerifyInputVersion.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/drCreateStandbySnapshot.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSqlOnPrimaryStandbyDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/drCreatePhysicalStandby.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeEmcli.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeBlackoutLsnr.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeCommonSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executeSetupDG.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/blkLsnrJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/UmountSharesJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeScript.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/dpLevelLockJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/sgLCMWrapperGenjob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/dumpDRDPInputFileJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_blkTargetByEmcliJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePdbMigrationJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeSqlJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/mt_executePDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeSqlOnPrimaryStandbyDBJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/createStandbyFromBackup.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executePluginJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executeTDECheckJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/checkSourceListenerJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/executePrerequisiteJob.xml  
+   inflating: ./25578368/files/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/disasterrecovery/modifyNamedCredentialJob.xml  
+    creating: ./25578368/etc/
+    creating: ./25578368/etc/config/
+   inflating: ./25578368/etc/config/inventory.xml  
+   inflating: ./25578368/etc/config/actions.xml  
+ 
+ Oracle Interim Patch Installer version 13.8.0.0.0
+ Copyright (c) 2017, Oracle Corporation.  All rights reserved.
+ 
+ 
+ Oracle Home       : /scratch/emcc/Middleware1/em132gc
+ Central Inventory : /scratch/emcc/oraInventory
+    from           : /scratch/emcc/Middleware1/em132gc/oraInst.loc
+ OPatch version    : 13.8.0.0.0
+ OUI version       : 13.8.0.0.0
+ Log file location : /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_11_55_26/apply2017-04-05_11-55-23AM_1.log
+ 
+ 
+ OPatch detects the Middleware Home as "/scratch/emcc/Middleware1/em132gc"
+ 
+ Verifying environment and performing prerequisite checks...
+ OPatch continues with these patches:   25578368  
+ 
+ Do you want to proceed? [y|n]
+ User Responded with: Y
+ All checks passed.
+ Backing up files...
+ Applying interim patch '25578368' to OH '/scratch/emcc/Middleware1/em132gc'
+ ApplySession: Optional component(s) [ oracle.sysman.oms.core, 12.1.0.3.0 ] , [ oracle.sysman.oms.core, 12.1.0.5.0 ] , [ oracle.sysman.oms.core, 12.1.0.4.0 ]  not present in the Oracle Home or a higher version is found.
+ 
+ Patching component oracle.sysman.top.oms, 13.2.0.0.0...
+ Patch 25578368 successfully applied.
+ Log file location: /scratch/emcc/Middleware1/em132gc/cfgtoollogs/opatch/25578368_Apr_05_2017_11_55_26/apply2017-04-05_11-55-23AM_1.log
+ 
+ OPatch succeeded.
+ 
+ OPatch has succeeded
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service swlib -core -file_list /scratch/emcc/Middleware1/em132gc/sysman/metadata/swlib/contentmgmt/1.8.3.0.0/FILELIST_pbu_swlib_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ Total 0 errors, 8 warnings. 0 entities imported.
+ Metadata registration successful
+ 
+ 
+ Registration of service successful
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service  procedures -core -file_list /scratch/emcc/Middleware1/em132gc/sysman/metadata/procedures/contentmgmt/1.8.3.0.0/FILELIST_pbu_procedures_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ CommonDGConfigFinish.xml: Metadata registration successful
+ CommonDGConfig.xml: Metadata registration successful
+ CommonMTDBCleanup.xml: Metadata registration successful
+ CommonRACDBCleanupWrapper.xml: Metadata registration successful
+ CommonRACDBCleanup.xml: Metadata registration successful
+ CommonRMANRun.xml: Metadata registration successful
+ FA_DisasterRecovery.xml: Metadata registration successful
+ FA_DR_Cleanup.xml: Metadata registration successful
+ FA_DR_CloneClean.xml: Metadata registration successful
+ FA_DR_Clone.xml: Metadata registration successful
+ FA_DR_CONFIG.xml: Metadata registration successful
+ FA_DR_MTDB_Cleanup.xml: Metadata registration successful
+ FA_DR_MTDB_PreReq.xml: Metadata registration successful
+ FA_DR_MTDB_SETUPDG.xml: Metadata registration successful
+ FA_DR_MTDB.xml: Metadata registration successful
+ FA_DR_MT_PAUSERESUME.xml: Metadata registration successful
+ FA_DR_MTPOD_Cleanup.xml: Metadata registration successful
+ FA_DR_MTPOD_DP.xml: Metadata registration successful
+ FA_DR_MTPODPDB_DP.xml: Metadata registration successful
+ FA_DR_PauseResumeRep.xml: Metadata registration successful
+ FA_DR_Replay.xml: Metadata registration successful
+ FA_DR_ScaleClean.xml: Metadata registration successful
+ FA_DR_Scale.xml: Metadata registration successful
+ FA_DR_SSReconfig.xml: Metadata registration successful
+ ReloadDatabaseTargetDP.xml: Metadata registration successful
+ 
+ 
+ Registration of service successful
+ 
+ echo 'Welcome1' | /scratch/emcc/Middleware1/em132gc/bin/emctl register oms metadata -service jobTypes -core -file_list /scratch/emcc/Middleware1/em132gc/sysman/metadata/jobs/contentmgmt/1.8.3.0.0/FILELIST_pbu_jobs_core_disasterrecovery 
+ 
+ Oracle Enterprise Manager Cloud Control 13c Release 2  
+ Copyright (c) 1996, 2016 Oracle Corporation.  All rights reserved.
+ blkLsnrJob.xml: Metadata registration successful
+ blkTargetByEmcliJob.xml: Metadata registration successful
+ checkDBTargetHostStatusjob.xml: Metadata registration successful
+ checkSourceListenerJob.xml: Metadata registration successful
+ createStandbyFromBackup.xml: Metadata registration successful
+ discoverFADatabaseTargetsJob.xml: Metadata registration successful
+ dpLevelLockJob.xml: Metadata registration successful
+ drCreatePhysicalStandby.xml: Metadata registration successful
+ drCreateStandbySnapshot.xml: Metadata registration successful
+ dumpDRDPInputFileJob.xml: Metadata registration successful
+ executeCommonSqlJob.xml: Metadata registration successful
+ executeDBPauseResume.xml: Metadata registration successful
+ executePluginJob.xml: Metadata registration successful
+ executePrerequisiteJob.xml: Metadata registration successful
+ executeScript.xml: Metadata registration successful
+ executeSqlJob.xml: Metadata registration successful
+ executeSqlOnPrimaryStandbyDBJob.xml: Metadata registration successful
+ executeTDECheckJob.xml: Metadata registration successful
+ modifyNamedCredentialJob.xml: Metadata registration successful
+ mt_blkTargetByEmcliJob.xml: Metadata registration successful
+ mt_executeBlackoutLsnr.xml: Metadata registration successful
+ mt_executeEmcli.xml: Metadata registration successful
+ mt_executePDBJob.xml: Metadata registration successful
+ mt_executePdbMigrationJob.xml: Metadata registration successful
+ mt_executePodJob.xml: Metadata registration successful
+ mt_executeReloadDBTraget.xml: Metadata registration successful
+ mt_executeSetupDG.xml: Metadata registration successful
+ mt_executeSqlJob.xml: Metadata registration successful
+ mt_executeSqlOnPrimaryStandbyDBJob.xml: Metadata registration successful
+ mt_executeTnsSqlJob.xml: Metadata registration successful
+ mt_VerifyInputVersion.xml: Metadata registration successful
+ sgLCMWrapperGenjob.xml: Metadata registration successful
+ UmountSharedStorageJob.xml: Metadata registration successful
+ UmountSharesJob.xml: Metadata registration successful
+ verifyInputFileJob.xml: Metadata registration successful
+ 
+ 
+ Registration of service successful
+ Registered the services and applied the patch on EM, will stage fa_dr_genparams now
+

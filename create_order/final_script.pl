@@ -1,0 +1,649 @@
+#!/usr/bin/perl
+
+
+use strict;
+use warnings;
+use Getopt::Long;
+use Pod::Usage;
+use File::Basename;
+use Cwd;
+
+my ($tag,$rackid,$primary_json_file,$standby_json_file,$em_registration,$pillar,$seed_pool,$running_pool,$sdictl,$logDir,$json_object,$dgname,$dgport);
+my ($relname,$hypusername,$hyppasswd,$sdiuser,$sdipasswd,$sdihost,$sdiscript,$infraObj,$infrauser,$infrapasswd,$infrahost,%allhyps,$is_server_pool,$server_pool);
+my(%templateHash,$sdiObj,$hvObj,$templatekey,$sys_img_loc,$sys_img_bi_loc,$hyp,$scriptDir,$bundle_scripts_loc,$email,$version,$HA,$system,$rac_version);
+
+
+BEGIN{
+	my $originalDir = getcwd();
+	$scriptDir = dirname($0);
+	chdir($scriptDir);
+	$scriptDir = getcwd();
+	chdir($originalDir);
+	push(@INC , "$scriptDir/../pm");
+}
+use RemoteCmd;
+use SDI;
+use HV;
+use JSON;
+use DoSystemCmd;
+
+$pillar = 'GSI';
+
+get_input();
+
+validate_input();
+
+create_objects();
+
+validate_ovs();
+
+register_tag();
+
+get_em_registrations();
+
+adddb('FUSION');
+
+adddb('IDM');
+
+addtags('FUSION');
+
+addtags('IDM');
+
+addrack();
+
+update_rack();
+
+addOVS();
+
+get_template_details();
+
+create_dirs();
+
+check_img_exists();
+
+modify_submit_bundle();
+
+modify_complete_bundle();
+
+copy_files_to_infradb();
+
+submit_order();
+
+
+sub get_input{
+        GetOptions('tag=s' => \$tag,
+                   'rackid=s' => \$rackid,
+                   'primary_json_file=s' => \$primary_json_file,
+		   'standby_json_file=s' => \$standby_json_file,
+                   'seed_pool=s' => \$seed_pool,
+                   'running_pool=s' => \$running_pool,
+		   'logDir=s' => \$logDir,
+		   'dgname=s' => \$dgname,
+		   'dgport=i' => \$dgport,
+		   'infrauser=s' => \$infrauser,
+		   'infrapasswd=s' => \$infrapasswd,
+		   'rac_version=s' => \$rac_version,
+		   'email=s' => \$email,
+		   'relname=s' => \$relname,
+		   'bundle_scripts_loc=s' => \$bundle_scripts_loc,
+		   'isstandby=s' => \$isstandby,
+		   'HA=s' => \$HA) or usage();
+}
+
+sub validate_input{
+	
+
+	if(! ( $tag and $rackid and $primary_json_file and $seed_pool and $running_pool and $logDir and $dgname and $dgport and $infrauser and $infrapasswd and 
+		$rac_version and $email and $relname and $HA and $bundle_scripts_loc)){
+		print "\nMnadatory parameter missing\n";
+		usage();
+	}
+
+	die "\nNo file present at location $primary_json_file\n" unless (-f $primary_json_file);
+	
+	die "\nBundle scripts directory $bundle_scripts_loc does not exist\n" unless(-d $bundle_scripts_loc);
+
+	my @bundle_files = qw(complete_bundle.sql gsi_bundle.sh submit_bundle.sql);
+	foreach my $file(@bundle_files){
+		die "\nThe file $file does not exist in the bundle scripts location $bundle_scripts_loc\n" unless (-f "$bundle_scripts_loc/$file");
+	}
+
+        my $primary_json_object= readJSON($primary_json_file);
+
+        $json_object= $primary_json_object;
+
+        if((uc($isstandby) eq 'YES') or (uc($isstandby) eq 'TRUE')){
+                die "\nParameter $standby_json_file not spcified, it is a mandatory parameter\n" unless (defined $standby_json_file);
+                die "\nNo file present at location $standby_json_file\n" unless (-f $json_file);
+
+                my $standby_json_object = readJSON($standby_json_file);
+
+                validateStandbyJSON($primary_json_object,$standby_json_object);
+
+                $json_object = $standby_json_object;
+        }
+
+}
+
+sub validateStandbyJSON{
+
+        my $p_json_object = shift;
+        my $s_json_object = shift;
+
+        die "\nFusion DB names are not the same in primary and standby json files\n" unless ($p_json_object->{"RACDB_INFO"}{"FUSION_DB_NAME"} eq $s_json_object->{"RACDB_INFO"}{"FUSION_DB_NAME"});
+
+        die "\nIDM DB names are not the same in primary and standby json files\n" unless ($p_json_object->{"RACDB_INFO"}{"IDM_DB_NAME"} eq $s_json_object->{"RACDB_INFO"}{"IDM_DB_NAME"});
+
+        die "\nFusion DB unique names are the same in primary and standby json files\n" unless ($p_json_object->{"RACDB_INFO"}{"FUSION_DB_UNIQUE_NAME"} ne $s_json_object->{"RACDB_INFO"}{"FUSION_DB_UNIQUE_NAME"});
+
+        die "\nIDM DB unique names are the same in primary and standby json files\n" unless ($p_json_object->{"RACDB_INFO"}{"IDM_DB_UNIQUE_NAME"} ne $s_json_object->{"RACDB_INFO"}{"IDM_DB_UNIQUE_NAME"});
+
+
+        die "\nFusion DB ports are not the same in primary and standby json files\n" unless ($p_json_object->{"RACDB_INFO"}{"FUSION_DB_PORT"} eq $s_json_object->{"RACDB_INFO"}{"FUSION_DB_PORT"});
+
+        die "\nIDM DB ports are not the same in primary and standby json files\n" unless ($p_json_object->{"RACDB_INFO"}{"IDM_DB_PORT"} eq $s_json_object->{"RACDB_INFO"}{"IDM_DB_PORT"});
+
+
+}
+
+
+sub create_objects{
+
+	system("mkdir -p $logDir");
+
+        $sdictl = $json_object->{SDI_INFO}{SDI_HOME} . '/sdictl/sdictl.sh';
+	
+        if((uc($isstandby) eq 'YES') or (uc($isstandby) eq 'TRUE')){
+                $sdihost = $json_object->{SDI_INFO}{SDI2_HOST};
+        }
+        else{
+                $sdihost = $json_object->{SDI_INFO}{SDI1_HOST};
+        }
+
+	$sdiuser = $json_object->{SDI_INFO}{USER_HOST_SDI};
+	$sdipasswd = $json_object->{SDI_INFO}{PSWD_HOST_SDI};
+	$hypusername = $json_object->{ZFS_STORAGE}{OVS_HYPERVISOR_USERNAME};
+	$hyppasswd = $json_object->{ZFS_STORAGE}{OVS_HYPERVISOR_PASSWORD};
+
+        my $logObj = Logger->new(
+                      {'loggerLogFile' => "$logDir/createorder.log",
+                      'maxLogLevel' => 4}
+                      );
+
+        $sdiObj = new SDI(user => $sdiuser,
+                             passwd =>  $sdipasswd,
+                             host => "$sdihost",
+                             sdiscript => $sdictl,
+                             logObj => $logObj);
+
+        $hvObj = RemoteCmd->new(user=> $hypusername,
+                                   passwd => $hyppasswd,
+                                   logObj => $logObj);
+
+	$infraObj = RemoteCmd->new(user => $infrauser,
+				   passwd => $infrapasswd,
+				   logObj => $logObj);
+
+	$system = DoSystemCmd->new({filehandle => \*STDOUT});
+}
+
+sub validate_ovs{
+
+        my $num = $json_object->{"TOTAL_VMS"};
+
+        for (my $i=1;$i<=$num;$i++){
+                my $hyp = $json_object->{VMS}{$i}{"VM_HV_NAME"};
+		$hyp = (split('\.',$hyp))[0];
+                $allhyps{$hyp} = 1;
+        }
+
+	undef $server_pool;
+
+	foreach my $hyp (keys %allhyps){
+		
+		my %ovshash  = $sdiObj->getOVSDetailsFromHost(hv => "$hyp");
+
+		if(exists $ovshash{'server_pool'}){
+			
+			if($ovshash{'server_pool'} =~ /-ovspool/){
+				print "\nError . The hypervisor $hyp is added in OVS with  rack id with server pool name $ovshash{'server_pool'}\n";
+				exit 1;
+			}
+			else{
+				$is_server_pool = 'true';
+				$server_pool =  $ovshash{'server_pool'} unless (defined $server_pool);
+
+				if($ovshash{'server_pool'} ne $server_pool){
+					print "\nHypversisor are added with different serverpool names $server_pool and $ovshash{'server_pool'} . Error\n";
+					exit 1;
+				}
+			}
+		}		
+	}
+
+	$server_pool = $rackid unless (defined $server_pool);
+	
+	print "\nAll hypervisors will be added to the server pool $server_pool\n";
+}
+
+
+sub register_tag{
+        my $cmd = "$sdictl register_tag -tagName $tag";
+
+	print "\n$cmd\n";
+
+	run_cmd_on_sdi($cmd);
+
+}
+
+sub get_em_registrations{
+
+        my $em_hostname = "$json_object->{SDI_INFO}{EMGC_HOST}";
+
+        my %emhash = $sdiObj->getEMDetails(hostname => $em_hostname);
+
+        $em_registration = $emhash{0}{name};
+
+	print "\nThe em registration is $em_registration\n";
+}
+
+sub adddb{
+        my $type = shift;
+        my $fa_database_type;
+        $fa_database_type = 'MAIN_DB' if $type eq 'FUSION';
+        $fa_database_type = 'OID_DB' if $type eq 'IDM';
+        my $DB_UNIQUE_NAME = $type . "_DB_UNIQUE_NAME";
+        my $DB_NAME = $type . "_DB_NAME";
+        my $DB_PORT = $type . "_DB_PORT";
+        my $DB_SID1 = $type . "_DB_SID1";
+        my $DB_SID2 = $type . "_DB_SID2";
+        my $DB_SERVICE_NAME = $type . "_DB_SERVICE_NAME";
+        my $DB_DATADISC_NAME = $type . "_DB_DATADISC_NAME";
+        my $DB_RECIDISC_NAME = $type . "_DB_RECIDISC_NAME";
+        my $DB_ORACLE_HOME = $type . "_DB_ORACLE_HOME";
+        my $cmd = "$sdictl addfadb"
+                ." -db_unique_name $json_object->{RACDB_INFO}{$DB_UNIQUE_NAME}"
+                ." -db_name $json_object->{RACDB_INFO}{$DB_NAME}"
+                ." -port $json_object->{RACDB_INFO}{$DB_PORT}"
+                ." -host_name1 $json_object->{RACDB_INFO}{RAC_NODE1_VIP_HOST}"
+                ." -sid1 $json_object->{RACDB_INFO}{$DB_SID1}"
+                ." -db_service_name $json_object->{RACDB_INFO}{$DB_SERVICE_NAME}"
+                ." -data_disc $json_object->{RACDB_INFO}{$DB_DATADISC_NAME}"
+                ." -reco_disc $json_object->{RACDB_INFO}{$DB_RECIDISC_NAME}"
+                ." -is_asm true"
+                ." -asm_user $json_object->{RACDB_INFO}{ASM_USERNAME}"
+                ." -asm_password $json_object->{RACDB_INFO}{ASM_USERPWD}"
+                ." -fa_database_type $fa_database_type"
+                ." -db_version  $rac_version"
+                ." -host_name2 $json_object->{RACDB_INFO}{RAC_NODE2_VIP_HOST}"
+                ." -sid2 $json_object->{RACDB_INFO}{$DB_SID2}"
+                ." -cluster_host1 $json_object->{RACDB_INFO}{FUSION_DB_HOST1}"
+                ." -cluster_host2 $json_object->{RACDB_INFO}{FUSION_DB_HOST2}"
+                ." -cluster_name $json_object->{RACDB_INFO}{RAC_CLUSTER_VIP_HOST}"
+                ." -crs_scan_name $json_object->{RACDB_INFO}{SRC_SCAN_NAME}"
+                ." -crs_scan_port $json_object->{RACDB_INFO}{CRS_SCAN_PORT}"
+                ." -crs_home $json_object->{RACDB_INFO}{CRS_HOME}"
+                ." -crs_ons_port $json_object->{RACDB_INFO}{CRS_ONS_PORT}"
+                ." -asm_sid1 $json_object->{RACDB_INFO}{ASM_SID1}"
+                ." -asm_sid2 $json_object->{RACDB_INFO}{ASM_SID2}"
+                ." -dg_preconfigured_listener_name $dgname"
+                ." -dg_preconfigured_listener_port $dgport"
+                ." -oracle_home $json_object->{RACDB_INFO}{$DB_ORACLE_HOME}"
+                ." -application_listener_name LISTENER_".uc($json_object->{RACDB_INFO}{$DB_UNIQUE_NAME})
+                ." -oracle_base /u01/app/oracle";
+	$cmd .= " -em_registration $em_registration" if(uc($type) eq 'FUSION');
+	$cmd .= " is_standby true" if((uc($isstandby) eq 'YES') or (uc($isstandby) eq 'TRUE'));
+
+        print "\n$cmd\n";
+
+	run_cmd_on_sdi($cmd);
+
+}
+
+sub addtags{
+        my $type = shift;
+        my $DB_UNIQUE_NAME = $type . "_DB_UNIQUE_NAME";
+        my $cmd = "$sdictl updatefadb -db_unique_name $json_object->{RACDB_INFO}{$DB_UNIQUE_NAME}"
+                 ." -addtag $tag"
+                 ." -addconstraint OPC_ORDER:+$tag"
+                 ." -addconstraint OPC_RACK:+$tag";
+        
+	print "\n$cmd\n";
+
+	run_cmd_on_sdi($cmd);
+
+}
+
+
+sub addrack{
+
+        my $type = "FA_"."$pillar";
+
+        my $cmd = "$sdictl addrack -id $rackid -frontend $json_object->{VMS}{1}{VM_SUBNET_MASK}:$json_object->{VMS}{1}{VM_GATEWAY}";
+	
+	my $num = $json_object->{"TOTAL_VMS"};
+        for (my $i=1;$i<=$num;$i++){
+                $cmd .= ":$json_object->{VMS}{$i}{VM_IP}";
+
+        }
+
+        $cmd =  $cmd." -ovsServerpool $server_pool -type $type -prefLevel 100 -zfs $json_object->{SDI_INFO}{ZFS_ID}";
+
+	$cmd .= " -networkBridge0 xenbr0";
+
+        print "\n$cmd\n";
+
+	run_cmd_on_sdi($cmd);
+
+
+}
+
+sub update_rack{
+	my $cmd = "$sdictl updaterack -id $rackid -addtag $tag -addconstraint OPC_ORDER:+$tag -addconstraint OPC_FADATABASE:+$tag";
+
+        print "\n$cmd\n";
+
+        run_cmd_on_sdi($cmd);
+
+}
+
+sub addOVS{
+
+
+	foreach my $hyp(keys %allhyps){
+
+	        my $ovsid  = (split('\.',$hyp))[0];
+        	my $cmd = "$sdictl addOVS -ovsId $ovsid -hostname $hyp"
+                	 ." -username $json_object->{ZFS_STORAGE}{OVS_HYPERVISOR_USERNAME}"
+	                 ." -password  $json_object->{ZFS_STORAGE}{OVS_HYPERVISOR_PASSWORD}"
+	                 ." -server_pool $server_pool"
+	                 ." -seed_pool $seed_pool -running_pool $running_pool";
+
+	        print "\n$cmd\n";
+
+	        run_cmd_on_sdi($cmd);
+
+	}
+
+
+}
+
+sub get_template_details{
+        %templateHash = $sdiObj->getTemplateDetails(relname => $relname);
+
+        if($templateHash{0}{relver} eq ''){
+                print "\nThere is no template registered in SDI with the release name $relname\n";
+                exit 1;
+        }
+
+        my $flag = 'false';
+
+        my $servicetype = 'FA_'.uc($pillar);
+
+        for my $keycount(keys %templateHash){
+                if(($templateHash{$keycount}{servicetype} eq $servicetype) and ($templateHash{$keycount}{ispreferred} eq 'true')){
+                        $flag = 'true';
+                        $templatekey = $keycount;
+                        last;
+                }
+        }
+
+        if( $flag eq 'false'){
+                print "\nNo template found with relname $relname and pillar $pillar with ispreferred as true\n";
+                exit 1;
+        }
+
+        print "\nTemplate name is $templateHash{$templatekey}{template}\n";
+        return 0;
+
+}
+
+sub create_dirs{
+
+	foreach my $hyp(keys %allhyps){
+
+	        my $template_name = $templateHash{$templatekey}{template};
+
+        	$sys_img_loc = "$seed_pool/$template_name";
+
+	        my $cmd = "mkdir -p $sys_img_loc";
+	
+	        my $out = $hvObj->executeCommandsonRemote(cmd => $cmd,
+                                                 host => $hyp);
+
+        	if (grep(/error|no such|failed|Fail/i, @$out)) {
+                	print "\nError in creating directory $sys_img_loc in the hyp $hyp\n";
+	                exit 1;
+        	}
+	}
+
+}
+
+
+sub check_img_exists{
+
+	foreach my $hyp(keys %allhyps){
+
+	        my $sys_img_file = $sys_img_loc . "/SystemImg.tar.gz";
+	
+	        my $cmd = "#!/bin/bash
+
+	                   if [ ! -f '$sys_img_file' ]; then
+	                        echo '$sys_img_file does not exist. No such file'
+        	                exit 1;
+	                   fi" ;
+
+        	my ( $ret_code , $out );
+	        ($ret_code,$out ) = $hvObj->createAndRunScript(host=> $hyp,
+                                                          cmd => $cmd);
+
+	        if($ret_code == 1 ){
+        	        print "\nSystem images do not exist in $sys_img_loc in the hyp $hyp .  Copying them from SDI host\n";
+	                copy_sys_img($hyp);
+	        }
+        	else{
+	                print "\nSystem images already exist in the hypervisor $hyp\n";
+        	}
+	}
+}
+
+
+sub copy_sys_img{
+
+	my $hyp = shift;
+
+        my $img_loc_sdi = "/fa_template/$relname/DedicatedIdm/paid/".uc($pillar)."/OVAB_HOME/vm";
+
+        my $img_file_sdi = "$img_loc_sdi/SystemImg.tar.gz";
+
+        my $destdir = $sys_img_loc;
+
+        $sdiObj->{'remoteObj'}->copySrcToDest( host => $sdiObj->{host},
+                                               file => $img_file_sdi,
+                                               username => $hypusername,
+                                               hostname => $hyp,
+                                               destdir => $destdir,
+                                               hostpasswd => $hyppasswd);
+
+	untar_imgs($hyp);
+}
+
+sub untar_imgs{
+
+	my $hyp = shift;
+        my $cmd = "tar -xvf $sys_img_loc/SystemImg.tar.gz -C $sys_img_loc";
+
+        my $out = $hvObj->executeCommandsonRemote(cmd => $cmd,
+                                                 host => $hyp);
+
+        if (grep(/error|no such|failed|Fail/i, @$out)) {
+        	print "\n Error in untaring the system image at $sys_img_loc in the hyy $hyp\n";
+		exit 1;
+	}
+
+	change_permissions($hyp);
+
+}
+
+sub change_permissions{
+
+	my $hyp = shift;
+
+	my $cmd = "chmod -R 777 $sys_img_loc";
+
+        my $out = $hvObj->executeCommandsonRemote(cmd => $cmd,
+                                                 host => $hyp);
+
+        if (grep(/error|no such|failed|Fail/i, @$out)) {
+                print "\n Error in changing directory permissions  at $sys_img_loc\n";
+                exit 1;
+        }
+
+
+	
+}
+
+sub modify_submit_bundle{
+
+	$version = "$templateHash{$templatekey}{relver}";
+
+	my $prodcmd = "sed -i -e \"s#PRODUCT_RELEASE_VERSION[^\\\)]*#PRODUCT_RELEASE_VERSION\x27,\x27$version\x27#\"";
+	
+	my $tagcmd = "sed -i -e \"s#TAGS[^\\\)]*#TAGS\x27,\x27$tag\x27#\"";
+
+	my $emailcmd = "sed -i -e \"s/email[^\\\),]*/email =>\x27$email\x27/g\"";
+
+        my $cmd = "$tagcmd $bundle_scripts_loc/submit_bundle.sql";
+        
+	my $ret_code = $system->do_cmd($cmd);
+
+	if(defined $ret_code and $ret_code >0){
+		print "\nError in changing tag name in submit_bundle.sql\n";
+		exit 1;
+	}
+
+	$cmd = "$prodcmd $bundle_scripts_loc/submit_bundle.sql";
+
+        $ret_code = $system->do_cmd($cmd);
+
+        if(defined $ret_code and $ret_code >0){
+                print "\nError in changing product release version in submit_bundle.sql\n";
+                exit 1;
+        }
+
+
+        $cmd = "$emailcmd $bundle_scripts_loc/submit_bundle.sql";
+     
+	$ret_code = $system->do_cmd($cmd);
+   
+        if(defined $ret_code and $ret_code >0){
+                print "\nError in changing email ids  in submit_bundle.sql\n";
+                exit 1;
+        }
+
+
+}
+
+sub modify_complete_bundle{
+
+	my $emailcmd = "sed -i -e \"s/email[^\\\),]*/email =>\x27$email\x27/g\"";
+
+        my $cmd = "$emailcmd $bundle_scripts_loc/complete_bundle.sql";
+        
+	my $ret_code = $system->do_cmd($cmd);
+      
+	if(defined $ret_code and $ret_code >0){
+                print "\nError in changing email in complete_bundle.sql\n";
+                exit 1;
+        }
+
+
+}
+
+sub copy_files_to_infradb{
+	
+	$infrahost = $json_object->{"SDI_INFO"}{"INFRA_DB_HOST"};
+	my $file = "$bundle_scripts_loc/complete_bundle.sql $bundle_scripts_loc/gsi_bundle.sh $bundle_scripts_loc/submit_bundle.sql";
+	my $dest = '/tmp';
+	
+	$infraObj->copyFileToHost(host => $infrahost,
+				  file => $file,
+				  dest => $dest);
+}
+
+
+sub submit_order{
+        my $org_id = 1000+int(rand(8999));
+        my $order_id = 100+int(rand(899));
+        my $pillar_submit = $pillar;
+        $pillar_submit = 'ERP' if ($pillar eq 'GSI');
+        my $submitoptions;
+        $submitoptions = (uc($HA) eq 'YES') ? "DEPLOY_TEST_INSTANCE_FALSE" : "PROV_TEST_BEFORE_PROD";
+
+        my $cmd = './gsi_bundle.sh' . " $org_id $order_id $pillar_submit NONE $submitoptions";
+
+	$cmd = "\"cd /tmp; $cmd\"";
+	print "\n$cmd\n";
+	
+	my $out = $infraObj->executeCommandsonRemote(host => $infrahost,
+							     cmd =>$cmd);
+        my $successStr = "PL/SQL procedure successfully completed";
+        my $num = grep(/$successStr/,@$out) ;
+
+        if($num !=2){
+                die "\nError in running the gsi_bundi.sh script.\n";
+        }
+
+        print "\nSubmitted the order successfully on with org id $org_id and order id $order_id\n";
+}
+
+sub run_cmd_on_sdi{
+	my $cmd = shift;
+
+	print "\nWill run the command $cmd on the SDI host\n";
+
+	my $out = $sdiObj->{remoteObj}->executeCommandsonRemote(cmd => $cmd,
+							      host => $sdiObj->{host});
+
+        if (grep(/error|no such|failed|Fail/i, @$out)) {
+                print "\nError in executing the command $cmd on SDI host $sdiObj->{host}\n";
+                exit 1;
+        }
+
+}
+sub readJSON{
+
+        my $json_file = shift;
+        my $json_input;
+        {
+                local $/ = undef;
+                open my $json_file_fh,'<',$json_file;
+                $json_input=<$json_file_fh>;
+                close $json_file_fh;
+        }
+
+        my $json_return = decode_json($json_input);
+        return $json_return;
+}
+
+sub usage{
+print << "EOF";
+tag
+rackid
+json_file
+seed_pool
+running_pool
+logDir
+dgname
+dgport
+infrauser
+infrapasswd
+rac_version
+email
+relname
+bundle_scripts_loc
+HA
+EOF
+
+exit(1);
+}

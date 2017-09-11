@@ -1,0 +1,186 @@
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/03/16 03:17:25 (no timeout)
+#| expect -c 'spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no /scratch/aime/tarun/create_order/validations/check_mount.pl oracle@slc03wfy.us.oracle.com:/tmp;
+#|                    expect Password: ;
+#|                    send "Welcome1\r";
+#|                    send "exit\r";
+#|                    interact'
+#| Program Output:
+spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no /scratch/aime/tarun/create_order/validations/check_mount.pl oracle@slc03wfy.us.oracle.com:/tmp
+Warning: Permanently added 'slc03wfy.us.oracle.com,10.245.138.1' (RSA) to the list of known hosts.
+Authorized uses only. All activity may be monitored and reported.
+oracle@slc03wfy.us.oracle.com's password: 
+check_mount.pl                                                                                                                              0%    0     0.0KB/s   --:-- ETAcheck_mount.pl                                                                                                                            100% 1898     1.9KB/s   00:00    
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/03/16 03:17:38 (no timeout)
+#| expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no oracle@slc03wfy.us.oracle.com /tmp/check_mount.pl -test fa_mounts -project_name fa_fadrsdigsiser8886635-test 
+#|                    expect Password: ;
+#|                    send "Welcome1\r";
+#|                    send "exit\r";
+#|                    interact'
+#| Program Output:
+spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no oracle@slc03wfy.us.oracle.com /tmp/check_mount.pl -test fa_mounts -project_name fa_fadrsdigsiser8886635-test
+Warning: Permanently added 'slc03wfy.us.oracle.com,10.245.138.1' (RSA) to the list of known hosts.
+Authorized uses only. All activity may be monitored and reported.
+oracle@slc03wfy.us.oracle.com's password: 
+
+Removed the previous files from tmp directory
+
+slcnas559.us.oracle.com:/export/fa_fadrsdigsiser8886635-test/fa_fadrsdigsiser8886635-test/REL13_ST0Rel0.0 /u01 nfs rw,hard,nointr,rsize=131072,wsize=131072,timeo=600,noacl,noatime,nodiratime 0 0
+
+
+
+
+There is a discrepancy with mount points
+
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/03/16 03:17:50 (no timeout)
+#| expect -c 'spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no oracle@slc03wfy.us.oracle.com:/tmp/fa_mounts* /scratch/aime//validation_logs;
+#|                    expect Password: ;
+#|                    send "Welcome1\r";
+#|                    send "exit\r";
+#|                    interact'
+#| Program Output:
+spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no oracle@slc03wfy.us.oracle.com:/tmp/fa_mounts* /scratch/aime//validation_logs
+Warning: Permanently added 'slc03wfy.us.oracle.com,10.245.138.1' (RSA) to the list of known hosts.
+Authorized uses only. All activity may be monitored and reported.
+oracle@slc03wfy.us.oracle.com's password: 
+fa_mounts.dif                                                                                                                             100%    0     0.0KB/s   00:00    
+fa_mounts.log                                                                                                                               0%    0     0.0KB/s   --:-- ETAfa_mounts.log                                                                                                                             100%   43     0.0KB/s   00:00    
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/03/16 03:18:02 (no timeout)
+#| expect -c 'spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no /scratch/aime/tarun/create_order/validations/check_mount.pl oracle@slc03wga.us.oracle.com:/tmp;
+#|                    expect Password: ;
+#|                    send "Welcome1\r";
+#|                    send "exit\r";
+#|                    interact'
+#| Program Output:
+spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no /scratch/aime/tarun/create_order/validations/check_mount.pl oracle@slc03wga.us.oracle.com:/tmp
+Warning: Permanently added 'slc03wga.us.oracle.com,10.245.138.3' (RSA) to the list of known hosts.
+Authorized uses only. All activity may be monitored and reported.
+oracle@slc03wga.us.oracle.com's password: 
+check_mount.pl                                                                                                                              0%    0     0.0KB/s   --:-- ETAcheck_mount.pl                                                                                                                            100% 1898     1.9KB/s   00:00    
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/03/16 03:18:15 (no timeout)
+#| expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no oracle@slc03wga.us.oracle.com /tmp/check_mount.pl -test idm_mounts -project_name fa_fadrsdigsiser8886635-test 
+#|                    expect Password: ;
+#|                    send "Welcome1\r";
+#|                    send "exit\r";
+#|                    interact'
+#| Program Output:
+spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no oracle@slc03wga.us.oracle.com /tmp/check_mount.pl -test idm_mounts -project_name fa_fadrsdigsiser8886635-test
+Warning: Permanently added 'slc03wga.us.oracle.com,10.245.138.3' (RSA) to the list of known hosts.
+Authorized uses only. All activity may be monitored and reported.
+oracle@slc03wga.us.oracle.com's password: 
+
+Removed the previous files from tmp directory
+
+slcnas559.us.oracle.com:/export/fa_fadrsdigsiser8886635-test/fa_fadrsdigsiser8886635-test/c9_ser8886635_idm /u01 nfs rw,hard,nointr,rsize=131072,wsize=131072,timeo=600,noacl,noatime,nodiratime 0 0
+
+df: `/podscratch': Stale file handle
+
+
+
+There is a discrepancy with mount points
+
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/03/16 03:18:28 (no timeout)
+#| expect -c 'spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no oracle@slc03wga.us.oracle.com:/tmp/idm_mounts* /scratch/aime//validation_logs;
+#|                    expect Password: ;
+#|                    send "Welcome1\r";
+#|                    send "exit\r";
+#|                    interact'
+#| Program Output:
+spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no oracle@slc03wga.us.oracle.com:/tmp/idm_mounts* /scratch/aime//validation_logs
+Warning: Permanently added 'slc03wga.us.oracle.com,10.245.138.3' (RSA) to the list of known hosts.
+Authorized uses only. All activity may be monitored and reported.
+oracle@slc03wga.us.oracle.com's password: 
+idm_mounts.dif                                                                                                                            100%    0     0.0KB/s   00:00    
+idm_mounts.log                                                                                                                              0%    0     0.0KB/s   --:-- ETAidm_mounts.log                                                                                                                            100%   43     0.0KB/s   00:00    
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/03/16 03:18:41 (no timeout)
+#| expect -c 'spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no /scratch/aime/tarun/create_order/validations/check_mount.pl oracle@slc03wfx.us.oracle.com:/tmp;
+#|                    expect Password: ;
+#|                    send "Welcome1\r";
+#|                    send "exit\r";
+#|                    interact'
+#| Program Output:
+spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no /scratch/aime/tarun/create_order/validations/check_mount.pl oracle@slc03wfx.us.oracle.com:/tmp
+Warning: Permanently added 'slc03wfx.us.oracle.com,10.245.137.254' (RSA) to the list of known hosts.
+Authorized uses only. All activity may be monitored and reported.
+oracle@slc03wfx.us.oracle.com's password: 
+check_mount.pl                                                                                                                              0%    0     0.0KB/s   --:-- ETAcheck_mount.pl                                                                                                                            100% 1898     1.9KB/s   00:00    
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/03/16 03:18:53 (no timeout)
+#| expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no oracle@slc03wfx.us.oracle.com /tmp/check_mount.pl -test ohs_mounts -project_name fa_fadrsdigsiser8886635-test 
+#|                    expect Password: ;
+#|                    send "Welcome1\r";
+#|                    send "exit\r";
+#|                    interact'
+#| Program Output:
+spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no oracle@slc03wfx.us.oracle.com /tmp/check_mount.pl -test ohs_mounts -project_name fa_fadrsdigsiser8886635-test
+Warning: Permanently added 'slc03wfx.us.oracle.com,10.245.137.254' (RSA) to the list of known hosts.
+Authorized uses only. All activity may be monitored and reported.
+oracle@slc03wfx.us.oracle.com's password: 
+
+Removed the previous files from tmp directory
+
+slcnas559.us.oracle.com:/export/fa_fadrsdigsiser8886635-test/fa_fadrsdigsiser8886635-test/c9_ser8886635_ohs /u01 nfs rw,hard,nointr,rsize=131072,wsize=131072,timeo=600,noacl,noatime,nodiratime 0 0
+
+df: `/podscratch': Stale file handle
+
+
+
+There is a discrepancy with mount points
+
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/03/16 03:19:06 (no timeout)
+#| expect -c 'spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no oracle@slc03wfx.us.oracle.com:/tmp/ohs_mounts* /scratch/aime//validation_logs;
+#|                    expect Password: ;
+#|                    send "Welcome1\r";
+#|                    send "exit\r";
+#|                    interact'
+#| Program Output:
+spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no oracle@slc03wfx.us.oracle.com:/tmp/ohs_mounts* /scratch/aime//validation_logs
+Warning: Permanently added 'slc03wfx.us.oracle.com,10.245.137.254' (RSA) to the list of known hosts.
+Authorized uses only. All activity may be monitored and reported.
+oracle@slc03wfx.us.oracle.com's password: 
+ohs_mounts.dif                                                                                                                            100%    0     0.0KB/s   00:00    
+ohs_mounts.log                                                                                                                              0%    0     0.0KB/s   --:-- ETAohs_mounts.log                                                                                                                            100%   43     0.0KB/s   00:00    
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+Sent mail to abcd@oracle.com,tarun.karamshetty@oracle.com successfully

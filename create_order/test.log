@@ -1,0 +1,40 @@
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/04/03 00:03:51 (no timeout)
+#| expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh lstcc;
+#|                    expect "password:" ;
+#|                    send "Or@ClE\r";
+#|                    send "exit\r";
+#|                    interact' | awk -F '|' '/slc03wnc/ { if ($1 !~ /spawn/ && $1 !~ /aime/ && $1 !~ /Connect/ && $1 !~ /^---/ && $1 !~ /Found/ && $1 !~ /Request/) print "name::"$1",,isdefault::"$2",,dcshortname::"$3",,host::"$4",,port::"$5",,httpsport::"$6",,protocol::"$7",,jvmdport::"$8",,omsagentport::"$9",,omsuploadport::"$10" ,,fasaasuser::"$11" ,,fasaaspasswd::"$12",,monitoruser::"$13",,monitorpasswd::"$14",,javaassembly::"$14}'
+#| Program Output:
+name:: primary_cc ,,isdefault:: true       ,,dcshortname:: US1           ,,host:: slc03wnc.us.oracle.com ,,port:: 7789 ,,httpsport:: 7801       ,,protocol:: HTTP     ,,jvmdport:: 3800      ,,omsagentport:: 3872           ,,omsuploadport:: 4901             ,,fasaasuser:: emcmon                   ,,fasaaspasswd:: *****                       ,,monitoruser:: em_svc_monitor  ,,monitorpasswd:: *****                    ,,javaassembly:: *****                    
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+The em registration is primary_cc
+
+/scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addOVS -ovsId slcai552 -hostname slcai552.us.oracle.com -username ovmroot -password  Welcome1 -rackId rel13rackkt -seed_pool /OVS/seed_pool -running_pool /OVS/running_pool
+
+/scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addOVS -ovsId slcai552 -hostname slcai552.us.oracle.com -username ovmroot -password  Welcome1 -rackId rel13rackkt -seed_pool /OVS/seed_pool -running_pool /OVS/running_pool
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/04/03 00:03:59 (no timeout)
+#| expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addOVS -ovsId slcai552 -hostname slcai552.us.oracle.com -username ovmroot -password  Welcome1 -rackId rel13rackkt -seed_pool /OVS/seed_pool -running_pool /OVS/running_pool;
+#|                    expect "password:" ;
+#|                    send "Or@ClE\r";
+#|                    send "exit\r";
+#|                    interact'
+#| Program Output:
+spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addOVS -ovsId slcai552 -hostname slcai552.us.oracle.com -username ovmroot -password Welcome1 -rackId rel13rackkt -seed_pool /OVS/seed_pool -running_pool /OVS/running_pool
+Warning: Permanently added 'slc03wnj,10.245.144.212' (RSA) to the list of known hosts.
+aime@slc03wnj's password: 
+Connecting to the SDIControlService endpoint at http://slc03wnj.us.oracle.com:7301
+
+Add OVS Error: Illegal Argument: ovsID slcai552 already exists
+
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+Error in executing the command /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addOVS -ovsId slcai552 -hostname slcai552.us.oracle.com -username ovmroot -password  Welcome1 -rackId rel13rackkt -seed_pool /OVS/seed_pool -running_pool /OVS/running_pool on SDI host slc03wnj

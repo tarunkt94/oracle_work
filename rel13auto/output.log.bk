@@ -1,0 +1,165 @@
+
+/scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh register_tag -tagName rel13taruntag
+
+Will run the command /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh register_tag -tagName rel13taruntag on the SDI host
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/04/27 07:26:55 (no timeout)
+#| expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh lstcc;
+#|                    expect "password:" ;
+#|                    send "Or@ClE\r";
+#|                    send "exit\r";
+#|                    interact' | awk -F '|' '/slc03wnc/ { if ($1 !~ /spawn/ && $1 !~ /aime/ && $1 !~ /Connect/ && $1 !~ /^---/ && $1 !~ /Found/ && $1 !~ /Request/) print "name::"$1",,isdefault::"$2",,dcshortname::"$3",,host::"$4",,port::"$5",,httpsport::"$6",,protocol::"$7",,jvmdport::"$8",,omsagentport::"$9",,omsuploadport::"$10" ,,fasaasuser::"$11" ,,fasaaspasswd::"$12",,monitoruser::"$13",,monitorpasswd::"$14",,javaassembly::"$14}'
+#| Program Output:
+name:: primary_cc ,,isdefault:: true       ,,dcshortname:: US1           ,,host:: slc03wnc.us.oracle.com ,,port:: 7789 ,,httpsport:: 7801       ,,protocol:: HTTP     ,,jvmdport:: 3800      ,,omsagentport:: 3872           ,,omsuploadport:: 4901             ,,fasaasuser:: emcmon                   ,,fasaaspasswd:: *****                       ,,monitoruser:: em_svc_monitor  ,,monitorpasswd:: *****                    ,,javaassembly:: *****                    
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+The em registration is primary_cc
+
+/scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name fadb -db_name fadb -port 1530 -host_name1 slc09mqv.us.oracle.com -sid1 fadb1 -db_service_name fadb -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type MAIN_DB -db_version  12.1.0.2.0 -host_name2 slc09mqu.us.oracle.com -sid2 fadb2 -cluster_host1 slc09mqz.us.oracle.com -cluster_host2 slc09mqy.us.oracle.com -cluster_name slc09mqt -crs_scan_name slc09mqt.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_fadb -oracle_base /u01/app/oracle -em_registration primary_cc
+
+Will run the command /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name fadb -db_name fadb -port 1530 -host_name1 slc09mqv.us.oracle.com -sid1 fadb1 -db_service_name fadb -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type MAIN_DB -db_version  12.1.0.2.0 -host_name2 slc09mqu.us.oracle.com -sid2 fadb2 -cluster_host1 slc09mqz.us.oracle.com -cluster_host2 slc09mqy.us.oracle.com -cluster_name slc09mqt -crs_scan_name slc09mqt.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_fadb -oracle_base /u01/app/oracle -em_registration primary_cc on the SDI host
+
+/scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name oiddb -db_name oiddb -port 1531 -host_name1 slc09mqv.us.oracle.com -sid1 oiddb1 -db_service_name oiddb -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type OID_DB -db_version  12.1.0.2.0 -host_name2 slc09mqu.us.oracle.com -sid2 oiddb2 -cluster_host1 slc09mqz.us.oracle.com -cluster_host2 slc09mqy.us.oracle.com -cluster_name slc09mqt -crs_scan_name slc09mqt.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_oiddb -oracle_base /u01/app/oracle
+
+Will run the command /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addfadb -db_unique_name oiddb -db_name oiddb -port 1531 -host_name1 slc09mqv.us.oracle.com -sid1 oiddb1 -db_service_name oiddb -data_disc DATA -reco_disc RECO -is_asm true -asm_user sys -asm_password oracle -fa_database_type OID_DB -db_version  12.1.0.2.0 -host_name2 slc09mqu.us.oracle.com -sid2 oiddb2 -cluster_host1 slc09mqz.us.oracle.com -cluster_host2 slc09mqy.us.oracle.com -cluster_name slc09mqt -crs_scan_name slc09mqt.us.oracle.com -crs_scan_port 1616 -crs_home /u01/app/12.1.0/grid -crs_ons_port 6200 -asm_sid1 +ASM1 -asm_sid2 +ASM2 -dg_preconfigured_listener_name LISTENER_DG -dg_preconfigured_listener_port 1521 -oracle_home /u01/app/oracle/product/12.1.0/dbhome_1 -application_listener_name LISTENER_oiddb -oracle_base /u01/app/oracle on the SDI host
+
+/scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh updatefadb -db_unique_name fadb -addtag rel13taruntag -addconstraint OPC_ORDER:+rel13taruntag -addconstraint OPC_RACK:+rel13taruntag
+
+Will run the command /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh updatefadb -db_unique_name fadb -addtag rel13taruntag -addconstraint OPC_ORDER:+rel13taruntag -addconstraint OPC_RACK:+rel13taruntag on the SDI host
+
+/scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh updatefadb -db_unique_name oiddb -addtag rel13taruntag -addconstraint OPC_ORDER:+rel13taruntag -addconstraint OPC_RACK:+rel13taruntag
+
+Will run the command /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh updatefadb -db_unique_name oiddb -addtag rel13taruntag -addconstraint OPC_ORDER:+rel13taruntag -addconstraint OPC_RACK:+rel13taruntag on the SDI host
+
+/scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addrack -id rel13tarunrack -frontend 255.255.248.0:10.245.136.1:10.245.138.10:10.245.138.11:10.245.138.12:10.245.138.13:10.245.138.14 -serverpool rel13tarunrack -type FA_GSI -prefLevel 100 -zfs zfs_29398615
+
+Will run the command /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addrack -id rel13tarunrack -frontend 255.255.248.0:10.245.136.1:10.245.138.10:10.245.138.11:10.245.138.12:10.245.138.13:10.245.138.14 -serverpool rel13tarunrack -type FA_GSI -prefLevel 100 -zfs zfs_29398615 on the SDI host
+
+/scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh updaterack -id rel13tarunrack -addtag rel13taruntag -addconstraint OPC_ORDER:+rel13taruntag -addconstraint OPC_FADATABASE:+rel13taruntag
+
+Will run the command /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh updaterack -id rel13tarunrack -addtag rel13taruntag -addconstraint OPC_ORDER:+rel13taruntag -addconstraint OPC_FADATABASE:+rel13taruntag on the SDI host
+
+/scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addOVS -ovsId slcah779 -hostname slcah779.us.oracle.com -username ovmroot -password  welcome1 -rackId rel13tarunrack -seed_pool /OVS/seed_pool -running_pool /OVS/running_pool
+
+Will run the command /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh addOVS -ovsId slcah779 -hostname slcah779.us.oracle.com -username ovmroot -password  welcome1 -rackId rel13tarunrack -seed_pool /OVS/seed_pool -running_pool /OVS/running_pool on the SDI host
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/04/27 07:27:03 (no timeout)
+#| expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no aime@slc03wnj /scratch/aime/work/CLOUDTOP/Middleware/Oracle_SDI1/sdictl/sdictl.sh list_fa_templates;
+#|                    expect "password:" ;
+#|                    send "Or@ClE\r";
+#|                    send "exit\r";
+#|                    interact' | awk -F '|' '/REL13_ST2/ { if ($1 !~ /spawn/ && $1 !~ /aime/ && $1 !~ /Connect/ && $1 !~ /^---/ && $1 !~ /Found/ && $1 !~ /Request/) print "relver::"$1",,patchrelver::"$2",,relname::"$3",,patchbundle::"$4",,servicebundle::"$5",,langlist::"$6",,servicetype::"$7",,istrail::"$8",,template::"$9",,ispreferred::"$10}'
+#| Program Output:
+relver:: 11.13.17.6.0    ,,patchrelver:: REL13_ST2               ,,relname:: REL13_ST2            ,,patchbundle:: ---          ,,servicebundle:: ---                   ,,langlist:: ---                     ,,servicetype:: FA_GSI       ,,istrail:: false    ,,template:: REL13_GSI_ST2          ,,ispreferred:: true         
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+Template name is REL13_GSI_ST2
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/04/27 07:27:11 (no timeout)
+#| expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcah779.us.oracle.com mkdir -p /OVS/seed_pool/REL13_GSI_ST2;
+#|                    expect "password:" ;
+#|                    send "welcome1\r";
+#|                    send "exit\r";
+#|                    interact'
+#| Program Output:
+spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcah779.us.oracle.com mkdir -p /OVS/seed_pool/REL13_GSI_ST2
+Warning: Permanently added 'slcah779.us.oracle.com,10.245.136.56' (RSA) to the list of known hosts.
+ovmroot@slcah779.us.oracle.com's password: 
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/04/27 07:27:14 (no timeout)
+#| expect -c 'spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no /tmp/slcah779.us.oracle.com.script.6068.sh ovmroot@slcah779.us.oracle.com:/tmp;
+#|                    expect Password: ;
+#|                    send "welcome1\r";
+#|                    send "exit\r";
+#|                    interact'
+#| Program Output:
+spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no /tmp/slcah779.us.oracle.com.script.6068.sh ovmroot@slcah779.us.oracle.com:/tmp
+Warning: Permanently added 'slcah779.us.oracle.com,10.245.136.56' (RSA) to the list of known hosts.
+ovmroot@slcah779.us.oracle.com's password: 
+slcah779.us.oracle.com.script.6068.sh                                                                                                0%    0     0.0KB/s   --:-- ETAslcah779.us.oracle.com.script.6068.sh                                                                                              100%  261     0.3KB/s   00:00    
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/04/27 07:27:26 (no timeout)
+#| expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcah779.us.oracle.com /tmp/slcah779.us.oracle.com.script.6068.sh;
+#|                    expect "password:" ;
+#|                    send "welcome1\r";
+#|                    send "exit\r";
+#|                    interact'
+#| Program Output:
+spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcah779.us.oracle.com /tmp/slcah779.us.oracle.com.script.6068.sh
+Warning: Permanently added 'slcah779.us.oracle.com,10.245.136.56' (RSA) to the list of known hosts.
+ovmroot@slcah779.us.oracle.com's password: 
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/04/27 07:27:28 (no timeout)
+#| expect -c 'spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcah779.us.oracle.com rm -rf /tmp/slcah779.us.oracle.com.script.6068.sh;
+#|                    expect "password:" ;
+#|                    send "welcome1\r";
+#|                    send "exit\r";
+#|                    interact'
+#| Program Output:
+spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ovmroot@slcah779.us.oracle.com rm -rf /tmp/slcah779.us.oracle.com.script.6068.sh
+Warning: Permanently added 'slcah779.us.oracle.com,10.245.136.56' (RSA) to the list of known hosts.
+ovmroot@slcah779.us.oracle.com's password: 
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+System images already exist in the hypervisor
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/04/27 07:27:30 (no timeout)
+#| sed -i -e "s#TAGS[^\)]*#TAGS','rel13taruntag'#" /scratch/aime/tarun/rel13auto/bundle_scripts/HA/submit_bundle.sql
+#| Program Output:
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/04/27 07:27:30 (no timeout)
+#| sed -i -e "s#PRODUCT_RELEASE_VERSION[^\)]*#PRODUCT_RELEASE_VERSION','11.13.17.6.0'#" /scratch/aime/tarun/rel13auto/bundle_scripts/HA/submit_bundle.sql
+#| Program Output:
+#| Result: command successful
+#|--------------------------------------------------------------------
+
+
+#|--------------------------------------------------------------------
+#| Executing External Program, 17/04/27 07:27:30 (no timeout)
+#| sed -i -e "s/email[^\),]*/email =>'tarun.karamshetty@oracle.com'/g"/scratch/aime/tarun/rel13auto/bundle_scripts/HA/submit_bundle.sql
+#| Program Output:
+sed: -e expression #1, char 56: unknown option to `s'
+#| Result: sed: -e expression #1, char 56: unknown option to `s'
+#| non-zero exit status 1
+#|--------------------------------------------------------------------
+
+ERROR: sed: -e expression #1, char 56: unknown option to `s'
+non-zero exit status 1 (sed -i -e "s/email[^\),]*/email =>'tarun.karamshetty@oracle.com'/g"/scratch/aime/tarun/rel13auto/bundle_scripts/HA/submit_bundle.sql)
+
+
+
+Line File                 Sub Called                                    Arg WntA
+---- ----                 ----------                                    --- ----
+ 136 DoBuiltinCmd.pm      Debug::stack_trace                             Y   Y
+ 395 DoSystemCmd.pm       DoBuiltinCmd::error                            Y   N
+ 427 final_script.pl      DoSystemCmd::do_cmd                            Y   N
+  64 final_script.pl      main::modify_submit_bundle                     Y   N
+
+
+

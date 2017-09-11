@@ -1,0 +1,133 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use Getopt::Long;
+use Pod::Usage;
+use Cwd;
+
+BEGIN{
+	push(@INC,'/net/slc03wlx/scratch/aime/ORDER_PROD/scripts/pm/');
+}
+use Expect;
+
+my ($ORACLE_HOME,$version,$ARU,$patch_loc,$sysman_password,$help);
+
+
+GetOptions('ORACLE_HOME=s' => \$ORACLE_HOME,
+	   'version=s' => \$version,
+	   'ARU=i' =>\$ARU,
+	   'patch_loc=s' => \$patch_loc,
+	   'sysman_password=s' => \$sysman_password,
+	   'help' => \$help) or pod2usage(2);
+
+if(!($ORACLE_HOME && $version && $ARU && $patch_loc && $sysman_password) || $help){
+	pod2usage(2);
+}
+
+
+die "Give the version in 5 digit format, ex : 1.8.2.0.0 \n" if($version !~ /\d+\.\d+\.\d+\.\d+\.\d+/);
+
+die "No file exists at the given patch location $patch_loc\n" unless(-f $patch_loc);
+
+my $cmd = "cp  $patch_loc drdp_patch.zip";
+run_system_cmd($cmd,"Error in copying the file to the current location");
+
+$cmd = "unzip drdp_patch.zip";
+run_system_cmd($cmd,"Error in unzipping the file");
+
+my $loc = getcwd();
+chdir("$loc/$ARU") or die "The location $loc/$ARU does not exist\n";
+
+$ENV{ORACLE_HOME} = $ORACLE_HOME;
+$ENV{OPATCH} = "$ORACLE_HOME/OPatch";
+$ENV{EM_BIN} = "$ORACLE_HOME/bin";
+
+
+
+#$cmd = "$ENV{OPATCH}/opatch apply -oh $ENV{ORACLE_HOME} -invPtrLoc $ENV{ORACLE_HOME}/oraInst.loc";
+
+$cmd = "echo $ENV{ORACLE_HOME}";
+
+
+my $exp = Expect->spawn($cmd);
+
+exit;
+if($exp->expect('proceed')){
+	$exp->send("y\n");
+}
+
+my $status = $exp->expect("succeeded","failed");
+
+if($status==1){
+	print "OPatch has succeeded\n";
+}
+else{
+	print "OPatch has failed\n Look into it\n";
+	$exp->soft_close();
+	exit(1);
+}
+
+$exp->soft_close();
+
+$cmd =  "$ENV{EM_BIN}/emctl register oms metadata -service swlib -core -file_list"
+	." $ENV{ORACLE_HOME}/sysman/metadata/swlib/contentmgmt/$version/FILELIST_pbu_swlib_core_disasterrecovery";
+register_service($cmd);
+
+$cmd =  "$ENV{EM_BIN}/emctl register oms metadata -service  procedures -core -file_list"
+	."$ENV{ORACLE_HOME}/sysman/metadata/procedures/contentmgmt/$version/FILELIST_pbu_procedures_core_disasterrecovery";
+register_service($cmd);
+
+$cmd =  "$ENV{EM_BIN}/emctl register oms metadata -service jobTypes -core -file_list"
+	."$ENV{ORACLE_HOME}/sysman/metadata/jobs/contentmgmt/$version/FILELIST_pbu_jobs_core_disasterrecovery";
+register_service($cmd);
+
+print "Registered the services and applied the patch on EM, will stage fa_dr_genparams now\n";
+
+
+sub register_service{
+
+	my $cmd = shift;
+	my $exp = Expect->spawn($cmd);
+	if($exp->expect('password')){
+        	$exp->send($sysman_password);
+	}
+
+	my $fail_regex = "unsuccessful|failed";
+
+	if($exp->expect(30,'-re',$fail_regex)){
+	        $exp->soft_close();
+	        print "Registration of service was unsuccessful\n";
+	        exit(1);
+	}
+	$exp->soft_close();	
+	
+}
+
+sub run_system_cmd{
+	my ($cmd,$fail_msg) = @_;
+	my $ret_code = system($cmd);
+	die "\n$fail_msg\n" unless $ret_code ==0;
+}
+
+__END__ 
+
+=head1 NAME
+
+apply_patch.pl
+
+=head1 SYNOPSIS
+
+The arguments ORACLE_HOME, version of the DRDP patch, ARU number, patch location and sysman password for EMGC are mandatory
+The version should be given in 5 numbers format , ex : 1.8.2.0.0
+
+Options :
+
+ORACLE_HOME : Location of OMS on the host
+version : THE DRDP version to be installed , give it in 5 numbers format , ex : 1.8.2.0.0
+ARU : Bug Number of the patch
+patch_loc : location of the DRDP patch 
+sysman_password : password for the sysman account
+
+Ex : apply_patch.pl -ORACLE_HOME /scratch/aime/work/CLOUDTOP/Middleware/MIDDLEWARE/EM/oms -version 1.8.2.0.0 -ARU 25293218 -patch_loc /ade_autofs/gd24_lcm/LCMSERVICE_MAIN_GENERIC.rdd/161222.0818/lcmservice/dist/zips/opatch/fadr_161222_25293218.zip -sysman_password ***
+=cut 
